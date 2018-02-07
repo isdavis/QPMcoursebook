@@ -1,0 +1,40 @@
+# Lab 9 Handout: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet from each group for grading. 
+
+Titanic
+
+Use the my.titanic dataset to answer the following questions. The dataset will be available once you install "titanic" package and call the library.
+
+```{r, eval=F}
+install.packages("titanic")
+library(titanic)
+my.titanic <- titanic_train
+View(my.titanic)
+```
+
+1. In the movie Titanic, the third class passengers were not allowed to go up to the deck where the life-boats were boarding because the first-class passengers would board before them.  This led to a sequence of tragic events.   Make  a  contingency  table  of  the  observed  frequencies  for  the  variables  of  interest:  survival of passengers with respect to their class.  (Include your R code and write down the table on your sheet.)
+
+
+2. Make a table that shows "row percentages" rather than frequencies, so that rows add up to 100%.  (HINT:look up arguments in ?prop.table) (Include your R code and write down the table on your sheet.)
+
+3. State  the  null  and  alternative  hypotheses  of  this  test,  and  interpret  the  table.   Conduct  the  necessary hypothesis test (Include your R code), and interpret the results.  Write a couple of sentences, answering the following questions:  Did the class of the passengers (first,  second,  third) relate to the likelihood of passengers' survival?
+
+4. Some claimed that the "women and children first" evacuation policy helped them escape regardless of their class.  Using only the women in the sample, make a contingency table to test this assertion.  Report and interpret the chi-squared statistic.  Do you think this evacuation policy worked? 
+
+**If you have time, complete the following exercise:**
+
+## Florida
+
+This exercise aims to teach you how to fit bivariate models.  An illustrative example is the 2000 US electionresults in Florida.  In Florida, there are 68 counties and the election results (florida.csv") can be retrieved from this link: (https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/florida.csv). Florida dataset contains the number of votes cast for each candidate in 1996 and 2000 elections.
+
+1. Focusing on the libertarian candidates, Ross Perot in 1996 and Pat Buchanan 2000, use the votes for theformer to predict the votes for the latter.  Present your R code and results.
+
+2. Interpret how these two candidates votes are related?  Do you think Perot votes in 1996 is a good predictor of Buchanan votes in 2000?  Why or why not? 
+
+3. Interpret  the  residuals  from  the  Florida  regression.   Create  a  residual  plot  where  residuals  are  plotted against fitted values.  Do you find anything interesting here? HINT: See the generic R-code for residual plots below: 
+
+```{r, eval=F}
+plot(fitted(model), resid(model),xlim = c(num1, num2), ylim = c(num3, num4),xlab = "Fitted values", ylab = "residuals")
+abline(h = 0)
+```

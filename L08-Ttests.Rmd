@@ -1,0 +1,154 @@
+# Lab 8: T-Tests In R 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Class Goals 
+
+- Recoding factors
+
+- Hypothesis testing for the difference of means in R
+
+## Gerber, Green, & Larimer GOTV Data 
+
+```{r, eval=F}
+social <- read.csv("https://raw.githubusercontent.com/
+     kosukeimai/qss/master/CAUSALITY/social.csv")
+colnames(social)
+```
+
+This should return: 
+
+[1] "sex" "yearofbirth" "primary2004" "messages" "primary2006" "hhsize"   
+
+In 2006, one of three mailers was sent out as part of a study:
+
+- Civic Duty (It's your duty to vote)
+
+- Hawthorne (You're being studied)
+
+- Neighbors (Your neighbors will know if you voted)
+
+How do these mailers impact turnout?
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/21.png")
+``` 
+
+We want to reduce messages to ``Treatment" and ``Control" :
+
+```{r, eval=F}
+table(social$messages)
+```
+
+This returns: 
+
+Civic Duty    Control  Hawthorne  Neighbors 
+     38218     191243      38204      38201 
+     
+```{r, eval=F}
+install.packages("car")
+library(car)
+social$messages2 <- recode(social$messages, 
+     " 'Hawthorne'='Treatment'; 'Civic Duty'='Treatment';
+      'Neighbors'='Treatment' ")  
+```
+
+Does turnout differ between treatment and control?
+
+```{r, eval=F}
+t.test(outcome ̃group, alternative = "two.sided",var.equal = FALSE, data =dataset)
+```
+
+## t.test() Output
+
+```{r, eval=F}
+t.test(primary2006 ~ messages2, alternative = "two.sided",
+     var.equal = FALSE, data = social)
+```
+
+Welch Two-Sample T-Test 
+
+data:  primary2006 by messages2
+
+t = -23.869, df = 234580, p-value < 2.2e-16
+
+alternative hypothesis: true difference
+
+      in means is not equal to 0
+      
+95 percent confidence interval:   -0.04506412 -0.03822505
+ 
+sample estimates:
+
+mean in group Control mean in group Treatment:  0.2966383      0.3382829 
+
+## Options with the t.test function
+
+Adjust for our hypothesis, given $H_0$ is $\mu_a = \mu_b$:
+
+- if $H_a:$ $\mu_a \neq \mu_b$, then alternative = "two.sided"
+
+- if $H_a:$ $\mu_a > \mu_b$, then alternative = "greater"
+
+- if $H_a:$ $\mu_a < \mu_b$, then alternative = "less"
+
+Adjust for variance assumptions:
+
+- If we assume unequal variance, then \texttt{var.eq = F}
+
+- If we assume equal variance, then \texttt{var.eq = T} 
+
+## Alternative Usage of the t.test Function 
+
+We can also give t.test two vectors.  First, create objects for turnout for two specific mailers:
+
+```{r, eval=F}
+neighbors <- social[social$messages == "Neighbors", "primary2006"]
+civic_duty <- social[social$messages == "Civic Duty","primary2006"]
+```
+
+t.test(neighbors, civic_duty)
+
+Welch Two Sample t-test
+
+data:  neighbors and civic_duty
+
+t = 18.463, df = 76271, p-value < 2.2e-16
+
+alternative hypothesis: true difference in means is not equal to 0
+
+95 percent confidence interval: 0.05667888 0.07014226
+
+sample estimates:
+
+mean of x: 0.3779482
+
+mean of y: 0.3145377 
+
+## Mailers from the 2016 Campaign 
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/22.jpg")
+```
+
+## Negative Advertising 
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/23.png")
+```
+
+## Negative Advertising Experiment 
+
+Voters were contacted prior to the 2004 election and randomly given either a \textbf{positive} or \textbf{negative} message on an issue.
+
+For example, on education:
+
+- Republicans failed to fund their own ``Leave No Child Behind" law and stuck Minnesotans with the cost... We deserve better leadership.
+
+- Democrats plan to provide more resources, smaller class sizes and more textbooks to public schools....We need to insure that every child receives a good education. 
+
+The authors then gathered turnout data for contacted voters in order to ask: Did the negative message impact turnout? 

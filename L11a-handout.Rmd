@@ -1,0 +1,35 @@
+# Lab 11 Handout: Quantitative Political Methodology 
+
+Teaching evolution can be politically controversial, but is scientifically uncontroversial and necessary for understanding biology. How can we determine if politics is skewing the teaching of evolution in schools? Are there individual biases, institutional biases, or a combination (perhaps an interaction) of both?
+
+Effects of qualifications and experience of individual teachers as well as state-level effects on how many hours biology teachers devote to teaching evolution in class. We want to ask ourselves: 
+
+- Does teaching vary by state?
+
+- Does teaching vary by the experience of the teacher?
+
+- But what if the effect of experience changes depending on which state you are in?
+
+- We can use interactions to investigate how differing levels of seniority affected the devotion of class time to evolution, conditioning on which state they are in!
+
+The data are from the National Survey of High School Biology Teachers and consist of 854 observations of high school biology teachers who were surveyed in the spring of 2007.  The dataset is called evolution.dta and is available in the Lab Code folder on blackboard.  The outcome of interest is the number of hours a teacher devotes to human and general evolution in his or her high school biology class (hrsallev).  To see the explanatory variables, see the Evolution Codebook in the Lab Code folder of blackboard. 
+
+1. Write down the names of all the members of your group in this space. We will collect one sheet from eachgroup for grading.
+
+2. Import the evolution.dta data set into R. Go ahead and open the codebook as well.First we need to recode some of the data to tell R where there are missing values.  The female variable codes 1 if the teacher is female, 0 if the teacher is male, and 9 if the sex of the teacher is unknown.  Recode all entries in the female column listed as 9 as NA, and write the code you used to do this below.
+
+3. Begin  by  creating  a  multivariate  regression  model  using hrsallev as  your  outcome  variable. For  explanatory variables,  use female, biocred3, degr3, evolcourse, certified, idscitrans, confident, an interaction term between phase1 and senior, and an interaction term between phase1 and notestp.
+
+- Write the prediction equation
+
+- Are any coefficients not significant?  Does this mean the whole model is bad?
+
+- Interpret the intercept of the model.
+
+4. According to the model, what is the effect of taking the college-level evolution course.  How does this compare to the effect of holding an additional degree?
+
+5.  Interpret the interaction between phase1 and seniorc.  Explain how we understand the coefficients numerically, and also give a substantive interpretation of this interaction effect.
+
+6.  What is the R-Squared value for this model?  What does this tell us?
+
+7.  Notice that the p-value for the F-Test is very small.  What does this mean?  Be very explicit with this statement. 

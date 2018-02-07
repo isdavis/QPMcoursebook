@@ -1,0 +1,164 @@
+# Lab 9: Contingency Tables in R
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Class Goals
+
+Today's lab will introduce you to the different  types of bivariate data displays:
+
+- Discrete by Discrete (Contingency Tables)
+
+- Discrete by Continuous
+
+- Continuous by Continuous
+
+It will also attempt to get at bivariate regressions.
+
+## Why is this useful? 
+
+It is very common that a question relies on a discussion of the relationship between two variables. 
+
+What type of variables?
+
+- Age and Vote Intentions
+
+- Party Ideology and Party Desire to Form Coalitions
+
+- Income groups and Spending on Alcohol
+
+## Discrete by Discrete Data Display 
+
+- Assume the two variables of interest are both countably discrete.
+
+- To examine the relationship between these variables, we will use \textbf{contingency tables}.
+
+- A contingency table is used to plot membership by groups.
+
+| | Democrat | Republican | 
+|-|-|-|
+|Male | 36 | 56 | 
+|Female | 43 | 22 | 
+
+- How can we interpret this table?
+
+## Contingency Tables 
+
+- The same contingency table with row percentages.
+
+- Does it make more sense to percentagize by sex or vote in the previous table?
+
+- General rule: percentagize by the independent/ explanatory variable. Below we do it by gender (i.e. by row).
+
+| | Democrat | Republican | 
+|-|-|-|
+|Male | 39.1% | 60.9% | 
+|Female | 66.1% | 33.9% | 
+
+- Note that the percentages add up to 100 on each row, not over each column. 
+
+## Creating Contingency Tables in R 
+
+Everything below is IMPORTANT for handout:
+
+Recall: Contingency tables take factors. Convert otherwise!
+
+```{r, eval=F}
+# Frequency 
+
+freq.tab <- with(data, table(factor1, factor2))
+
+#Percentage 
+
+with(data, round(prop.table(freq.tab)*100, 2))
+
+# Chi-Square 
+
+chisq.test(freq.tab)
+```
+
+## Discrete by Continuous Displays 
+
+When we have one discrete variable and one continuous
+
+- Rely on some of the methods that we have used previously! 
+
+Options:
+
+- boxplots for each group;
+
+- histograms for each group;
+
+- plot the distribution of observations for each group.
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/24.png")
+```
+
+```{r, eval=F} 
+boxplot(y~x,data = dataset,xlab = "Informative X label",ylab = "Informative Y label",main = "Informative Title",col = c(col1, col2, ....))
+```
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/25.png")
+```
+
+```{r, eval=F} 
+hist(x,data = dataset,breaks = c(num1, num2, ....),freq = TRUE,xlab = "Informative X label",ylab = "Informative Y label",main = "Informative Title",col = "color")
+```
+
+## Continuous By Continuous Displays 
+
+If we want to examine the relationship between two continuous variables graphically, we will utilize a scatterplot. 
+
+- Income by Age
+
+- Income by Ideology (21-point scale)
+
+- Note: when ordered categories are plenty enough, consider them as continuous
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/26.png")
+```
+
+```{r, eval=F} 
+plot(x, y, data = dataset,main = "Informative Title",xlab = "Informative X label",ylab = "Informative Y label",pch = 19)      
+
+#Note:  Change for different types
+
+#Add regression line (y~x)
+
+abline(lm(y~x), data=dataset, col = "color")
+```
+
+## The value of Scatterplots
+
+Scatterplots allow us to assess the direction and strength of a relationship between 2 variables.
+
+3 types of relationships:
+
+- **Positive:** As x increases, y also increases.
+
+- **Negative**: As x increases, y decreases.
+
+- **No Relationship:** There is no relationship between the variables.
+
+Careful with nominal variables: Directions do not apply! We can only say whether or not a relationship exists.
+
+In  R, we can only make scatterplots with **numeric** variables!
+
+- Check whether the variable is numeric:
+
+```{r, eval=F}
+str(datasetname$variableofinterest)
+is.numeric(datasetname$variableofinterest)
+```
+
+- If your variable is not numeric in structure but convertible to be numeric, such as numbers as factor levels or numbers as characters within quotation marks, we can convert it to a numeric variable (only if it makes sense):
+
+```{r, eval=F} 
+datasetname$newvariable <- as.numeric(datasetname$variableofinterest)
+```

@@ -1,0 +1,59 @@
+# Inference for Regression
+
+Has a professor ever given you a study to read as homework with a confusing table with numbers, asterisks, and letters?  Today, we are going to teach you to understand that table so you can impress your friends, relatives, and (most importantly) your professors with your mastery of regression analysis.
+
+##Learning objectives:
+
+1) Be able to make inferences from regression using hypothesis tests, t-statistics, p-values, and confidence intervals.
+
+2) Be able to interpret a regression table.
+
+##Inference with regression
+
+###Hypothesis tests
+
+We can use hypothesis tests to determine whether or not a relationship exists between two variables in our prediction equation. Our null hypothesis is that no relationship exists between the two variables. This occurs when the slope describing the relationship between x and y, $\beta$, is zero, or a flat line.  This is described by $H_0: \beta = 0$, while the alternative hypothesis Ha can either be $H_a: \beta \neq 0$ or $\beta < 0$ or $\beta > 0$, depending on what we are trying to assess.
+
+To calculate our test statistic, we subtract our calculated slope value, $\beta$, from our null hypothesis value and divide by the standard error. That is:
+
+$$ t = \frac{\beta - 0}{se} $$
+
+The formula for the standard error of the slope is:
+
+$$ se = \frac{s}{\sqrt{ \sum(x_i - \bar{x})^2)}} $$
+
+where $$ s = \sqrt{\frac{SSE}{n-2}} $$
+
+The test statistics, $t$ is distributed according to the t distribution.  We calculate the degrees of freedom by subtracting from n the number of parameters we are estimating. Since here we only have a bivariate regression, we would have degrees of freedom $= n -2$ (one for $\alpha$ and one for $\beta$). As always, if $n> 30$ we can approximate the t distribution with the z distribution.
+
+Again as always, the p value describes the probability of obtaining the observed slope were the true slope describing the relationship between the two variables were zero and the null hypothesis were true. It is our measure of surprise. A small p value suggests the regression line has a non-zero slope.  That is, if the slope were actually zero, than the strength of the relationship between x and y would be very surprising.
+
+If the p value is less than our predetermined $\alpha$ (DONT GET CONFUSED ... this is not the same $\alpha$ as above) we can reject the null hypothesis that there is no relationship between the two variables.
+
+###Confidence intervals
+
+We do not just want to know, however, that the slope is non-zero and that a relationship exists between the variables. We want to know the extent of that relationship, which we can determine using confidence intervals.  We calculate the confidence interval for the slope using the formula:
+
+$$ \beta \pm t*(se) $$
+
+with $df = n - 2$ and the $se$ calculated exactly as it is in the above hypothesis test.
+
+Let's do an example. In a data set of size n= 100 where x = size of house in square feet and y = selling price, our observed slope is 126.6, meaning that for each square foot increase in the size of the house, the selling price increases by 126.6 dollars (on average). Our $se$ equals 8.47.
+
+In a 95% confidence interval for the true slope value $\beta$, we calculate with $df = 100 - 2$ and $t = 1.984$:
+
+$$ 126.6 \pm 1.984 (8.47) = 126.6 \pm 16.8 = [110, 143]$$
+
+If we were to take many, many samples of size $n = 100$, we would be confident that 95% of the time that the true mean increase in selling price for each 1 square foot increase in size would fall between 110 dollars and 143 dollars.
+
+##Table Interpretation
+
+In your readings for your other Poli Sci classes have you ever come across a chart like this?
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/11.png)
+
+Well, now you have the tools to interpret what it means.  For the moment, ignore the fact that there are multiple variables.  We will come back to that later in the class.
+
+Imaging that this is a bivariate regression with only one explanatory variable and a constant.  For example, dependent variable in this chart is a house incumbent's legislative electoral vote share from 1980 - 1996 (the left panel). The first explanatory variable listed here is roll-call ideological extremity. The first coefficient listed is the slope. It shows us that the relationship between incumbent vote share decreases by .085 for each increase in roll-call ideological extremity. 
+
+The number in parentheses is the standard error for that $\beta$.  It tells us the variability in sample slope values that would result from repeatedly selecting random samples of incumbent vote share and calculating prediction equations. The stars next to the slope coefficient for roll call extremity shows us that the relationship between incumbent vote share and roll call ideology is significant at the $\alpha = .01$ or the $\alpha = .001$ level (see the note at the bottom of the table).

@@ -1,0 +1,72 @@
+# Lab 2: Importing and Displaying Data
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Importing Data 
+
+There are many different kinds of data: there are comma-separated-value files (.csv), text files (.txt), STATA files (.dta), SPSS files (.spss), and some others. We will work primarily with .csv files and some .dta files in this course. 
+
+In order to import data, we need to make sure we set the correct working directory. After downloading the data, make sure the R working directory is set to the location you saved the data. Then once you are working in the correct directory, we can read csv files in by using the "read.csv" function. 
+
+We'll try this with some energy data. Go to: (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ARKOTI) and download PESenergy.csv 
+
+```{r, eval=F}
+getwd() 
+```
+ This shows you R's current working directory 
+```{r, eval=FALSE}
+setwd("/Users/yourname/Downloads")
+```
+ This sets the working directory to your downloads folder
+```{r, eval=F}
+data <- read.csv("PESenergy.csv")
+```
+This imports PESenergy.csv into a data frame in R. 
+
+Once we have the data in R, we can manipulate in a number of ways. Experiment with the code below: 
+
+```{r, eval=F}
+head(energyData)
+tail(energyData)
+summary(energyData)
+table(energyData$Energy)
+energyData[c(10:20),c("Date","Energy","rmn1173")]
+```
+
+```{r, eval=F}
+summary(energyData$Approval)
+```
+This creates a summary table but for only one specific variable. 
+
+```{r, eval=F}
+energyData$approvalProp <- energyData$Approval*0.01
+```
+This creates a new variable, which is exactly 0.01 times the Approval variable. We can see this more clearly if we run the summary of our new variable, the output should be exactly 0.01 times the ouptut of the previous summary table: 
+
+```{r, eval=F}
+summary(energyData$approvalProp)
+```
+
+We can also use R to create different kinds of plots: 
+
+```{r, eval=F}
+hist(energyData$Energy, xlab="Television Stories", main="Title")
+boxplot(energyData$Energy, ylab="Television Stories", main="Title")
+plot(y=energyData$Energy, x=energyData$Approval,ylab="Television Stories",xlab="Presidential Approval")
+plot(x=energyData$Energy, ylab="Television Stories",xlab="Month-Year",type="l")
+```
+
+We can also use this code to help save a plot: 
+
+```{r, eval=F}
+library(lattice)
+getwd()
+pdf("stories_over_time.pdf")
+densityplot(energyData$Energy, xlab="Television Stories")
+dev.off()
+```
+

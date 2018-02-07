@@ -1,0 +1,13 @@
+
+# Visualizing Data in R
+
+Learning Objectives:
+
+1. Learn how to create simple plots in R.
+
+2. Learn how to interpret the results.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Hj1pgap4UOY&t=19s" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FEAS3akVxD8" frameborder="0" allowfullscreen></iframe>

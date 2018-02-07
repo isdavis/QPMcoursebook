@@ -1,0 +1,56 @@
+
+#Measurement Error
+
+##Learning Objectives 
+1)   Learn to define the following types of errors: sampling bias, response bias, non-response bias
+##Learning Objective 1:  Types of Biases
+
+If the goal of a survey is to be representative, then anything that causes a survey to deviate from the population is a major problem.  Something that causes a survey result to deviate from the population is referred to as bias. 
+
+Bias can be introduced in a number of ways.  We will divide biases into three categories: sampling bias, response bias, and non-response bias.
+
+###Sampling bias
+
+Sampling bias occurs when there is a problem in the sampling process.  Sometimes, the sample is poorly conducted.  For example, in a survey of WashU undergraduates, if we put together a stratified sample, based on residential area, and then selected 50% of our subjects from Shepley Hall, then our survey would not be reflective of the general WashU undergraduate population, because 50% of WashU  students do not live in Shepley hall.  This is a **sampling error**. 
+
+To give a political example, in telephone surveys, sometimes people do not pick up their phone.  In this situation, most polling firms will try calling back later.  If a firm does not try to call back when people are out, then they run the risk of introducing sampling error, because younger people are more likely to be out than older people, and younger people are more likely to be liberal. 
+
+Other times, a sample simply isn't random.  Certain groups are systematically left out of a sample.   This is called a **selection bias**, or selection effect.  In this case, the sample will fail to reflect the population as a whole. 
+
+Although this may sound like an obvious problem, this happens all the time.  For example, hosts at various cable news shows sometimes ask viewers to text in what they think about a certain policy, and then display the results as if they are reflective of the general population.  But just because 93% of people who texted in think that the President should be re-elected does not mean that the population as a whole agrees.  Since it is not a randome sample, it doesn't even mean that 93% of viewers agree!
+
+A common situation where sampling error occurs involves phone lines.  People without phone lines are excluded from most surveys.  That may not be too big of an issue in a country like the United States, where there may not be a substantial difference  between people with phone lines, and people without them.   But in a country like Afghanistan relying on phone calls to conduct a survey would be a very big problem since phones are only owned by (relatively) wealthy individuals and some areas have no service at all!
+
+Another example is Geico commercials, where they say that people who switch to Geico on average save money.  This is a selection bias, because only people who are offered a cheaper rate will switch.  If people were randomly selected and forced to switch to Geico, then they would not be saving 30% or more.
+
+###Response bias
+
+In some surveys, the questions may be poorly worded.  The language may be ambiguous, or may be open to different interpretations. So the process of answering the questions may lead to some bias in how the questions are answered.  
+
+In some surveys, something about the survey itself causes subjects to respond differently than they would in real life.  For example, if someone is being surveyed on how often they volunteer, and (s)he rarely volunteers, (s)he may feel embarrassed or guilty about this fact, and tell the interviewer that (s)he volunteers frequently.   This is called the **social desirability effect**.
+
+For example, if a survey asks someone if they voted in the last election, and they had not, that person may be more inclined to answer untruthfully, because failing to vote is frowned upon. 
+
+Other times, the ordering of questions might affect responses.  For example, if a survey begins by asking subjects numerous questions about terrorism, and then asks them to list the issues most important to them, more subjects might list terrorism than would be the case if the survey had not first asked numerous questions about it.  This is referred to as **order effect**. 
+
+An example of order effect occurred in a survey in 1948 that asked, 
+
+>Q1: Do you think the US should let Communist newspaper reporters from other countries come in here and send back to their papers the news as they see it?
+
+But half of the people were first asked,  
+
+>Q2: Do you think a communist country like Russia should let American newspaper reporters come in and send back to America the news as they see it?
+
+Among people who were first asked the question about American reporters (Q2), 73.1% said yes to Q1.   But, among people who did not first answer Q2, only 36.5% said yes to Q1. 
+
+###Non-response bias
+
+People don't always respond to surveys.  When people who do not respond to surveys differ in some systematic way from people who do respond, then the sample fails to be representative of the general population. 
+
+For example, students who submit course evaluations tend to do so because they either disliked their professor, or loved their professor.  In a class, students who do not have strong feelings one way or another are less likely to submit an evaluation, so the evaluation results are likely to indicate that the class is more polarized than it actually is. 
+
+Note: Non-response bias is not the same as selection bias.  Selection bias has to do with how the sample was constructed by the researcher.  Non-response bias has to do with how individuals chosen to be in the sample behave.
+
+##What's the takeaway?
+
+There are several different ways that a survey can fail to reflect the population. The sample itself could not be reflective of the population, which would be a **sampling bias**.  Sometimes, something about the survey could prompt people to give answers that don't reflect what they actually believe or do, which is a **response bias**.  Other times, the people who are selected, but don't respond differ in an important way from people who do respond, causing the results of the survey to be skewed.  This is called a **non-response bias**. 

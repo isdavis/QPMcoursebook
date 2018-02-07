@@ -1,0 +1,23 @@
+
+# Working with the T-distribution
+
+Learning objectives
+
+Get a general idea about the t-distribution.
+Learn how to find areas under the curve for the t-distribution using a table.
+
+##A bit about the t-distribution
+
+The t distribution is a theoretical probability distribution. It is symmetrical, bell-shaped, and similar to the standard normal curve. It differs from the standard normal curve, however, in that it has different parameter, called degrees of freedom, which changes its shape. This is usually labled $df$ or $\nu$.
+
+Note that the smaller the df, the flatter the shape of the distribution, resulting in greater area in the tails of the distribution. The t distribution is useful for distributions with degrees of freedom less than 30. It is a more accurate way of describing distributions with relatively low degrees of freedom. As df approaches infinity, the t distribution becomes more like the normal distribution.    
+
+##Finding probabilities
+
+For the time being, I only want you learn how  know how to use a t-table, which you can find [here](https://pages.wustl.edu/files/pages/imce/montgomery/t_distribution.pdf). This is really best shown using an example.
+
+For a distribution with $n = 10$, find the probability of $t \ge 0.1$. 
+
+First, we need to determine the degrees of freedom (10-1 = 9).
+Once we have established the degrees of freedom as 9, we can use the t value to find the probability $P (t \ge 0.1)$.  That is, we can now use our t-value in conjunction with our t table in order to find our probability. Once we have located how many degrees of freedom we have on our table (9, row 1, column 9) we can scan the columns for the right t-value to the first column, lableed $t_{.100}$.  The corresponding probability is 1.38.
+Note that this value corresponds to the probability to the right of the t-value. So if we want the area to the left, we will have to use some of the tricks shown on the normal distribution page.

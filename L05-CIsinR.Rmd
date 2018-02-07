@@ -1,0 +1,116 @@
+# Lab 5: CI's in R 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here) 
+
+## Class Goals 
+
+- Plotting the t distribution, with different degrees of freedom
+
+- Building confidence intervals (CIs) 
+
+- Working on lab handout
+
+## Example Graphs and R Code: 
+
+```{r}
+par(mfrow=c(1,3))
+elif <- seq(-6.869, 6.869, length.out=100)
+plot(elif, dt(elif, df=2), xlab="x", ylab="Density",main=paste("t Distribution:  Degrees of freedom=2"),type="l",col="green",ylim=c(0,0.5))
+plot(elif, dt(elif,df=10), xlab="x", ylab="Density",main=paste("t Distribution:  Degrees of freedom=10"),type="l",col="red",ylim=c(0,0.5))
+plot(elif, dt(elif,df=30), xlab="x", ylab="Density",main=paste("t Distribution:  Degrees of freedom=30"),type="l",col="blue",ylim=c(0,0.5))
+```
+
+## What is a Confidence Interval? 
+
+- Interval estimate of a population parameter
+
+- Takes into account the uncertainty
+
+- Depends on the data and confidence level
+
+- Confidence level: if confidence intervals are constructed across manyseparate data analyses, the proportion of such intervals that containthe true value of the parameter will match the confidence level
+
+- What happens when we increase/decrease confidence level?
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/19.png")
+```
+
+Figure :Normal population: 30 samples (n=150),μ=0, 90% confidence interval) 
+
+Out of the 30 confidence intervals, only 27 of them (90%) include μ!
+
+##Confidence Intervals for the Mean of Populations 
+
+- Obtain $\bar{y}=\frac{\sum{y_i}}{n}$
+
+- Obtain $\sigma_{\bar{y}}=\frac{\sigma}{\sqrt{n}}$ or $\hat{\sigma}_{\bar{y}}=\frac{S}{\sqrt{n}}$
+
+- Choose a confidence level
+ 
+- Obtain confidence coefficient: $\frac{\text{confidence level}}{100}$
+
+- Find the Z-score that corresponds to $\frac{(\text{1-confidence coefficient})}{2}$ [Normal Table or R]
+
+
+Confidence Interval for your chosen confidence level: 
+
+($\bar{y}-z*\sigma_{\bar{y}},\bar{y}+z*\sigma_{\bar{y}}$)
+
+## In R: 
+
+###Numerical Summaries: 
+
+- Get the mean, standard deviation and number of observations of thevariable you are interested in
+
+###Normal Quantiles
+
+- Gives you the required z-score for your confidence coefficient 
+
+- Be sure tochoose the “upper tail”option so that your R Commanderresult matches the Normal table
+
+### Code 
+
+Obtain the Z- score and save it in an object called z.score: 
+
+```{r, eval=F} 
+z.score = qnorm(c((1-confidence coefficient)/2),lower.tail=FALSE))
+```
+
+Get mean, sd, and n of the variable and save in appropriately named objects:
+
+```{r, eval=F}
+mean.variable = mean(nameofdataset$nameofvariable,na.rm=T)
+sd.variable = sd(nameofdataset$nameofvariable,na.rm=T)
+n = length(na.omit(nameofdataset$nameofvariable))
+```
+
+Compute lower bound: 
+
+```{r, eval=F}
+mean.variable - z.score*sd.variable/sqrt(n)
+```
+
+Compute upper bound:
+
+```{r, eval=F}
+mean.variable+ z.score*sd.variable/sqrt(n)
+```
+
+Calculating 99% Confidence Interval for mean proportion of Clinton votefrom polls data (from last week): 
+
+```{r, eval=F}
+z.score = qnorm(c(0.005), lower.tail=FALSE))
+n = length(na.omit(polls$Clinton))
+mean.clinton = mean(polls$Clinton,na.rm=T)
+sd.clinton = sd(polls$Clinton,na.rm=T)
+lower.bound = mean.clinton -z.score*sd.clinton/sqrt(n)
+upper.bound = mean.clinton +z.score*sd.clinton/sqrt(n)
+```
+
+The 99% Confidence Interval is: (42.827,44.091)
+

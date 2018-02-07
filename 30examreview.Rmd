@@ -1,0 +1,125 @@
+
+# Review Exam 1
+
+##Objectives
+
+1. Remind yourself of what you have learned so far in QPM
+
+2. Understand the main themes and how they are related to one another
+
+3. Get an idea of the concepts and equations you will need to know for the exam
+
+**Disclaimer**
+
+This page is designed to be helpful as you review.  It is absolutely not guaranteed to remind you of everything you need to study in order to get 100% on the exam. But this is definitely a good place to start.
+
+##Random Samples
+
+When we are dealing with a particular population and particular research questions, it is important that we have a random sample so our statistics are representative of the population from which we are taking the sample.
+
+There are various ways to put together a random sample, including **cluster samples, stratified random samples, systematic samples, and multi-stage samples**. Know what they are and how they are distinct from one another.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2527
+
+##Measurement Error
+
+Although we try our best to keep our samples random so that they are representative of our population, various types of measurement errors can occur in the form of bias. There are three in particular that are important to keep in mind: **sampling bias** (when the sample is not representative of the population), **response bias** (when subjects answer surveys in a way that is contrary to their own beliefs), and **non-response bias** (when subjects who are selected for a survey but don't respond are different from the subjects who do respond in important ways).
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2528
+
+##Scales of Measurement
+
+The data that we collect from our random samples, which are hopefully representative and non-biased, can take many forms depending on what variables we choose to study. There are four main types of scales you will need to know: **nominal** (categorical) variables are separated into different categories but have no natural ordering; **ordinal** variables have a natural ordering but do not have natural distances between their values; **interval** variables have both a natural ordering and a natural distance between values; and **ratio** variables are a subset of interval data in which the zero value signifies that there is none of that variable.
+
+**Granularity** refers to how well the data fits on a particular scale. A **continuous** variable can take on any value along a scale, while a **discrete** variable can take on only certain values.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2529
+
+##Measures of Position
+
+Once we have identified the scales that the variables will take, it will be useful to calculate some measures of position so that we can start to describe the data. These measures of position include percentile, interquartile range, outliers, and skew. The **percentile** tells us what percentage of the observations fall below a given observation. The **interquartile range** determines the middle 50% of the data. An **outlier** is an observation that has an extreme value. **Skew** is a way to describe the asymmetry of a dataset.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2579
+
+##Measures of Dispersion
+
+Another way we can start to describe data is through measures of dispersion that include range, deviations, variance, and standard deviations. The **range** is a simple measure of variability defined by the lowest value in a dataset subtracted from the highest value. A **deviation** is a measure of distance from the center, **variance** refers to the degree to which observations are spread out from the mean, and the **standard deviation** represents the distance from the mean.  You should be able to define and calculate each of these measures of dispersion.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2578
+
+##Measures of Central Tendency
+
+Measures of central tendency are yet another way to describe data. These are the more traditional ways to describe data you have learned since middle school: **mean, median, mode**, etc. You should know how to calculate each.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2577
+
+##Sampling Distributions
+
+We have learned that we use samples to estimate parameters of a population. However, it is almost always the case that there is some error when we are trying to estimate population parameters using a sample. In order to know how much error will likely be in our sample, we use a sampling distribution, which uses probability theory to describe how sample statistics will vary. In other words, a sampling distribution is how the sample means or proportions are distributed. While we use the standard deviation to measure how far individuals in a sample tend to be from the sample mean, in a sampling distribution we use **standard error** to measure how far a sample mean or proportion tends to be from the true population mean or proportion. 
+
+The **Central Limit Theorem** is an important rule you will need to know with regards to sampling distribution. It posits that when the sample sizes are sufficiently large, the resulting sampling distribution  will be normally distributed, regardless of the population distribution. Furthermore, with an infinite number of samples, the mean of the sampling distribution will equal the true population mean. 
+
+Familiarize yourself with sampling distributions and how they differ from sample distributions and population distributions. These are some of the most important concepts and distinctions you will need to know in this course.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2664 ; http://pages.wustl.edu/montgomery/articles/2666
+
+##The Normal Distribution, Binomial Distribution, and T-Distribution
+
+The standard normal distribution is probably the distribution you are most familiar with, and the one you will use most often. The binomial distributions and t-distributions are used in special cases-when the data calls for them.
+
+You should know what distinguishes each distribution from one another, when to use each, and how to calculate probabilities using the respective tables for both means and proportions. Examples are provided in the respective sections in the course book.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2678 ; http://pages.wustl.edu/montgomery/articles/2677; http://pages.wustl.edu/montgomery/articles/1841
+
+##Constructing Confidence Intervals
+
+Confidence intervals are a type of interval estimate of a population parameter and are used to indicate the reliability of an estimate. You should know exactly what they are and how to go about constructing them for means and proportions with large and small sample sizes. You should also know how to go about calculating the necessary sample size required for a desired confidence level.
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2757 ; http://pages.wustl.edu/montgomery/articles/2795 ; http://pages.wustl.edu/montgomery/articles/2796 ; http://pages.wustl.edu/montgomery/articles/2772
+
+##Hypothesis Testing
+
+You should know the basics of hypothesis testing. The **null hypothesis** is that of the determined skeptic: the outcomes in each trial happened by chance and the world worked according to the laws of statistics, while the **alternative hypothesis** posits that something more than chance is acting on a population. You should understand the concept of a **p-value** and be able to interpret the results of a hypothesis test.
+
+You should be able to conduct a significance test for a mean and a proportion with both large and small sample sizes.  There are five steps in conducting a hypothesis test:
+
+1.  Make assumptions about your data.
+
+2.  Identify the null and alternative hypotheses.  Is the significance test one-sided or two-sided?
+
+3.  Calculate a test statistic.
+
+4.  Identify the P-value.
+
+5.  Form a conclusion.
+
+You should also be able to recognize **Type I and Type II error**.  Type I error occurs when the null hypothesis is true and you've rejected the null hypothesis (an alarm without a fire).  Type II error occurs when the null hypothesis is false and you fail to reject the null hypothesis (a fire without an alarm).
+
+To learn more: http://pages.wustl.edu/montgomery/articles/2898; http://pages.wustl.edu/montgomery/articles/6203; http://pages.wustl.edu/montgomery/articles/2977; http://pages.wustl.edu/montgomery/articles/2978
+
+ 
+
+##Notation, notation, notation
+
+ 
+~|Mean|Standard deviation|Estimated mean (using sample distribution)|Estimated standard deviation (using sample distribution)|
+-|-|-|-|-|
+Sample distribution|$\bar{x}$|$s$|N/A|N/A|
+Sampling distribution|$\mu_{\bar{x}}$|$\sigma_\bar{x}$ (Called standard error)|$\hat{\mu}_{\bar{x}}$|$\hat{\sigma}_{\bar{x}}$|
+Population distribution|$\mu$|$\sigma$|$\hat{\mu}$|$\hat{\sigma}$
+ 
+~|Expected Value|Standard deviation|Estimated Proportion (using sample distribution)|Estimated standard deviation (using sample distribution)|
+-|-|-|-|-|
+Sample distribution |$\hat{\pi}$|(Not needed))|N/A|N/A|
+Sampling distribution|$\mu_\hat{\pi}$|$\sigma_{\hat{\pi}}$ |$\hat{\mu}_{\hat{\pi}}$|$\hat{\sigma}_{\hat{\pi}}$|
+Population distribution|$\pi$|$\sigma=\sqrt{\pi(1-\pi)}$|$\hat{\pi}$|$\hat{\sigma}$
+ 
+##Some summarization
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/8.png)
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/9.png)
+
+<!-- bookdown::render_book("index.Rmd") --> 
+
+

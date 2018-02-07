@@ -1,0 +1,49 @@
+<!-- bookdown::render_book("index.Rmd") --> 
+
+# Regression discontinuity designs, Part 1
+
+##Learning objectives
+
+1. Learn what regression discontinuity is and why we would use it.
+2. Regression discontinuity as an experiment.
+3. Regression discontinuity in non-experimental settings.
+
+Part II of this online content will provide more specific instructions on how to estimate a Regression Discontinuity design.
+
+##Learning objective 1: What is regression discontinuity?
+
+Regression discontinuity is a method where we look for evidence of a causal effect by comparing outcomes for observations which are *just* above or *just* below some threshold.  You can think about it like an experiment where the treatment or intervention is administered to all subjects above (or below) a certain threshold. 
+
+Like all causal analysis methods, the goal of regression discontinuity testing is to determine whether certain treatments work more effectively than other treatments.  However, in regression discontinuity testing the treatment is NOT randomly assigned. This allows us to perform regression discontinuity analysis without a formal experiment in order to test the effects of some sort of historical intervention.  
+
+##Learning Objective 2: Thinking about regression discontinuity as an experiment 
+
+If we wanted to conduct an experiment using regression discontinuity, we would start by determining which people were going to receive treatment. Say, for example, we wanted to test the effect of tutoring help on students, and our hypothesis was that tutoring will increase a student's grades.  Using regression discontinuity allows us to prioritize students with low grades so that the students who need the treatment more will receive it. Say we got all the participants' grades, and decided to administer treatment (tutoring, in this case) to any student whose score is below 71% (the class mean). Thus, we have not administered our treatment at random.  Instead, we have administered the treatment, which we hypothesize will be beneficial, to those who need it most. The plot here shows the distribution of students' scores before the intervention (based on a pre-test) where the red line indicates the threshold for receiving the treatment.
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/14.png)
+
+Now imagine that after two months of tutoring for the lower-half of the class, we gather data on grades to get the distribution of the students on a post-test. Now we are going to run a regression where the dependent variable is student's pre-test score and the main explanatory variable is student's pre-test grade.
+
+If the treatment works, and tutoring does increase grades, we should see a discontinuity at the threshold (e.g., at the pre-test score of 71).  If the treatment didn't work, there should be no unusual break in the relationship between these two variables at the threshold. 
+
+Let's visualize this a bit.  Here is a graph showing the relationship between the pre-test score and post-test scores for students *if we imagine there was no treatment effect*. Note that there is no unusual break in the linear relationship between thse two variables at the 71-point threshold.
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/15.png)
+
+Now, here is a plot where we imagine that the treatment did work.  Note that there is a break -- or discontinuity -- right at the threshold/cutoff that determined whether students were in the treatment or control condition.  
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/16.png)
+
+It is important to note that in order to conduct regression discontinuity, we must assume that without treatment, the pre-test averages would follow a predictable pattern in relation to the post-test averages. In this case, we assume that if we did not treat at all, pre-test averages would be the same as post-test averages (which we can see by the fact that the best-fit line has a slope of 1).
+
+By assuming this, we can use the resulting graph to conduct regression discontinuity. If the graph we get once we take all the data looks like the first one above, we can conclude that the treatment had no significant effect, because the pre-test and post-test averages are the same as if there had been no treatment. However, if there is a discontinuity, we can conclude that the treatment worked. 
+
+##Learning objective 3: Regression discontinuity in the real world
+
+Regression discontinuity also allows us to see the effects of past events or interventions without performing an experiment. Say, for example, we want to test being eligible to vote in one year has an effect on your tendency to vote in the future.  (Some political scientists hypothesize that people develop voting habits, so that voting in the past makes you more likely to vote in the future.)
+
+Prof. Marc Meredith tested this using data from California. He looked at the turnout rates in the 2006 election for people around the voting eligibiltiy threshold for the 2004 election.  Here are the results he found:
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/17.png)
+
+As you can see, there was a modest (but real) causal effect of being eligible to vote in previous elections on people's future tendency to vote that can be seen right at the threshold.

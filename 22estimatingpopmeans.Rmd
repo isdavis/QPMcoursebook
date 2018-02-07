@@ -1,0 +1,111 @@
+
+#Estimating population means using confidence intervals
+Learning Objectives
+
+1. Understand what statistical inference is
+2. Understand how we make statistical inferences using sample statistics to estimate population parameters
+3. Understand what kind of estimate a confidence interval is
+4. Understand how to do a simple confidence interval calculation
+
+##Statistical inference is how we draw conclusions from the data.
+
+**Statistical inference** is the process that we use to draw conclusions from a data. A set of data is a *sample* from our population. The **sample** is a subset of the **population**.  Inference involves using statistics we calculate from the sample to make and informed guess about population.
+
+When we do statistical inference we are interested in drawing conclusions from a set of data (sample) so that we can estimate **population parameters**. (Population parameters are the characteristics of the population in which we are interested.) Parameters of the population include things like the mean, standard deviation, and variance.
+
+Statistical inference is the process by which we use sample statistics to make inferences about population parameters. Figure 1 and Table 1 describe the relationship between sample statistics and population parameters. 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/5.png)
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/6.png)
+
+
+
+##We make statistical inferences by using sample statistics to estimate population parameters.
+
+Using sample statistics we can make estimates about population parameters. There are two types of estimates of parameters: **point estimates** and **interval estimates**. A point estimate is a single number that is the best guess for the parameter. An interval estimate is an interval of numbers around the point estimate, within which the parameter value is believed to fall.
+
+##The method we use to make statistical inferences using sample statistics is called estimation.
+
+The term **estimator** refers to a particular type of statistic for estimating a parameter. This is conceptual.   The term **estimate** is a noun that refers to the value of that particular statistic. For example, the sample mean is an estimator of a population mean. If the sample mean of a particular sample 75 then the value 75 is the estimate for the population mean.
+
+Just as there are multiple possible sample statistics,  there are are many possible estimators. If we are interested, for example, in the population's mean, then we could use the mean, the median, or the mode of the sample as our estimator.  How do statisticians decide which estimator is best?
+
+Good estimators usually have two qualities: they are  **unbiased** and **efficient**. An unbiased estimator has its sampling distribution "centered" around the parameter; in other words, the expected value of the statistic is identical to the population parameter. An efficient estimator has a relatively small standard error, meaning that the variance of the sampling distribution is small. Unbiased and efficient estimators give us accurate and precise  estimates of population parameters. The point estimators we teach you in this class have been shown to be the most efficient unbiased estimators possible. 
+
+##Constructing confidence intervals to make statistical inferences.
+
+A truly informative statistical inference, however, should provide not only a point estimate but should also indicate how confident we can be that the estimate is correct.  So, rather than a single value, we often prefer to use a range of values. This is what is known as an interval estimate: an interval of numbers (usually centered around some point estimate) within which the parameter value is believed to fall. Another name for interval estimates is confidence intervals, because they contain the parameter with a certain degree of confidence. 
+
+Confidence intervals have the following form:
+
+Point estimate $\pm$ Margin of Error.
+
+Specifically, we can calculate confidene intervals for the sample mean ....
+
+Under certain circumstances, confidence intervals for means take the following formula:
+
+$$\bar{y} \pm z (\frac{s}{\sqrt{n}}) $$
+
+Where,
+
+$\bar{y}$ = sample mean 
+$z$ = z-score corresponding to confidence level 
+$s$ = sample standard deviation
+$n$ = sample size 
+The point estimate of the population mean $\mu$ is the sample mean $\bar{y}$. For large random samples, by the Central Limit Theorem, the sampling distribution of is approximately normal. So, for large samples, we can find a margin of error by multiplying a z-score from the normal distribution by the standard error.
+
+##Remember that we already learned about the standard error ....
+
+The standard error of the sample mean is  given by the following equation:
+
+$$\sigma_\bar{y} = \frac{\sigma}{\sqrt{n}} $$
+
+In the above equation, $\sigma$ is the population standard deviation. But like $\mu$, $\sigma$ is an unknown parameter. In practice, we estimate $\sigma$ using the sample standard deviation $s$. So, in practice, confidence intervals use the estimated standard error. This is how we end up with the equation for confidence intervals: 
+
+$$\hat{\sigma}_\bar{y} = \frac{s}{\sqrt{n}} $$
+
+ 
+
+##Remember that we already learned about the z-score .... 
+
+When we are calculating a confidence interval for a mean, our point estimate is our sample mean. Our standard error is calculated by dividing the sample standard deviation by the square root of the sample size. We have yet to understand where the z-score comes from.
+
+The z-score corresponds to the confidence level we are interested in. We choose a **confidence level** before we go about constructing our **confidence interval**. We try to choose confidence levels that are close to (but not exactly) 100%. The higher the confidence level, the more confident we can be that our unknown parameter falls within the interval estimate.
+
+The z-score indicates what our confidence interval is. Recall that 95% of the normal distribution falls within 1.96 standard deviations of the mean. We use the same logic to calculate the z-score for our confidence intervals. If we are interested in a 95% confidence interval, then our z-score is 1.96; if we are interested in a 99% confidence level, then our z-score is 2.575.
+
+In general, in order to find the z-score that corresponds to our confidence level, we take
+
+$$(1-\mbox{confidence coefficient)}/2.$$
+
+The z-score that corresponds with the resulting probability is the z-score that we use when we construct our confidence interval.
+
+NOTE: The confidence coefficient is often denoted by the Greek letter $\alpha$
+
+##Example.
+
+Let's do a quick example.
+
+Let's suppose we have a sample in which the sample mean is 10 and the standard error is $\frac{s}{\sqrt{n}}=2$. We want to calculate a 95% confidence interval. We use the following formula:
+
+$$\bar{y}\pm z(\frac{s}{\sqrt{n}}) = 10 \pm z(2) $$
+
+In this case, the z-score that corresponds to a 95% confidence interval is $z=1.96$.
+
+$$10 \pm 1.96(2) = 10 \pm 3.92$$
+
+Note that the formula above is only representative of our confidence interval.  It shows our original point estimate and margin error. Our confidence interval must be a range of numbers  In this case, it is: [6.08, 13.92]. What does this mean? It means, (kinf of) that according to our calculations, we can say with 95% confidence that our population mean falls between 6.08 and 13.92.
+
+Technically, however, that interpretation is not quite right.  The 95% confidence level means that if we took many, many samples and calculated many, many confidence intervals according the procedures above, 95% of the time the true population parameter would fall within those many, many 95% confidence intervals.  We actually don't know the probabilyt that $\mu$ falls within the particualr interval [6.08, 13.92].  This is a bit confusing to think about, and most of the time you can think of it using the sentence in the last paragraph.  But, keep in mind that the actual interpretation is a bit muddier.
+
+Here is a nice video that goes through another example and explains the relationship between the confidence interval and the normal distribution: 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/dNfpsVLaaEE" frameborder="0" allowfullscreen></iframe>
+
+##Conclusion.
+
+In this section we learned that we make statistical inferences to make conclusions from our data. Statistical inference requires that we estimate population parameters using sample statistics.
+
+One way we can make a statistical inference is by constructing confidence intervals. Confidence intervals give us an interval of numbers around the point estimate within which the parameter value is believed to fall.
+
+Although confidence intervals can be constructed for means or proportions, in this article, we learned that how to construct a confidence interval for a population mean (parameter) using the sample mean and sample standard deviation (sample statistics).

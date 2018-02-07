@@ -1,0 +1,17 @@
+## Lab 8 Handout: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet from eachgroup for grading.
+
+2. We  want  to  test  the  effect  of  negative  advertising  on  turnout  using  the  data  from  a  field  experiment by Arceneaux and Nickerson (Arceneaux,  Kevin and David W. Nickerson.  2010.  "Comparing Negativeand Positive Campaign Messages:  Evidence From Two Field Experiments." American Politics Research 38.).  You can download the data at (https://pages.wustl.edu/montgomery/negative-ads-dataset#overlay-context=montgomery).  The key variable of interest is a message delivered to voters by phone the weekend before the 2004 presidential election.  This is recorded in the data as treatment (1 = negative frame, 2 = positive frame). The outcome variable of interest is voted02p (0 = did not vote, 1 = voted). 
+
+- Download the data from the QPM website and read it into R (Hint:  use the function read.delim()). 
+
+- Overwrite the variable treatment as a factor with categories negative and positive (Hint:  use thefunction factor() that we covered last week.)
+
+3. Set up null and alternative hypotheses to find out whether negative messages make a difference for voter turnout.  Once you have done this, get the TA to initial your hypotheses before proceeding.
+
+4. Given your hypotheses, conduct a t-test.  Write down your code and the output obtained.  Do negative messages make a difference for voter turnout after all?  Explain with reference to information from your R output.  How confident are you?
+
+5. If you have time, test your hypotheses for the younger voting population (under 25 years old).  First, subset your dataset.  Then conduct a t-test.  Write down your code and the output.  Interpret this output.  Donegative ads make a difference for younger voter turnout?  Explain.
+
+6. Compare your results from the two t-tests.  Did they produce the same output?

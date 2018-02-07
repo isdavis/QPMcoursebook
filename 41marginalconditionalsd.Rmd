@@ -1,0 +1,25 @@
+# Marginal and Conditional Standard Deviation
+
+##Learning Objective:
+
+1) Understand the difference between marginal and conditional standard deviation.  
+
+At this point, you already know the basics of bivariate regression.  In a bivariate regression, you use a set of independent x values to predict your y values using a simple linear model $y = a + \beta x$.
+
+For instance, let's say that you have a dataset that contains information on the number of years of education a person has completed and their income. In your data set, the mean income is 40,000 dollars and the standard deviation for the entire data set, that is, the average distance away from the mean, is 18,000 dollars.
+
+##Marginal standard deviation
+
+This average distance a data point is from the mean for the entire data set is described by the marginal standard deviation. It is just the definition of the standard deviation we have been using since the concept was introduced. It is calculated by:
+
+$$ \sqrt{\frac{\sum(y- \bar{y})^2}{n -1}}$$
+
+##Conditional standard deviation
+
+You also have a regression function which tells you that $E(y) =  -5000 + 3000x$.  This would mean that people with a high school education (x = 12 years of education), should have mean income $\hat{y} = E(y) = -5000 + 3000 (12) = 31,000$.
+
+We do not expect every person with 12 years of education to have an income of $31,000. Again, that is just the mean for that value of x, or the expected value. Instead, we expect the y values to vary a bit around the expected value.  The conditional standard deviation is the standard deviation conditional on a certain value of x.  So if x = 12, the conditional standard deviation tells me on average how far I can expect y to fall around that specific $\hat{y}$. The conditional standard deviation is calculated by:
+
+$$ S = \sqrt{\frac{SSE}{n-2}} $$
+
+The conditional standard deviation is almost always smaller than the marginal standard deviation. Why? Because the marginal standard deviation describes the average distance away from the mean for all x, while the conditional standard deviation tells you the average distance an expected y will be from the mean for only one x.  

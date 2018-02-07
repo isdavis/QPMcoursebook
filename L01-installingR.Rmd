@@ -1,0 +1,83 @@
+
+# QPM Lab 1: Installing R and Rstudio 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(Date here)
+
+## What is R? 
+
+R can be used for many different purposes. It is a programming language, a letter, a piece of data analysis software, and a community with over 2 million users. R is open source and completely free, so if you ever encounter a problem, you can go online and the R community will try to help you out. 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/1.png)
+
+R's open source nature also means that you can contribute! If you discover or develop something, the R community would love to learn about it. 
+
+We will use R in our Lab sections, to complete problem sets, and you will use it to analyze data for the final presentation. Many large companies use R to analyze data, so this experience will be useful in the long run and we recommend maintaining your R knowledge even after this class is over. 
+
+## Installing R 
+
+1. Close any running applications on your computer.
+
+2. To obtain R, go to The Comprehensive R Archive Network (CRAN) (http://www.r-project.org/)
+
+3. Click "Download R".
+
+4. Scroll down to the USA, choose "CRAN Mirror **United States,Washington University, St. Louis**".
+
+5. You will see versions ofRfor Linux, MacOS, and Windows. Downloadand install the version that corresponds to your operating system.
+
+6. Warning for Windows users: You might want to be careful with the directory you download to! 
+
+This is what R should look like, once opened: 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/2.png)
+
+## Installing Rstudio 
+
+RStudio allows you, the user, to run R in a more user-friendly environment. Like R, it is open-source and free. To obtainRStudio, go to the following link: (http://www.rstudio.com/) 
+
+1. Click on "Download RStudio"
+
+2. Scroll down and choose your operating system (under the Installers block) 
+
+This is what Rstudio should look like, once opened: 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/3.png) 
+
+Here are some basic things to try in R: 
+
+- Multiplying, dividing, adding numbers in Rstudio console: 
+
+```{r, eval=FALSE}
+5*3
+5+3
+5/3
+```
+
+- Assigning a value to an object: (This assigns x the value of 6) 
+
+```{r, eval=FALSE}
+x <- 6 
+```
+
+- Install a package:
+
+```{r, eval=F}
+install.packages("foreign")
+```
+
+- Call a package through its library: 
+```{r, eval=F}
+library(foreign)
+```
+
+This CRAN-package, foreign, will come handy when you read data into R next week!
+
+Here are some additional resources:
+ 
+An introduction to R: (http://cran.r-project.org/doc/manuals/R-intro.pdf) 
+
+An introduction to RStudio: (http://dss.princeton.edu/training/RStudio101.pdf) 

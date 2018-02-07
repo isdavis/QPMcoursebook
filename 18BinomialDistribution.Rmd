@@ -1,0 +1,40 @@
+
+# The Binomial Distribution
+Learning Objectives
+
+1.    Understand the characteristics of a binomial distribution and how it relates to a normal distribution.
+2.    Understanding how to look up probabilities for the binomial distribution on a table.
+
+##The Binomial Distribution
+
+A binomial random variable is discrete, not continuous. This means that there are only two possible outcomes (examples: heads/tails coin toss, win/lose football game, support Obama/Not Obama). In general, there are certain requirements that must hold for the binomial distribution to be applicable.
+
+1.    n repeated identical independent trials
+2.    two outcomes (success/failure)
+3.    P (success) + P(failure) must be equal to 1
+
+The binomial function for calculating the probability distribution of the binomial for any probability p and number of trials n is as follows:
+
+$$Pr (x = k) = {n \choose k} p^k(1-p)^{n-k}$$
+
+The mean and the variance of the binomial distribution are as follows:
+
+$$\mu= np$$
+
+$$\sigma^2= np(1-p)$$
+
+As useful as the binomial distribution is, it becomes more difficult to use as the values for n get larger. Lucky for us, when p = .5, the binomial distribution closely approximates a continuous density function which results in a smooth, symmetrical, bell-shaped curve called the standard normal distribution. In fact, the standard normal works for any value of p so long as n is large.  
+
+See this video for some detailed examples of how to use the binomial distribution (don't worry, you won't be doing these calculations by hand!)
+
+<iframe width="560" height="315" src="https://youtube.com/embed/xNLQuuvE9ug" frameborder="0" allowfullscreen></iframe>
+
+##Calculating probabilities using a table
+
+Download [this table](https://pages.wustl.edu/files/pages/imce/montgomery/binomialtable.pdf) and take a moment to look through it.
+
+With this table, we can find the probability of observing any possible number of successes for many possible values of $n$ and $p$.  The far left column shows the size of the trial $n$, and the second column shows the number of successes.  The other columns show the probability of observing that number of successes for different values of $p$.
+
+If the probability of a success is $p=0.20$ and $n=8$, the probability of observing two successes is 0.294.  To see this, you go to the second page of the table linked above.  Look near the top where the column labeled $n$ says 8.  Then look at the row where the column labeled $r$ says 2.  Follow this row along to the column labeled 0.20.  That's the answer.
+
+Try this yourself.  If I have 16 trials and p=.55, what is the probability of observing 10 successes?  The answer is 0.168.  If this still doesn't make sense to you, post a question on Facebook or go talk to one of the TAs in office hours.

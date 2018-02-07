@@ -1,0 +1,73 @@
+# Difference-in-Differences, Part II
+
+##Learning Objectives
+
+1. Consider a real-world phenomena to which diff-in-diff can be applied
+2. Execute diff-in-diff with aggregate-level data
+3. Execute diff-in-diff with individual-level data
+
+##One real-world example
+
+A series of train bombings in Madrid on March 11, 2004 left 191 people dead and 1,500 injured. In the Spanish congressional elections which took place three days later, the Socialist party defeated the Conservative party. Did the terrorist attack increase the Socialist party's vote share? How can we go about making such a causal claim?
+
+As it turns out, real-world processes created conditions which were conducive to a difference-in-differences design, as identified by Jose Montalvo (http://84.89.132.1/~montalvo/wp/restat2011.pdf). A portion of voters for the March 14th elections lived outside of Spain, and were able to cast their absentee ballots in advance of the election -- and in many cases, prior to the March 11th bombings. Spanish residents, on the other hand, all voted on election day, after the bombings.
+
+Spanish non-resident voters (voters living abroad) are most certainly not identical to Spanish resident voters across all covariates that might affect which party they support. One could speculate that they're richer (high-paid executives working for multinational corporations); younger (students attending college abroad); or generally more liberal in their worldview.
+
+But the difference-in-difference strategy does not rely on the two groups being identical -- only on their being *consistently different.*
+
+The counterfactual claim of similarity-in-differences is as follows: *in the absence of the intervening terrorist attack, the difference between resident and non-resident support for the Conservative party would have been the same in the 2004 election as it was for the previous election*. While this assumption cannot be tested, Montalvo provides a pretty compelling case for why we should accept it. The graph below shows resident and non-resident vote share over time. 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/13.png)
+
+In the years leading up to 2004, resident and non-resident vote shares differed in a remarkably consistent way. But in 2004, when all of the resident voters received the treatment (i.e. the information of the bombings), and only a portion of the non-resident voters did, the parallel movement of the trend lines breaks.
+
+##Executing difference-in-differences with aggregate-level data
+
+The figure above shows aggregate-level data -- the total vote share for the two populations at different points in time. To execute a difference-in-differences estimation of the effect of the bombings on vote share, we follow the steps outlined on the previous page: 
+
+- The resident voters are our "treatment" group (Tr) The non-resident voters are our "control" group (Cr).
+
+- The 2000 election will be the pre-treatment period, and the 2004 election will be the post-treatment period.
+
+- Approximations of Tr-pre, Cr-pre, Tr-post, and Cr-post are as follows:
+
+Conservative Party Vote %	|Treatment(Residents)	|Control (Non-residents)|
+-|-|-|
+Pre-treatment (2000)	|60|	49|
+Post-treatment (2004)	|51|	51|
+
+- D1 = Tr-pre minus Cr-pre = 60-49 = 11 
+
+- D2 = Tr-post minus Cr-post = 51-51 = 0
+
+- D2 minus D1 = 0-11 = -11 = DD, **the difference-in-differences**
+
+The effect of the treatment (information of the bombings) is estimated to be -11, or a decrease of 11% in the Conservative party's vote share.
+
+*Note: you can calculate DD as described above, DD = [ (Tr-post minus Cr-post) minus (Tr-pre minus Cr-pre) ], or alternatively as DD = [ (Tr-post minus Tr-pre) minus (Cr-post minus Cr-pre) ]. The two values are algebraically equivalent.*
+
+##Executing difference-in-differences with individual-level data
+
+What if we had data from individual observations as opposed to the populations in aggregate (e.g., 500 respondents from telephone surveys on election day in 2000 and 2004)?
+
+Respndent ID#	|Voted Conservative (Y) |	Treatment group (X1)|	Post-treatment (X2) |	Treatment AND Post (X1 x X2) |
+-|-|-|-|-|
+1001|	0	|0	|0	|0|
+1002|0	|1	|1	|1|
+1003|	1	|1	|1	|1|
+1004|	0	|1	|0	|0|
+1005|	1 |	0	|1	|0|
+1006|	1 |	0	|0	|0|
+1007|	0	|0	|1	|0|
+1008|	1	|0	|1	|0|
+ 	 	 	 	 
+The first column is just an identifier for each respondent.  The outcome (Y) variable, is a dummy indicating whether or not each respondent voted for the Conservative party.  The treatment group variable (X1) is a dummy indicating whether the respondent was in the treatment (resident) group.  The post-treatment variable is a dummy variable that is equal to zero whenthe observation is from the 2000 (pre-) election and equal to one when the observation is from the 2004 (post-treatment) election. The last variable, Treatment AND Post, is an interaction term, calculated by multiplying the treatment group dummy times the post-treatment dummy.
+
+The diff-in-diff estimation can then be accomplished with regression:
+
+$$Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3(X_1 \times X_2) + \epsilon,$$
+
+where $\beta_1$ captures any pre-treatment differences between the treatment and control groups, $\beta_2$ captures any differences that existed between the control group and the treatment group before the study began, and $\beta_3$ captures the effect of treatment on the treated groups.
+
+Executing difference-in-differences, having individual-level data offers a couple distinct advantages over aggregate data. First, it gives us a better understanding of the pre-treatment differences between treatment and control groups. It also provides standard errors on all of the coefficients, allowing us to determine the statistical significance of any effect we find within a standard regression context. Finally, it enables us to include other control variables into the regression equation (such as age or income, for the above example), so we can better isolate the causal effect of the treatment.

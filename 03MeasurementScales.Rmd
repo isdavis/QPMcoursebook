@@ -1,0 +1,89 @@
+
+#Scales of Measurement
+
+##Learning Objectives:
+
+1) Learn what ordinal, nominal, and interval scales are. Be able to distinguish between them. 
+
+2) Learn what "granularity" means, learn what the two types of granularity, continuous and discrete, mean, and learn how to distinguish them
+
+##Learning Objective 1: Scales
+
+###First of all, what do we mean by scales?
+
+A "scale" is just the way we measure or quantify a variable.  There are three different scales with which data can be measured: nominal, ordinal, or interval. 
+
+###Nominal Scale
+
+Variables measured on a nominal scale  can be separated into different categories, but they have *no natural ordering*.  We can't say that one data point is "more something" than another point.
+
+One example is conenent.   It is possible to put countries into different categories based on the continent they're in.  The reason that continent is a nominal variable is that, while we can put countries into different categories, there is no universal, objective way of putting them along a dimension.
+
+*Note:* Sometimes variables measured on a nominal scale are called "categorical" data.
+
+###Ordinal Scale:
+
+Variables measured on an ordinal scale have a natural ordering, but no natural distances between them.  We can put the data points in a conceptual line, but there isn't a precise (or meaningful) distance between observed values.
+
+Many survey questions measure opinion on an ordinal scale.  For example,  in 2012 The Pew research Center asked:
+
+>Is your overall opinion of Barack Obama very favorable, mostly favorable, mostly unfavorable, or very unfavorable?  
+
+We can be pretty sure  that people who respondend "very unfavorable" approved less of President Obama than people who responded "mostly unfavorable."  But how much less?  We don't know exactly, which is why this variable is measured on an ordinal scale. (You can see many more examples of question wordings to measure approval Preisdent Obama [here](http://www.pollingreport.com/obama_fav.htm).)
+
+###Interval Scale:
+
+Variables measured on an interval scale have both a clear ordering and the difference between numbers has a clear meaning.  We can not only put data points in a line, we can also position them within precise distances from each other. 
+
+An easy example is height. We can order everyone in QPM in a line, from tallest to shortest, and we can say precisely how much taller (or shorter) one person is than the others. 
+
+###Ratio scale:
+
+Ratio scale is a subset of Interval data.  In a ratio scale, the zero value signifies that there is none of that variable.  Most scales in social science are ratio scales.  For example, if we were to measure the proportion of the time a legislator votes with the leadership of a certain party, then a score of 0% means that that legislator cast no votes with the party leadership.  
+
+An example of a scale that is not measured on a ratio scale is temperature measured in Fahrenheit or Celsius.  If a room is 0 degrees Fahrenheit or Celsius, that does *not* mean that there is no warmth.
+
+###Focus on the measurement and not the concept
+
+Certain variables, when measured in different ways, can be measured with different scales.  For example, think about political ideology.  One way to measure the ideology of a member of Congress would be to ask them if they are "Very liberal, somewhat liberal, somewhat conservative, or very conservative."    This would have an ordinal scale.  
+
+However, there are other ways to measure ideology.  For example, we could measure the proportion of votes each member cast that were consistent with the Republican leadership.  This would allow us to make a scale of ideology that is interval.  (We might find that Nancy Pelosi's voting record is 70.2% more liberal than John Boehner's.)
+
+Below is the link to Congressional rankings released by Americans for Democratic Action, a left-wing political group, and rankings released by the Club for Growth, and right-wing political group. 
+
+http://www.adaction.org/media/votingrecords/2010.pdf
+http://www.clubforgrowth.org/projects/
+
+##Summary:
+
+Watch this video for a very nice summary of these concepts and some thoughts on how best to plot them.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/hZxnzfnt5v8" frameborder="0" allowfullscreen></iframe>
+
+##Learning Objective 2: Granularity
+
+##What is granularity?
+
+Granularity refers to how answers fit on a scale.  If a variable can take on any value along a scale, it is **continuous**.  An example of a continuous variable is the proportion of the vote a candidate receives in an election.  A candidate can receive 0%, 100%, or any value in between. 
+
+If a variable can only take on certain (countable) values, it is **discrete**.  All nominal data are discrete. 
+
+Consider the following survey question, asked in a poll by Rusmussen Reports (full survey [here](http://www.rasmussenreports.com/public_content/politics/questions/pt_survey_questions/august_2012/questions_health_care_update_august_24_25_2012)): 
+
+>A proposal has been made to repeal the health care law and stop it from going into effect. Do you strongly favor, somewhat favor, somewhat oppose or strongly oppose a proposal to repeal the health care law?
+
+In the above question, the results would be discrete, because there are only 5 possible answers.  Respondents can strongly favor, somewhat favor, some oppose, or strongly oppose the proposal.  There is no possible answer between strongly favor or somewhat favor, for example. 
+
+Here is a video that can help you tell the difference between discrete and continuous data.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/8yKtrZR9MYo" frameborder="0" allowfullscreen></iframe>
+
+##What are the takeaways?
+
+Based on whether data have a natural order or natural distance, they can be measured on a **nominal**, **ordinal**, or **interval scale**.  A specific type of interval scale is a **ratio** scale.  Some variables, measured in different ways, can potentially be measured on several types of scales. 
+
+Based on the space between answers, or **granularity**, scales can either be **continuous**, if variables can take on any value on the scale, or **discrete**, if they can only take on certain values.  
+
+This video will help you keep this all straight.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/uP3-q7Re_jk" frameborder="0" allowfullscreen></iframe>

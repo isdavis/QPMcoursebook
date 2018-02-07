@@ -1,0 +1,112 @@
+# Lab 4: Who's Winning the Election? 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here) 
+
+##Class Goals 
+
+- Distribution functions in R
+
+- CI in R basics
+
+- More on plotting normal distributions
+
+- More advanced subsetting
+
+- Use statistical knowledge to assess the 2016 election
+
+##Distribution Functions 
+
+- "d"ensity - given $x$, returns height of a density curve.
+
+```{r}
+dnorm(.6, mean = 0, sd = 1)
+```
+
+- "q"uantile - for given p, returns the $x$ such that p% of the curve is to the left of $x$.
+
+```{r}
+qnorm(c(0.025, 0.975), mean = 0 , sd = 1)
+```
+
+- p"robability -  for given $x$, returns the probability of drawing $x$ or smaller from the distribution.
+
+```{r}
+pnorm(-1.96, mean = 0, sd = 1)
+```
+
+- "r"andom - draw $n$ values from the distribution at random.
+
+```{r}
+rnorm(1, mean = 0, sd = 1)
+```
+
+- For distributions other than Normal, change the suffix (e.g. for Student's $t$ distribution, {binom} for Binomial distribution)
+
+## CI Basics
+
+Recall, the formula for a CI _for a mean given sufficiently large n_ is 
+$$\bar{y} \pm (Z\times \sigma_{\bar{y}})$$
+
+We can build this in \texttt{R} as follows:
+
+- bar_y <- mean(var) 
+
+- sigma_bar_y <- sd(var)/sqrt(n)
+
+- z <- qnorm(c(upper, lower), mean = 0, sd = 1) 
+
+
+Putting it all together: 
+
+- bar\_y + z*sigma\_bar\_y
+
+## Plotting Two Normal Distributions on One Graph 
+
+```{r}
+ruler <- seq(0, 100, 1)
+plot(x = ruler, y = dnorm(ruler, mean = 50, sd = 15), xlab = "x",ylab = "Density", xlim = c(0, 100), ylim = c(0, .045),type = "l", main = "Two Normal Distributions")
+lines(x = ruler, y = dnorm(ruler, mean = 40, sd = 10), col = "blue")
+```
+
+##Plotting a Distribution Over a Histogram 
+
+```{r}
+hist( rnorm(500, mean = 6, sd = 2), ylim = c(0, .23),main = "Normal Distribution", xlab = "x",col = "aquamarine", freq = F)
+ruler <- seq(0, 14, .01)
+lines( x = ruler, y = dnorm(ruler, mean = 6, sd = 2),col = "darkmagenta", lwd = 2 )
+```
+
+##Advanced Subsetting 
+
+How can we select observations that meet multiple conditions?
+
+- == translates to “Is equal to"
+
+- >,<,>=,<= translate to “greater than", "less than", etc.
+
+- & translates to “and"
+
+- | translates to “or"
+
+Examples:
+
+```{r, eval=F} 
+dataname$varname[dataname$varname2 == value]#If value is text, put it in quotes!
+dataname$varname[dataname$varname2 == value& dataname$varname3 == value2]
+dataname[dataname$varname > value,  ] #all columns
+dataname[dataname$varname == value |dataname$varname2 > value2, ]
+```
+
+## Sampling Distribution of a Proportion 
+
+- For random sampling with a {\bf large} sample size n, the sampling distribution of the proportion $p$ is approximately normal.
+
+- The mean of the sampling distribution is $p$ and standard deviation is $\sqrt{\dfrac{p(1-p)}{n}}$
+
+- Hence, we can write $p \sim N\left(p,\sqrt{\dfrac{p(1-p)}{n}}\right)$
+
+- If p is very close to 0 or 1, we need a larger sample for this statement to be true.

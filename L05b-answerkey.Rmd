@@ -1,0 +1,62 @@
+## Lab 5 Handout Answer Key: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet fromeach group for grading.
+
+2. According to the recent Current Population Reports, self-employed individuals in the U.S. work anaverage of 45 hours per week, with a standard deviation of 15.  Assume this variable is approximately normally distributed.  For all questions, write down your answer and copy the Rcode you used to find it. 
+
+- What proportion average more than 40 hours per week?
+
+40 hours per week has z = (40-45)/15 = -0.33, and is 0.33 standard deviations below the mean. The proportion of self-employed individuals who averaged more than 40 hours per week is: 
+
+```{r}
+pnorm(c(40), mean=45, sd=15, lower.tail=FALSE)
+```
+
+- What proportion average less than 40 hours per week?
+
+```{r}
+1-pnorm(c(40), mean=45, sd=15, lower.tail=FALSE)
+```
+
+- What proportion are lazy bums who sit around all week and do nothing (i.e.  work 0 hours aweek)?
+
+```{r}
+1-pnorm(c(0), mean=45, sd=15, lower.tail=FALSE)[1] 
+```
+Download the "africa" data for African countries: data(africa) from the "faraway" package.  Look into variables included in the data.  Construct 95% confidence intervals for the mean percent of votingin the last elections (pctvote) for the countries with no coup (miltcoup== 0) and for the countries with any number of coup (miltcoup >0).  (HINT: Subset the data set into two new datasets.)  The first new dataset should contain observations with no military coup, and the second new datasetshould contain those with any number of military coups.)  Write down your answer and copy theRcode you used to find it. 
+
+- NO COUP countries, 95% confidence interval:
+
+- COUP countries, 95% confidence interval:
+
+- What do these confidence intervals substantively tell us about voter turnout in Africancountries?
+
+```{r, eval=F}
+install.packages("faraway")
+library(faraway)
+data(africa)
+View(africa)
+
+# countries with no military coup
+Africa1 <- africa[africa$miltcoup==0,]
+
+# countries with any number of military coups
+Africa2 <- africa[africa$miltcoup>0,]
+
+# No coup CI: percent voting in last election
+z.score = qnorm(c(0.025), lower.tail=FALSE)
+n = length(na.omit(Africa1$pctvote))
+mean.pctvote = mean(Africa1$pctvote,na.rm=T)
+sd.pctvote = sd(Africa1$pctvote,na.rm=T)
+lower.bound = mean.pctvote - z.score*sd.pctvote/sqrt(n)
+upper.bound = mean.pctvote + z.score*sd.pctvote/sqrt(n)
+
+# Coup CI: percent voting in last election
+z.score = qnorm(c(0.025), lower.tail=FALSE)
+n = length(na.omit(Africa2$pctvote))
+mean.pctvote = mean(Africa2$pctvote,na.rm=T)
+sd.pctvote = sd(Africa2$pctvote,na.rm=T)
+lower.bound = mean.pctvote - z.score*sd.pctvote/sqrt(n)
+upper.bound = mean.pctvote + z.score*sd.pctvote/sqrt(n)
+```
+

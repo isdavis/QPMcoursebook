@@ -1,0 +1,127 @@
+# Lab 4 Handout Answer Key: Quantitative Political Methodology
+
+## Problem 1: 
+
+Write down the names of all the members of your group in this space.  We will collect one sheet from eachgroup for grading.
+
+## Problem 2: Data Types 
+
+Respondents of a Gallup poll were asked the following questions. State thetype of data for each question and explain (possible answers can include: qualitative (categorical) vs. quantitative, discrete vs. continuous, nominalvs. ordinal vs. interval. Note: not all might apply)
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/20.png")
+```
+
+(a)  Are you a member of the Republican or Democratic Party?
+
+Qualitative - Nominal 
+
+(b)  What is your combined household income?
+
+Quantitative – continuous – interval
+
+(c)  How many elections have you participated in the last 10 years?
+
+Quantitative – discrete – interval
+
+(d)  How likely are you to vote in the upcoming election? [1. Not verylikely; 2. Somewhat likely; 3. Very likely]
+
+Qualitative – ordinal
+
+(e)  Attitudes toward legalization of marijuana (favor, neutral, oppose)
+
+Qualitative – nominal (but accepted ordinal as well)
+
+## Problem 3: 
+
+Define the following terms. Give examples when appropriate:
+
+(a)Parameter vs. Statistic
+
+Numerical summery of the population vs. the sample data
+
+(b)Sampling Distribution
+
+Probability distribution for a statistic (e.g. sample mean, sampleproportion)
+
+(c)Standard Error
+
+The standard deviation of the sampling distribution of $\bar{y}$.
+
+$\sigma_{\bar{y}} = \frac{\sigma}{\sqrt{n}}\$
+
+(d)Confidence Coefficient (or Confidence Level)
+
+The probability that a confidence interval will contain the parameter ofinterest.
+
+## Problem 4: Confidence Intervals 
+
+You randomly selected 36 military organizations from around the world and gather data on the percent of their force that was conscripted through a draft. The mean of your sample data is 45 percent and you know (magically) that the population has a standard deviation of 8 percent. Calculate the best point estimate and a 92 percent confidence interval forthe population mean. Label the point estimate and confidence interval carefully. Write a sentence explaining what this confidence interval means. 
+
+Hint: the unit of analysis is the military organization => quantitative data.
+
+- We know: 
+
+$n=36, \bar{y} = 45, \sigma = 8$, Confidence coefficient = 0.92
+
+- Calculate the appropriate z-statistic: 
+
+$\frac{1-0.92}{2} = .04 \Rightarrow  Z = 1.75$\\
+
+- Calculate CI:
+
+$\bar{y} \pm Z \times \frac{\sigma}{\sqrt{n}} = 45 \pm 1.75 \times \frac{8}{\sqrt{36}} = 45 \pm 1.75 \times \frac{4}{3} =45 \pm 2.3=[42.7, 47.3]$
+
+- Interpret: 
+We are confident that in repeated sampling, 92% of the time the confidence interval around the sample mean will contain the population mean of military organizations' drafted force.% will be  between 42.7% and 47.3%.
+
+
+## Problem 5: Sample Size 
+
+How large a sample size is needed to estimate the proportion of Wash U. students who approve of President Obama’s job performance. Assume we want to be correct to within three percent and we want to have 92% confidence in our findings? You do not have a pilot study, so use the most conservative approach.
+
+- We know:  
+
+Target error rate $E = 0.03$, Conservative guess about $\hat{\pi} = 0.5$,  92% Confidence level $\rightarrow Z = 1.75$
+
+- Calculate sample size:
+
+$n = \displaystyle \frac{Z^2}{E^2}\big(\hat{\pi}(1-\hat{\pi}) \big) = \frac{1.75^2}{0.03^2}(0.5(1-0.5)) = \frac{3.0625}{0.0009} 0.25 = 850.69 = 851$
+
+## Problem 6: Hypothesis Testing 
+
+The Food and Nutrition Board of the National Academy of Sciences states that the recommended daily allowance (RDA) of iron for adult female sunder the age of 51 is 18 milligrams (mg). A sample of iron intake was obtained during a 24-hour period from 45 randomly selected adult females under the age of 51. It revealed that the sample mean was 14.68 mg. At 99% significance level, does the data suggest that adult females under the age of 51 are, on average, getting less than the RDA of 18 mg of iron? Assume that the population standard deviation is 4.2 mg.
+
+- State the null and alternative hypotheses:
+
+$H_0$: $\mu = 18$ mg
+
+$H_1$: $\mu < 18 mg$
+
+- Find $\alpha$:
+
+ Degree of significance: $100-99=1\%$
+ 
+ Level of significance: $\alpha=0.01$
+
+- Find the test statistic: 
+
+$Z=\frac{\bar{x}-\mu_{\bar{x}}}{\sigma/\sqrt{n}}$
+
+From $H_0$: $\mu_{\bar{x}}=18$
+
+$Z=\frac{(14.68-18)}{4.2/\sqrt{45}}=-5.3$
+
+- Find critical value (using normal table or R):
+
+Since $\alpha=0.01 \Rightarrow Z_{\alpha}=-2.33$
+
+- Compare the values or test statistic and critical values:
+
+$Z\leq Z_{\alpha}$ => Reject $H_0$
+
+- Interpret results:
+
+At 99\% confidence level, the data provides sufficient evidence to reject the null hypothesis. In other words, we can conclude that adult females under the age of 51 are, on average, getting less than the RDA of 18mg of iron. 
+
+**Good luck to everyone on the midterm!!**

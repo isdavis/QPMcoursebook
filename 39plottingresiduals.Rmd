@@ -1,0 +1,5 @@
+# How to Plot Residuals in R 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/eTZ4VUZHzxw" frameborder="0" allowfullscreen></iframe>  
+
+Around 3:30 is where residuals starts 

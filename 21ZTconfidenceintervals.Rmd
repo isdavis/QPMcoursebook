@@ -1,0 +1,94 @@
+
+# Confidence Intervals with the z and t-distributions
+Learning objectives:
+
+1) Understand the concept of a confidence interval and be able to construct one for a mean
+2) Understand when (for what kinds of data) to use the standard error formula $$\frac{s}{\sqrt{n}}$$
+3) Know when to use the t-distribution and when to use the z-distribution for constructing intervals
+
+##So, first let's review ...
+
+It's important to remember the difference between a sample distribution and a sampling distribution. Remember that a sample data distribution is the distribution of the data points within a single sample.  A sampling distribution is the probability distribution a statistic can take. Keep in mind also that, by the Central Limit Theorem, the sampling distribution of the sample mean $(\bar{y})$ is approximately normal regardless of the shape of the original distribution of the variable.
+
+For a solid review of these key concepts, check out the previous pages here and here.
+
+##What is a confidence interval and how do we calculate it?
+
+Learning Objective 1: Understand the concept of a confidence interval and be able to construct a confidence interval for a mean
+Roughly speaking, a confidence interval is range of numbers within which we believe the true population parameter to fall.  
+
+Here, we will focus on how to calculate a confidence interval for a population mean.
+
+Let's think about this in terms of z-scores. When we calculate a z-score, we want to look at how many standard deviations away from the mean our data point falls. A confidence interval relies on a similar principle. We want to estimate how many standard errors our sample mean falls from the true population mean on the sampling distribution. We use the normal distribution because the sampling distribution for sample mean is always normal by the Central Limit Theorem.
+
+Recall that when we calculated z-scores,  each one had a probability associated with it that told us the probability of getting a value at or above that given value? (For example, when you find that the z-score for a given observation equals 1.96, you know that the probability of finding a value at or above that value is .025 and below is 1-.025 = .975).
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/3.gif)
+
+So, using our tables , we know that 95% of a normal distribution falls within 1.96 standard deviations of the mean.  Since the mean of the sampling distribution ($\mu_{\bar{y}}$) is the population mean $(\mu$), we can say that, with probability .95, the sample mean $\bar{x}$ will fall within 1.96 standard errors of the population mean.
+
+**NOTE**: We use the standard error because we are looking at the sampling distribution and not the sample data distribution.
+
+The following graph illustrates (x is the same as y here).
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/4.png)
+
+Since what we are trying to do is establish in what interval the true population parameter falls, we add and subtract from the sample mean, a multiple of its standard error, or the z-score for the probability we want.
+
+Why? Because, as stated above, we know that for the normal distribution that specific probability and that specific z-score always go together.
+
+For sample means the formula is: $$\bar{Y} \pm Z (\frac{S}{\sqrt{n}})$$
+
+We use $S$ rather than $\sigma$ because we we are estimating the population standard deviation. If we know $\sigma$, we can use it in our calculations instead.  In reality, we do not know $\sigma$, but this sometimes is asked about on homeworks or exams.
+
+##Knowing when to use the formula (and when not to)
+
+Learning objective #2: knowing when to use the above formula
+We want you to be sure to understand when to use the formula.
+
+$$\bar{x} \pm z (\frac{s}{\sqrt{n}})$$
+
+Often in statistics classes, people get incorrect answers because they were confused about which formula to use.
+
+We use the above formula **only** when we are calculating a confidence interval for a mean, **not** for a proportion. We will need a different formula.
+
+Suffice it to say for now that we use the above formula only with data for which we can calculate a numerical mean. What kind of data is that? Quantitative, data (i.e., not nominal).
+
+For example, a data set measuring human height is a quantitative data set. Why? Because height is a variable that is naturally measured numerically. We can construct a confidence interval for the mean height in a sample using the above formula for this reason.
+
+To understand this concept a bit better, think about a non-quantitative variable like eye color. You cannot measure the color of someone's eyes numerically, therefore a data set examining whether or not a given sample has green eyes or not is not quantitative data. And if it is not quantitative data, we cannot use the this formula.  
+
+##Should you be using the t or the z?
+
+Learning objective #3: Understanding when to use the z-distribution v. the t-distribution
+Keep in mind: we are able to use the normal distribution to construct our confidence interval because of the Central Limit Theorem. When $n \geq 30$, the sampling distribution of the sample mean becomes normal. If $n \leq 30$, the skewness of the population could influence the shape of the sampling distribution and make it not normal.
+
+But what do we do if we want to calculate confidence interval for a sample size where $n\leq 30$? We use the t-distribution, **but only if we feel it is appropriate to assume that the population distribution itself is normal (or close to normal).**
+
+Constructing confidence intervals with t-distribution is the same as using the z-distribution, except it replaces the z-score with a t-score.
+
+Recall the above formula for calculating the confidence interval for a mean. Notice again that we used the sample standard deviation, $s$,  instead of the true population standard deviation, $\sigma$, in our calculation of the standard error. This estimation of $\sigma$ introduces extra error, and this extra error can be pretty big when $n\leq 30$.
+
+Because $s $is a poor estimator of $\sigma$with a small sample size, we will not assume that the sample distribution is normal. Instead, we will use a t-distribution, which is designed to give us a better interval estimate of the mean when we have a small sample size. In fact, the t-distribution provides us with a different sampling distribution for each small sample size.  
+
+Here are the fundamental principles for using the t-distribution for confidence intervals:
+
+1. You cannot use the t-distribution unless you assume that the population distribution of the variable is *normally distributed*.
+
+2. The t-distribution, like the z-distribution, is bell-shaped and symmetric about a mean of 0. 
+
+3. The t-distribution incorporates the fact that for smaller sample sizes the distribution will be more spread out using something called degrees of freedom. For confidence intervals, the **degrees of freedom** will allways be $df = n-1$, or one less than the sample size.
+
+4. For every change in degrees of freedom, the t-distribution changes. The larger the sample size (n), the closer the t-distribution mimics the z-distribution in shape. We construct a confidence interval for a small sample size in the same way as we do for a large sample, except we use the t-distribution instead of the z-distribution.
+
+5. The formula is: $$\bar{x} \pm t (\frac{s}{\sqrt{n}})$$
+
+This video by Khan does a particularly good job of explaining why we need the t-distribution. If you want the explanation watch the whole thing. If you just want to watch him calculate an example, start watching around 4:02.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/K4KDLWENXm0" frameborder="0" allowfullscreen></iframe>
+
+##Summary:
+
+The formula for calculating a confidence interval for a mean is : $\bar{x} \pm z (\frac{s}{\sqrt{n}})$
+We can only use the formula $\bar{x} \pm z (\frac{s}{\sqrt{n}})$ for quantitative data
+We use the t-distribution for sample sizes of normal data with $n \leq 30$.

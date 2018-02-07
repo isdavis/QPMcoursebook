@@ -1,0 +1,20 @@
+
+# Sampling Distribution for Proportions
+
+Learning objectives
+
+Understand how to find the standard error of the sampling distribution of a proportion.
+
+##The binomial and the normal
+
+A proportion is simply a scaled mean, so we treat proportions in a similar manner to means when trying to find its sampling distribution. So, for example, we imagine that everyone who supports Trump is a $y_i=1$ and everyone who doesn't is $y_i=0$. The proportion of Trump supporters in our sample is therefore $ \sum y_i / n = \bar{y}$, which we usually denote p (just to keep things straight).
+
+ As it is a statistics, the sampling distribution of a proportion is often approximated by the normal distribution with:
+
+$$p \sim Normal \left(\hat{\pi}, \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\right)$$
+
+where $\hat{\pi}=p$ (the observed proportion from the sample) and  $n$ is the sample size of our sample.
+
+Note that we do not have a separate parameter for the variance. This is because this formula derives from the binomial distribution, where both the mean and the variance are known so long as we know $\pi$ and $n$.
+
+ 

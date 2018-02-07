@@ -1,0 +1,121 @@
+# Lab 7: Testing ATE's In R 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Class Goals 
+
+- Average treatment effects
+
+- Working with factors
+
+- Comparing data using tables
+
+- Comparing means using the tapply() function 
+
+## Factors in Data 
+
+```{r, eval=F}
+resume <-read.csv("https://raw.githubusercontent.com/kosukeimai/qss/master/CAUSALITY/resume.csv")
+colnames(resume) #this will return: 
+
+[1] "firstname" "sex" "race" "call"
+```
+
+```{r, eval=F}
+> class(resume$sex)
+"factor"
+> str(resume$sex)
+
+Factor w/ 2 levels "female","male":  1 1 1 1 1 2 1 1 1 2...
+> str(resume$call)
+int [1:4870] 0 0 0 0 0 0 0 0 0 0 ...
+```
+
+## Visualizing data as a table
+
+We can then use view this data in a convenient form:
+
+```{r, eval=F}
+> table(resume$race, resume$call)
+```
+
+| variable | 0 | 1 | 
+| - | - | - | 
+| black | 2278 | 157 | 
+| white | 2200 | 235 |
+
+## Creating factor variables 
+
+What if we want a new factor variable?
+
+Create a new column in dataframe for callbacks as a factor:
+
+```{r, eval=F} 
+resume$callback <- factor(resume$call, levels = c(0,1),labels = c("No_Call", "Call"))
+```
+
+Reviewing the table with this factor:
+
+```{r, eval=F} 
+table(resume$race, resume$callback)
+```
+
+treatment | No_Call | Call | 
+- | - | - | 
+black | 2278 | 157 | 
+white | 2200 | 235 |
+
+If we are interested in propotions we can use the prop.table() function around our defined table:
+
+```{r, eval=F} 
+> prop.table(table(resume$race, resume$callback)
+```
+
+treatment | No_Call | Call | 
+- | - | - | 
+black | 0.46776181 | 0.03223819 | 
+white | 0.45174538 | 0.04825462 | 
+
+## From factor to string 
+
+Factors can be problematic if we want variables as textand not as categories:
+
+```{r, eval=F} 
+class(resume$firstname)
+"factor"
+```
+
+This is easy to deal with:
+
+```{r, eval=F} 
+class(as.character(resume$firstname))
+"character"
+```
+
+## Using tapply() 
+
+Suppose we want to know the “Average Treatment Effect" of being white or black. We can use tapply to create a table of these treatment effects by race. 
+
+```{r, eval=F} 
+tapply(variable,index,function)
+tapply(resume$call, resume$race, mean)
+```
+black |white |
+- | - | 
+0.06447639 | 0.009650924 | 
+
+## STAR Study 
+
+Student-Teacher Achievement Ratio (STAR)
+
+- Longitudinal study (study measuring the same sample group overtime) of 11,601 students from kindergarten to grade 4.
+
+- Students were either placed in small classes, regular-sized classes, orregular-sized classes with an aid. The study measured the effects of class size on math and reading outcomes as well as whether the students went on to graduate high school. 
+
+- As with many longitudinal studies, because participants might dropout early or enter the program late, there is lots of missing data. When dealing with these data, our code needs to account for this!
+
+

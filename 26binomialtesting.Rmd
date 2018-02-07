@@ -1,0 +1,60 @@
+
+# Binomial Testing
+
+##Small-Sample Test for a Proportion
+
+##Learning Objectives
+
+1. Review binomial distributions
+
+2. Understand the null hypothesis
+
+3. Use the binomial distribution table to determine probabilities
+
+4. Understand a p value and its meaning at a given value
+
+##Binomial Distributions
+
+As we discussed a few weeks ago, a binomial variable is discrete, which means there are two possible outcomes (the Cardinals will win/lose a game, the president will veto/not veto a bill).  We also know that the binomial distribution is perfectly symmetric only when $\pi$ = 0.50. This makes sense, because when considering an event where there are two possible outcomes (x and y), we would expect that the majority of the time, the outcome of half of the trials would be outcome x, and the outcome of the other half of the trials would be outcome y.
+
+##Null Hypothesis
+
+The null hypothesis is the probability of an event that we would expect as statisticians assuming that the outcomes in each trial happened by chance and that the world worked according to the laws of statistics.
+          
+It is what a skeptic would say about the likelihood of an event.
+ 
+
+For example, let's say that I flip a coin two times. Here is what could happen:
+
+Flip 1 | Flip 2 | Probability of this occurring |
+-- | -- | -- |
+T |T | 1/4= 0.25 |
+T | H | 1/2= 0.5 (assuming we do not care about the order of the results) |
+H | T |   |
+H | H | 1/4=0.25 | 
+
+In a world run by statistics, we can predict that 50% of the time, when we flip a coin twice, we will end up with one heads flip and one tails flip. This represents the null hypothesis: $\pi_0$ = 0.5
+
+Suppose we flip the coin twice and get two tails. We want to find out what this result means assuming that the null hypothesis is true.
+
+The way we can do this is by determining the probability of flipping two tails in a row (assuming that $\pi=.5$), then determining if that probability is "small" (assuming that the null hypothesis is correct). 
+
+If the probability of two coin flips is very low under this assumption, we can "reject" the null hypothesis. 
+
+IMPORTANT NOTE: When conducting a hypothesis test, you can either reject the null or not reject the null. You can never accept the null. That is because in science, we do not seek to prove things are true, but to disprove things that are not true.
+## Binomial Distribution Table
+
+The table can be found [here](http://pages.wustl.edu/files/pages/imce/montgomery/binomialtable.pdf). Please review this table and make sure you understand how to read it for class on Monday. If you are confused, refer back to this article.
+
+##P-values
+
+A p-value is, the probability that the test statistic equals the observed value or a value even more extreme in the direction predicted by $\pi_a$, calculated by presuming $\pi_0$ is true.
+The p-value can be found on your binomial distribution table. It represents the probability of finding a certain set of outcomes given the null hypothesis. With our coin flipping example, I can find out using the binomial distribution table that for the outcome TT, p=.250. That means 25% of the time; I can expect to see these results.
+
+The p-value is a measure of surprise. It tells us how surprised we should be about a given outcome *or something more extreme*.
+
+In one article, R.A Fisher, statistician extraordinaire, decided that if the p-value is .05 or less, than this is surprising enough to reject the null hypothesis. If you are good enough at math, apparently you can do things like that. What this means is that if the probability of an occurrence OR SOMETHING MORE EXTREME is less than .05, our results are so surprising that we reject the null. Otherwise we do not reject the null.
+
+Let's go back to that coin flip example. If our null hypothesis is that $\pi=.5$ and our research hypothesis is that it is an unfair coin biased towards Tails ($\pi_a > .5$).  Let's say we flip the coin twice and observe two tails. We see that p=.250 for two coin flips with the outcome TT. Because .250>.05, we do not reject the null.
+
+Conceptually, this means that getting the result TT fits within our knowledge of statistics; that it is not sufficiently unlikely for you to flip a coin two times and get the results TT.

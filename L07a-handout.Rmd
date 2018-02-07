@@ -1,0 +1,36 @@
+# Lab 7 Handout: Quantitative Political Methodology 
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet fromeach group for grading.
+
+2.  The STAR (Student-Teacher Achievement Ratio) Projects is a four-year longitudinal studyexamining the effect of class size in early education.  You can download the .csv file at (https://raw.githubusercontent.com/kosukeimai/qss/master/CAUSALITY/STAR.csv).  The data are comprised of 6325 students, with variables for race (White = 1, Black = 2, Asian = 3, Hispanic = 4, Native American = 5, Other = 6), kindergarten class type (small = 1, regular = 2, regular with anaid = 3), grade 4 test scores for math and reading, # of years spent in small classes, and whether or not the student graduated highschool (0 or 1 respectively).  Note that there are a lot of missing values (marked by NA's) in this dataset. 
+
+- Download the dataset.  Create a new variable called kinderin the dataframe.  The variable should recode class type by changing integer values into informative factor labels. 
+
+- Recode the race variable similarly, but instead of creating a new column in the dataset, overwrite the existing column as a factor instead of an integer.
+
+3. Compare the means of fourth grade reading and math tests for those students assigned to a smallclass in kindergarten with those assigned to a regular-sized class?  Give a brief explanation of whatyou see.
+
+4.  Compare the range of math and reading test scores between students assigned to regular-sized classes and those in small classes.  To do this, compare relatively high scores (those in the 66th percentile) to relatively low scores (in the 33rd percentile).  This is a quantile treatment effect.  Does this tell you any more than the comparison of mean treatment effects?
+
+Complete (5) and (6) if you have time:
+
+5.  Some students stayed in small classes for all four years of the study, and some spent fewer or no years in small classes.
+
+- In R, create a contingency table of the number of number of kinder and yearssmall variables to see the number of students who spent differing amounts of time in small classes.  Copy the table below. 
+
+- Calculate and compare the means and medians of math scores for students who spent different numbers of years in small classes.  You need not transcribe the calculations, but give a brief description in words of what you find.
+
+6.  Finally, we will compare the mean treatment effect of class size between White students and Minority students. 
+
+- As Asians, Native Americans, and `Other' students comprise a relatively small part of our sample, create two separate dataframes |one containing the observations of white students, andone containing the observations of black and Hispanic students.
+
+- Calculate the mean values of these two groups to fill in the following table. 
+
+| | White Students | Minority Students | 
+- | - | - |
+Mean Math Scores (regular class sizes) |  |  | 
+Mean math scores (small class sizes) |  |  |
+Mean reading scores (regular class sizes) |  |  |
+Mean reading scores (small class sizes) |  |  |
+
+- What does this show about the difference in the "average treatment effect" of class size between white students and minority students?  Is there a difference between the effect for math and reading?

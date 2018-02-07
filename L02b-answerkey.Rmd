@@ -1,0 +1,96 @@
+# Lab 2 Handout Answer Key: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group.  We will collect one sheet from each groupfor grading.
+
+2.  Download constructionData.dta from  Monogan  (2015)'s  Dataverse.   It  is  a  dataset  on  healthlobbying in the 50 American states.
+
+```{r, eval=F}
+lobby <- read.dta("constructionData.dta")
+```
+
+3.  How many rows and columns are there?
+
+```{r, eval=F}
+head(lobby)
+```
+
+4.  Subset the data to four columns.  The four columns are:
+
+- partratedpc
+
+- partratepharmprod
+
+- partrateprofessionals
+
+- partrateadvo
+
+4. (cont.) The  columns  represent  the  lobbying  participation  rate  (i.e.   number  of  lobbyists  as  a  percentageof  number  of  firms)  for  four  subgroups  of  health  lobbyists. partratedpc is  the  lobby  participation  rate  for  direct  patient  care. partratepharmprod is  the  rate  for  drugs  and  health  products. partrateprofessionals is the rate for health professionals. partrateadvo is the rate for healthadvocacy.
+
+```{r, eval=F}
+lobbySub <- lobby[,c("partratedpc", "partratepharmprod", "partrateprofessionals", "partrateadvo")]
+```
+
+5.  What are the medians for the four variables?
+
+```{r, eval=F}
+median(lobbySub$partratedpc)
+median(lobbySub$partratepharmprod)
+median(lobbySub$partrateprofessionals)
+median(lobbySub$partrateadvo)
+
+# OR if you're adventurous 
+
+apply(lobbySub, 2, median)
+barplot(apply(lobbySub, 2, median))
+```
+
+6.  Go back to the full dataset.  Create a histogram that shows the distribution of the lobby participation rate for all health care areas (using the variable partratetotalhealth).  Create a similar histogram for the number of bills related to health considered by the state legislature in 1997 (usinghealthagenda97).
+
+```{r, eval=F}
+hist(lobby$partratetotalhealth)
+hist(lobby$healthagenda97)
+```
+
+7.  Create a scatter plot with healthagenda97 on the vertical axis and partratetotalhealth on thehorizontal axis.  Interpret what the plot is telling you.
+
+```{r, eval=F}
+plot(y=lobby$healthagenda97, x=lobby$partratetotalhealth)
+```
+
+This shows the relationship between how much health lobbying is done and how many health related bills were passed. As we can see, the relationship is not very strong (correlation coefficient is around -0.25). This could mean that lobbying has little to no effect on policy, but we must be careful to not assume this, because just as correlation does not imply a causal relationship, **lack of correlation does NOT imply that there is no relationship**, for many of the same reasons. 
+
+8.  Save the last plot you made in a pdf 
+
+```{r, eval=F}
+getwd()
+pdf(file="lab2_plot.pdf")
+plot(y=lobby$healthagenda97, x=lobby$partratetotalhealth)
+dev.off()
+```
+
+Answer the following questions if you have time.
+
+9.  Re-create  the  histograms  you  made  for  question  7.   But  this  time  make  the  vertical  axis  showprobability densities instead of raw frequencies.
+
+```{r, eval=F}
+hist(lobby$partratetotalhealth,freq=F)
+hist(lobby$healthagenda97,freq=F)
+```
+
+10.  Can you add a linear line to the plot you created for question 8 that shows the relationship betweenthe two variables?
+
+```{r, eval=F}
+lmLine <- lm(lobby$healthagenda97~lobby$partratetotalhealth)
+plot(y=lobby$healthagenda97, x=lobby$partratetotalhealth)
+abline(lmLine)
+```
+
+11.  Can you create the last three plots in a single panel?  Save them all in one file. 
+
+```{r, eval=F}
+par(mfrow=c(1,3))
+hist(lobby$partratetotalhealth,freq=F)
+hist(lobby$healthagenda97,freq=F)
+plot(y=lobby$healthagenda97, x=lobby$partratetotalhealth)
+abline(lmLine)
+```

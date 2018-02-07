@@ -1,0 +1,112 @@
+# Chi Squared Test of Independence
+
+##Learning Objective 1: What is a Chi-Squared Test of Independence?
+
+When you are given a contingency table (which deals with two variables), you may want to know whether the results indicate that the two variables are related. That is, you might want to see if the two variables are independent of one another.
+
+If the variables are *independent*, then a change in one should not be related with change in the other.
+
+If they are *dependent*, one variable will change in concert with the other.
+
+In the Chi-Squared Test, the goal is to compare the values in a contingency table that would be expected if the variables are independent with the values we actually observe.  If the observed numbers differrs "too much" from what we would expect if they are independent, we can reject the null hypothesis of independence.
+
+##Learning Objective 2: Performing a Chi-Squared Test of Independence
+
+1. To start, you will need a contingency table. You must have the responses tallied in each row and column with the aggregate totals for each row and column as well.  Here is an example of table that looks at how age is related to preferences for hamburgers or hotdogs.
+
+ 
+~|Hamburger|Hotdog|Total|
+-|-|-|-|
+Under 30|25 |13 |38|
+Over 30|22 |13 |35|
+Total|47| 26 |73|
+ 
+2. Then you will need to specify your explanatory and outcome variables
+
+- Explanatory variable: The variable that is statistically independent.  For instance, in a medical experiment this might be some new drug. 
+
+- Outcome variable: The variables that might be statistically dependent.  In experiment, for example, this would be the desease you are trying to cure.
+Our null hypothesis is that the distribution of the outcome variable will not change as a function of the value of the explanatory variable.
+
+3a. Then you must calculate the $\chi^2$ statistic:
+
+- First you must find $f_{observed} = f_o$ = observed frequency = the raw count (NOT THE %).  This is the number of cases we observe in each cell of the table.
+
+- Then you must find $f_{expected} = f_e $= what we would expect for independent samples. This value is equal to:
+
+$$\frac{\text{Row total }\times \text{Column total}}{\text{Grand total}}$$
+
+- If the null hypothesis true, then we would expect $f_{observed} = f_{expected}$
+
+- The formula for the $\chi^2$ measures the degree to which our obsrerved data differs from what we would expect under the null.  Specifically, 
+
+$$\chi^2 = \sum\frac{(f_0-f_e)^2}{f_e}$$
+
+Note that we summing over all cells in the table.
+
+3b.  A few comments on $\chi^2$:
+
+- If the samples are truly independent, $\chi^2 \rightarrow 0$.
+
+- If they are actually dependent, $\chi^2 \rightarrow \infty$
+
+- This statistic is distributed according to the $\chi^2$ distribution. And we will use that to calculate p-values.
+
+- YOU WILL ALWAYS HAVE A POSITIVE NUMBER.
+
+4.     Once you get the $\chi^2$ statistic you must find the Degrees of Freedom to calcualte the p-value.
+
+- DF= (rows ??? 1)(columns ??? 1)
+
+- In R, the code is: pchisq($\chi^2$, df = (rows-1)(columns-1), lower.tail=FALSE)
+
+- Use this table for exams.
+
+5. Conclusion
+
+If your P-value is greater than your $\alpha$, you will fail to reject the null hypothesis. If it is less than your $\alpha$, you will reject the null hypothesis.
+
+##Learning Objective 3: Seeing How it is Done!
+
+First let's pose a question: Is age independent of preference between hamburgers and hotdogs
+
+Now, let's look at a chart which gives responses for an actual example.  Here is the contingency table from above.
+
+~|Hamburger|Hotdog|Total|
+-|-|-|-|
+Under 30|25 |13 |38|
+Over 30|22 |13 |35|
+Total|47| 26 |73|
+ 
+Now let's get Null and Alternative Hypotheses:
+
+*Null*: Age has no impact on preference between Hotdogs and Hamburgers
+Alternative: Age does have an impact on preference between Hotdogs and Hamburgers
+
+From there, it is time to calculate the Chi Squared statistic
+
+First, you must calculate the expected ($f_e$) values for each of the cells using the following formula above.  You calculate it for all of the "response" cells. The $f_e$ for each cell  are provided in each cell in parenthesis.  
+
+~|Hamburger|Hotdog|Total|
+-|-|-|-|
+Under 30|25(24.5) |13(13.5) |38|
+Over 30|22(22.5) |13(12.5) |35|
+Total|47| 26 |73|
+ 
+Second, you must calculate chi squared statistic with the following formula:
+
+$$\chi^2 = \sum\frac{(f_0-f_e)^2}{f_e}$$
+
+If you do the calculation, you should find 0.061
+
+Now you need the degrees of freedom.  DF= (Row-1)*(Column-1)=(2-1)*(2-1)=1
+
+Note: You might be tempted to say that the # of rows=4 and the # of columns=4. However, we are not looking for the total number of rows and columns in the table, just the number of rows and tables for the "response" cells!
+
+Now you calculate the p-value: Given the test statistic of 0.061 and df=1, P-value should    come out to around 0.8. This is a very high p-value, and therefore you will fail to reject the null hypothesis, and therefore age does not seem to be related to hamburger/hotdog preference.
+
+Below is a video, which will take you through the same type of calculations that were performed above
+
+<iframe width="560" height="315" src="https://youtube/embed/hpWdDmgsIRE" frameborder="0" allowfullscreen></iframe>  
+
+Contingency Table Chi-Square Test: Contingency Table Chi-Square Test 

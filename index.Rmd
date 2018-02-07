@@ -1,0 +1,54 @@
+---
+title: "Quantitative Political Methods Coursebook"
+author: "Jacob Montgomery"
+devtools: install_github("rstudio/bookdown")
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: default
+  bookdown::pdf_book: default
+---
+
+
+#Class Overview 
+
+##Learning objective #1: What is the point of all of this group work?
+
+This year, this course has been revised to incorporate some elements of Team Based Learning. This is an approach to creating permanent groups to work on problems in class, in lab, and out of class throughout the semester.  
+
+We are not going to follow the TBL approach strictly. But we are going to have fewer lectures and more structured group activities.  Learn more about Team Based Learning by watching this video.
+
+##Learning object #2: What is the point of all of these online activites?
+
+A better question would be what is the point of sitting in a room and watching a professor talk? It's 2012!
+
+Moving an increasing amount of teaching resources online is a big trend in education at all levels.  But this isn't just trendy, it appears to be very effective. Preliminary research shows that online learning paired with in-class interactions with faculty is a much more effective than the traditional lecture format.
+
+Watch this short TED talk by Peter Norvig to learn more:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/tYclUdcsdeo" frameborder="0" allowfullscreen></iframe>
+
+
+
+##Learning objective #3:  How is this going to work?
+
+The approach I am trying to adopt for this class is to help you learn in four basic steps.  
+
+1. Initial exposure to materials through self-study.
+
+2. Repeated exposure to materials in short lectures.
+
+3. Use your new knowledge in a collaborative environment where assistance is readily available.
+
+4. Use your new knowledge on your own.
+
+The goal is for you to see and use information in multiple ways to improve learning outcomes.  Experience (and research) shows that this approach is far superior to simple lectures in helping you learn more and retain it longer.  To help you along this process, each learning component will be broken down as follows.
+
+1. You will read your book and review online materials.  Regular online quizzes will help motivate you to stay current.
+
+2. I will begin most classes with a short lecture where I will cover the materials again and answer questions.
+
+3. You will apply your knowledge during in-class team assignments.  If you have any questions or run into problems, I will be right there to give you help.  To keep the team motivated, these assignments will be graded.
+
+4. You will apply your knowledge on your own (or with friends) in your problem sets.
+

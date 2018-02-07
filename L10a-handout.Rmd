@@ -1,0 +1,36 @@
+# Lab 10 Handout: Quantitative Political Methodology 
+
+Write down the names of the members of your group. We will collect one sheet from each group for grading.
+You will work with a dataset that comes from Brandice Canes-Wrone, Brady David, and John Cogan.
+2002. “Out of Step, Out of Office: Electoral Accountability and House Members Voting.” American
+Political Science Review 96 (1): 127 - 140. Download Incumbents.txt and Incumbents Codebook from
+Prof. Montgomery’s website. The dataset contains variables related to elections for the U.S. House,
+including spending patterns of incumbents and challengers. Data are at the electoral district level. Each
+observation represents a specific contest. Each line of the data includes information about the district, the
+incumbent, and the challenger (if there is one). Note that some variables are in logarithmic scale. The
+dataset is a tab delimited txt file.
+
+1. We want to test the following hypothesis: As the challenger’s campaign spending increases, the incumbent’s
+campaign spending increases. State the null and alternative hypotheses.
+
+
+2. Make a scatterplot for the two variables of interest WITHOUT the least-squares line. Have clear axes
+labels. Customize the plot in some way. (You can jitter the data, define the shape of the points, etc.)
+Write down the R code. Call the TA to show your scatterplot and have it signed below.
+
+3. Describe the scatterplot. Is there a relationship between the two variables? If so, what kind?
+
+4. Conduct a regression analysis to test the hypothesis stated in Question 1. Write down the R code.
+
+5. Write down the regression equation you obtained from R. Interpret the intercept and slope coefficients.
+Are they believable (are you confident in your estimates)? Why? Does the result support your hypothesis?
+
+If you have the time, answer the following questions.
+
+6. Go back to the scatterplot you created for Question 2. Add the least-squares line. Write down the R code.
+
+7. Based on the R output you obtained for Questions 4 and 5, identify how many observations were used in the model.
+
+8. Based on the R output you obtained for Questions 4 and 5, interpret what the residual standard error is telling you.
+
+9. Based on the R output you obtained for Questions 4 and 5, assess the model fit. How good is the model?

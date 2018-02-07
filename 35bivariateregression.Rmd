@@ -1,0 +1,70 @@
+# Bivariate Regression
+
+##Learning Objectives:
+
+- Understand what linear regression is
+
+- Understand what linear regression is used for
+
+- Know how to calculate a linear regression
+
+##Summary
+
+Linear regression is a type of model used to describe the relationship between two interval variables.  The linear regression is the straight the line for which the sum of the squared distances between the data point and the expected value along that line is minimized.  A linear regression can tell us whether there's an association between two variables and how strong the relationship is.
+
+##What is a linear regression?
+
+So far, the tools we have covered can help us tell whether there is a difference between two groups (e.g., a treatment and control group).  Now we're going to cover a tool that helps us determine the relationship between two variables in one population.  For example, let's say we want to look at the relationship between age and political ideology.  
+
+A linear regression is a line that describes the "best fit" for the observed data.  We will talk about how we determine what that best fit is in the next section, but right now, let's talk about the components of a line. 
+
+A line can be written as  where $\beta$ is the slope of the line, and $\alpha$ is the y-intercept (the value of y when x is zero).  If the line is horizontal, then the slope would be zero.  The slope is given as the change in y divided by the change in x, or "rise over run."
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/10.png)
+
+In the line above, the y intercept is .8, and the slope is $\frac{(4-2)}{(8-3)} = \frac{2}{5}$.  Therefore, the equation of the line above can be given as $y=.8+.4 \times x$ .
+
+##When do we use linear regression?
+
+Imagine you want to determine the relationship between the average income in a county, and the percentage of voters in that county who vote.  In this case, there are two interval variables: an average income and a percent.  Imagine that your hypothesis is that having a higher income causes voter turnout.  You would want to have some way to measure the relationship between these two variables.  You might select a random sample of counties in the United States, and determine the average income in that county, as well as the proportion of voters in that county.  Then what? 
+
+Linear regression is the most commone way that researchers determine the relationship between two variables.  Remember the parts of a line.  In the equation for a line, there are two variables, x and y.  According to your hypothesis, voter turnout is the dependent variable, and income is the independent variable.  We would let y represent the dependent variable, and let x represent the independent variable.  This means that we have a line that tells us that
+
+$$Turnout = \alpha + Income \times \beta.$$
+
+Your theory would lead you to expect that $\beta\ne0$ (that there is a relationship between turnout and income).
+
+The problem then becomes, how do we determine the "correct" values of $\alpha$ and $\beta$? 
+
+To answer that question, we have to take a step back, and note that, unless one variable perfectly predicts another (which is extremely rare in social science), your data points are unlikely to all fall exactly on one line.  This means that there is some error inherent in linear models.
+
+When we take into account error, $\epsilon$, we get the following formula:
+
+$$y = \alpha + x \beta + \epsilon $$
+
+In order to use a linear regression, **we have to assume that the errors are normally distributed.**  That is very, very important.  When we say that errors are normally distributed, what we mean is that if you were to plot the distance from the actual y-value to the expected y-value based on the line, the resulting plot would be a normal distribution with a mean at 0, and a standard deviation of $\sigma^2$. 
+
+Fitted values
+
+This means that , our best guess for $y$ based on the regression and some observed value of $x$, is given by the equation
+
+$$ \hat{y_i} = \alpha+x_i \beta$$
+
+Estimating $\alpha$ and $\beta$
+
+So how do we know what numbers to plug in for $\alpha$ and $\beta$?  We plug in the numbers that result in the lowest sum of squared error.  To calculate this, we use the Sum of Squared Error (SSE).  The equation is:
+
+$$SSE = \sum_{i=1}^n(y_i - \hat{y_i})^2 = \sum (y_i - \hat{\alpha} - x_i\hat{\beta})^2$$
+
+We use this equation to determine the value of $\alpha$ and $\beta$ for which the SSE is lowest.  The solution is the two following equations
+
+$$\hat{\beta} = \frac{\sum_{i=1}^n\Big((X_i - \bar{X})(Y_i - \bar{Y})\Big)}{\sum_{i=1}^n(X_i - \bar{X})^2}$$ $$ \hat{\alpha} = \bar{Y} - \hat{\beta}\bar{X}$$
+
+ 
+The video below does a very thorough job of breaking down how to perform a linear regression. 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/xojW6OEDfC4" frameborder="0" allowfullscreen></iframe>  
+
+Here's another video on how linear regressions work.  It's a little shorter.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/VvQ-QkU8DPs" frameborder="0" allowfullscreen></iframe>  

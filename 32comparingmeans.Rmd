@@ -1,0 +1,130 @@
+
+# Comparing Means
+
+##Comparing Means for Quantitative Variables
+
+You will learn how to compare means between two different samples. This should make you all very excited; because it gives you the ability to answer some pretty cool types of questions. For example:
+
+- Does studying actually get me a better grade on a test?
+ 
+- If I eat more sugar, will that make me gain weight?
+
+- Do people become more partisan as they age, or more moderate, or neither?!
+
+The reason that you will be able to answer these questions is we will show you how to compare the means of two groups, to see if they can plausibly be equal. It is important to note that this section will work only for **means, not proportions.**
+
+##Learning Objective #1: What Information Goes Into Comparing Means for Quantitative Variables?
+
+In order to make this comparison, you need 4 pieces of information:
+
+1.     The mean for sample 1 ($\bar{y}_1$)
+
+2.     The mean for sample 2 ($\bar{y}_2$)
+
+3.     The standard deviation for sample 1 $S_1$
+
+4.     The standard deviation for sample 2 $S_2$
+
+##Learning Objective #2: What Formulas are Needed for Comparing Means for Quantitative Variables?
+
+Hypothesis Testing About Differences: ((Estimate-Null)/Standard Error)
+
+1. Estimate=$(\bar{y}_1 - \bar{y}_2)$ 
+
+2. Null = generally zero (that is, you are guessing that there is no difference between the two samples)
+
+3. **If the sample size is large** then there will be a corresponding Z-Score. The p-value will be calculated just as we have done with hypothesis testing previously. And Standard Error will be calculated as follows:
+
+$$ SE= \sqrt{\frac{S_1^2}{n_1} +\frac{S_2^2}{n_2}} $$
+
+4. **If the sample size is small**, then all calculations will be the same except for two differences.
+
+ + First, the calculation for Standard Error will be as follows :
+
+$$Standard Error=\hat{\sigma}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$$
+
+where $\sigma^2$ is the pooled variance, which is calculated as 
+
+$$\hat{\sigma}=\sqrt{\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}}$$
+
+  + Second, the "test statistic" must be taken from the T-Score table, with the Degrees of Freedom= $(n_1+n_2-2)$
+
+##Learning Objective 3: Putting it all into practice!
+
+1.     Step 1: Assumptions
+
+  + Either Large "N" or Small "N" (If N is less than 30, use Small "N")
+
+  + If n is small, we must must be able to assume a Normal Distribution  
+
+2.     Null and Alternative Hypotheses
+
+  +   For both Small and Large "N" for differences of the mean, the "Null" would be that the means are the same $(\mu_1-\mu_2=0)$, and the alternative would be that the means are not equal$(\mu_1-\mu_2\ne0)$ 
+
+3.     Calculating a Test Statistic
+
+  +   Formula: (Estimate-Null)/Standard Error
+
+  +   First, you calculate the difference of the means (estimate).   This merely involves subtracting the sample mean of one sample from the sample mean of the other sample
+
+  +   Then you must calculate the Standard Error
+
+For Large Sample Size:
+
+- Formula for SE: $\sqrt{\frac{S_1^2}{n_1} +\frac{S_2^2}{n_2}}$
+
+- Use Z-score
+
+For Small Sample Size
+
+- Formula for SE: $\hat{\sigma}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$, where $\hat{\sigma}$ is the pooled standard deviation above.
+              
+- Use T-Score
+
++     The value for the Null is usually "0"
+
+4.     Calculating P-Value
+
+  + For Small Sample Size
+
+- Take the absolute value of the test statistic
+
+- Find Degrees of Freedom: Formula: DF=N1+N2-2
+
+- Find the corresponding probability of the test statistic or more extreme, given the degrees of freedom
+
+- If the Alternative Hypothesis is Sample 1 does not equal Sample 2 (as opposed to, say, Sample 1 is less than Sample 2) then you must multiply the probability by 2
+
+  + For Large Sample Size
+
+- Take the absolute value of the test statistic
+
+- Find the corresponding probability of the test statistic or more extreme
+
+- If the Alternative Hypothesis is Sample 1 does not equal Sample 2 (as opposed to, say, Sample 1 is less than Sample 2) then you must multiply the probability by 2
+
+5.     Draw a Conclusion
+
+  + Choose an Alpha, generally 0.01, 0.05, or 0.10 in Political Science
+
+  + If the P-value is larger than the alpha level, you will fail to reject the null hypothesis
+
+  + If the P-value is smaller than the alpha level you will reject the null hypothesis
+
+In these videos, Kahn discusses the sampling distribution for the difference of means from two samples and shows how the calculate a confidence interval for that quantitity.  He then goes on to show how to conduct a hypothesis test (which, as we know, is a very related task). But watch all of the videos, as I think they are worthwhile for understanding the key points discussed above.
+
+Here, he uses a large "N" and therefore a Z-score. If "N" were small, the only difference would be that you would need to calculate P-value using a T-score (with the correct standard error equation), and consider the Degrees of Freedom.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/TcIDXqmt74A" frameborder="0" allowfullscreen></iframe>  
+<iframe width="560" height="315" src="https://youtube.com/embed/hxZ6uooEJOk" frameborder="0" allowfullscreen></iframe>  
+<iframe width="560" height="315" src="https://youtube.com/embed/yQsCMnz9wO8" frameborder="0" allowfullscreen></iframe>  
+<iframe width="560" height="315" src="https://youtube.com/embed/N984XGLjQfs" frameborder="0" allowfullscreen></iframe>  
+
+
+##What did you learn?
+
+Goal 1: Learning what goes into comparing two samples of quantitative variables
+
+Goal 2: Understanding the formulas for performing a hypothesis test comparing two samples of quantitative variables with both small and large sample sizes
+
+Goal 3: Understanding how to perform a hypothesis test comparing two samples of quantitative variables with both small and large sample sizes

@@ -1,0 +1,29 @@
+
+# Type I and Type II Errors
+
+##Learning Objective:
+
+Recognize the difference between Type I and Type II errors
+
+##Type I and Type II Errors
+
+- A type I error occurs when the null hypothesis is falsely rejected. We minimize the risk of making a type I error by using an $\alpha$ level as the basis of comparison for our p-value. For example, an $\alpha$ level of 0.05 means that only 1 in 20 times, we will make a type I error and falsely reject the null where the null hypothesis is a true descriptor of our data.
+
+- A type II error occurs when the alternative hypothesis is true, but we fail to reject the null.
+
+- Here is a table explaining the two types of errors we can encounter when interpreting a hypothesis test:
+ 
+~| Truth=H0 | Truth=Ha |
+-| -------- | -------- |
+Fail to Reject H0=True | No Error | Type II |
+Reject H0 | Type I | No Error
+
+Imagine a fire detector. The null state of being is "no fire." The alternative hypothesis is "fire."
+
+If the fire detector goes off but there is no fire (like when you take a hot shower in the traditional dorms), then a type I error has occurred- the null hypothesis of "no fire" was falsely rejected. Let's say that your fire alarm keeps making a type I error, so you get frustrated and remove the batteries from the fire alarm. A few days later, there actually is a fire, but the alarm doesn't go off because you took out the batteries. This means that a type II error has occurred- the alternative hypothesis was true (there was a fire), but instead you falsely failed to reject the null. 
+
+In general, we are more concerned about Type I errors, since this will lead us to reject the null hypothesis when it is actually true.  So, for instance, we might conclude that our experiment worked, when in fact the treatment had no effect.
+
+This video starts with a good example of two-sided large n hypothesis test (in case you need to refresh your memory), and at about the 3:00 mark, it explains the difference between type I and type II errors.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/FHT6e_mdGoU" frameborder="0" allowfullscreen></iframe> 

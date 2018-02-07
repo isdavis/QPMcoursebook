@@ -1,0 +1,14 @@
+
+# A Brief Introduction to R 
+
+
+Learning objectives:
+
+1)Learn how to assign a value to an object in R.
+
+2)Learn your way around R (using R Studio).
+
+3)Learn how to do simple arithmetic in R.
+
+
+<iframe width="560" height="315" src="https://youtube.com/embed/UYclmg1_KLk" frameborder="0" allowfullscreen></iframe>

@@ -1,0 +1,54 @@
+
+# Frequency and Probability Distributions
+
+**A General Introduction**
+
+Learning Objectives:
+
+1)Define probability.
+
+2)Understand the basic properties of a probability.
+
+3)Understand the meaning of "frequency distribution."
+
+##What is a probability?
+
+There are many definitions of a probability, but here is one that is easy to understand and that is pretty useful for this class is the **frequency interpretation** of probability.  In essence, we imagine doing something (flipping a coin, rolling a dice, taking a random sample) 
+
+**Probability (frequency interpretation)**
+The relative frequency of occurrence for some particular outcome if a process is repeated a large number of times under similar conditions.
+
+Probabilities help us answer questions like:
+
+If I flip a coin three times, what is the probability that I will get exactly two heads?
+
+If I roll two dice, what is the probability of getting a two?
+
+If I take a random sample of 100 Wash U students, what is the probability that less than 40% of the sample will be male?
+
+##Frequency distribution
+
+A probability distribution of a discrete variable, Y, assigns a probability to each possible outcome. As an example, we can write out the frequency distribution for all possible outcomes of rolling two fair dice. In the left column, is the outcome.  In the right column is the probability of observing that outcome.
+
+$S= {y_1+ y_2 +\ldots+y_k}$, which means that S represents the set of all possible outcomes in a set of data, Y is the actual realization of the variable.
+
+Example: if we flipping a coin three times, S is the set of possible outcomes (0 heads, 1 head, 2 heads, 3 heads). The variable (the number of heads we observe from flipping a coin three times) is represented by the variable Y. 
+
+$p(y_k)= Pr(Y=y_k)$ where $0 \le p(y_k) \le 1 \forall k$ 
+
+This looks complicated, but essentially what it means is that the probability of an event occurring equals the probability of a specific event out of all of the other observations. This value falls between 0 and 1 no matter what. An occurrence cannot be more than 100% likely to occur or less than 0% likely not to occur, so the proportion will always be between 0 and 1. The closer it is to 1, the more likely it is that the predicted event will occur.
+
+$ \sum_{k=1}^K p(y_k )=1$
+
+This means that the sum of all the probabilities that an event will occur equals 1. 
+
+Here are some videos to help: 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/3ER8OkqBdpE" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://youtube.com/embed/6E_NVnboMB8" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://youtube.com/embed/Fvi9A_tEmXQ" frameborder="0" allowfullscreen></iframe>
+
+
+This last video walks you through the construction of a probability density function. 

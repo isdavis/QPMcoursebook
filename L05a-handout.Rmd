@@ -1,0 +1,23 @@
+
+## Lab 5 Handout: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet fromeach group for grading.
+
+2. According to the recent Current Population Reports, self-employed individuals in the U.S. work anaverage of 45 hours per week, with a standard deviation of 15.  Assume this variable is approximately normally distributed.  For all questions, write down your answer and copy the Rcode you used to find it. 
+
+- What proportion average more than 40 hours per week?
+
+- What proportion average less than 40 hours per week?
+
+- What proportion are lazy bums who sit around all week and do nothing (i.e.  work 0 hours aweek)?
+
+Download the "africa" data for African countries: data(africa) from the "faraway" package.  Look into variables included in the data.  Construct 95% confidence intervals for the mean percent of votingin the last elections (pctvote) for the countries with no coup (miltcoup== 0) and for the countries with any number of coup (miltcoup >0).  (HINT: Subset the data set into two new datasets.)  The first new dataset should contain observations with no military coup, and the second new datasetshould contain those with any number of military coups.)  Write down your answer and copy theRcode you used to find it. 
+
+- NO COUP countries, 95% confidence interval:
+
+- COUP countries, 95% confidence interval:
+
+- What do these confidence intervals substantively tell us about voter turnout in African countries?
+
+
+

@@ -1,0 +1,59 @@
+
+# Sample Size for CI for the Mean
+
+Learning Objectives
+
+1. Understanding the information you need before calculating the sample size.
+2. Manipulating the formula for a confidence interval for the mean to find the right sample size
+
+##Here's the setup ...
+
+When given certain information,  it is possible to figure out how many individuals we will need for our sample to make a specific confidence interval for an unknown population mean.
+
+There are 4 main pieces of necessary information
+
+A guess about the standard deviation ($\sigma$), usually taken from a previous survye or another sample from a similar population.
+
+It is important to note that if you have no information  about the standard deviation, there is no default choice. This is contrary to how it works with proportion.  If you don't have any other information, you are basically going to have to use your prior beliefs (i.e., guesstimate).
+ Z-Score
+
+The Z-score might be manifested by providing a "confidence-level." This confidence level must then be converted to a corresponding Z-score. (e.g., 95% confidence correlates with a Z-score of 1.96)
+Maximum Error (E)
+
+This value corresponds to the furthest away a value can be from the mean while still being inside of the confidence interval. For example, if a CI has a mean of 100 and an interval of (90,110) then "E" is equal to 10.                                                            
+
+##Now let's go through the steps for isolating "n"....
+
+Recall that the formula for CI for the Mean is:
+
+$$CI= \mu \pm  Z(\frac{\sigma}{\sqrt{n}})$$
+
+We are going to re-write this as:
+
+$$ CI=\mu \pm E $$
+
+That is, $\mu-E$ is equal to the lower bound and $\mu+E $is equal to the upper bound of the confidence interval.  Combining the two equations above, we see that
+
+ $E= Z(\frac{\sigma}{\sqrt{n}})$.
+
+This last step might be confusing. What I did was take the upper bound of the Confidence Interval and subtract from it $\mu$. This gives the value for E. That way, you can change "CI" to "E" and get rid of $\mu$ on the other side of the equation.
+
+Now we can isolate n on one side of the equal sign using basic algebra.
+
+$$ \sqrt{n}=\frac{Z \sigma }{E}$$
+
+Therefore, to find the number of individuals in a sample, one should use the formula:
+
+$$n= \left(\frac{Z\sigma}{E}\right)^2$$
+
+NOTE: If your find N is not a whole number, round up. That is, even if the found "N" is 12.03, round up to 13. The reason for this, is that you want to be conservative when choosing a sample size. 
+
+##Let's look at that again ...
+
+<iframe width="560" height="315" src="https://www.showme.com/sma/embed/?s=ZQIgfAW" frameborder="0" allowfullscreen></iframe>
+
+##Summary
+
+In this section, you should have become more familiar with confidence intervals for the mean. We have taken you through finding the necessary information to find n. We have taken you through manipulating the formula to find n.
+
+However, this section should have also given you a sense of how the formula works in general. The goal is to have a true understanding of the function of each variable within a Confidence interval.

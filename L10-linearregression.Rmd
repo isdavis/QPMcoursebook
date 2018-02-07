@@ -1,0 +1,109 @@
+# Lab 10: Linear Regressions in R
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Class Goals 
+
+- Transforming variables
+
+- Linear regression
+
+- Revisit scatterplots
+
+## Variable Transformations
+
+We transform variables for several reasons: to improve model fit and to correct violations of model assumptions, to name a few. 
+
+You might need it for your group project! If you have variables involving money (e.g. income, GDP, expenditure), those are usually logged. Coefficients need to be interpreted with respect to the transformed scale.
+
+**Before & After Linear Transformation**
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/27.pdf")
+``` 
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/28.png")
+``` 
+
+In R: 
+
+Log transformation (all values need to be larger than 0):
+
+```{r, eval=F}
+anes$log.income <- log(anes$income)
+```
+
+Square-root transformation:
+
+```{r, eval=F}
+anes$sqr.income <- sqrt(anes$income)
+```
+
+Quadratic transformation:
+
+```{r, eval=F}
+anes$income.sqrd <- (anes$income)ˆ2
+```
+
+## Linear Regression 
+
+```{r, eval=F}
+spending.mod <- lm(incspend~seniority,data=inc.dat)summary(spending.mod)
+```
+
+**Output:**
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/32.png")
+``` 
+
+## Making a Good Regression Table 
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/29.png")
+``` 
+
+- Have a clear and informative table title.
+
+- Name the outcome and predictor variables so that the reader caneasily understand what they are measuring.
+
+- In many cases, the column name should be the outcome variable.
+
+- Rows should show the covariates.
+
+- Coefficients should be followed by standard errors in parentheses.
+
+- After presenting the coefficients and standard errors, show thenumber of observations and information on model fit.
+
+- There should be a footnote (at the end of the table) about what thestars next to the coefficients mean.
+
+In short, make the table reader-friendly!
+
+## Scatterplots Revisited 
+
+They are still the best way to visually show relationship between two variables. We use them primarily for interval variables (or ordinal variables with many categories).
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/30.png")
+``` 
+
+```{r, eval=F}
+plot(jitter(inc.dat$seniority), inc.dat$incspend, xlab="Seniority",ylab="Spending", pch="+", main="Incumbent Spending and Seniority")
+abline(spending.mod, col="green")
+```
+
+**Plotting the Residuals:**
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/31.png")
+``` 
+
+```{r, eval=F}
+plot(jitter(inc.dat$seniority), spending.mod$residuals,xlab="Seniority", ylab="Residuals", pch="+", main="Residual-to-predictor")
+abline(h=0)
+```

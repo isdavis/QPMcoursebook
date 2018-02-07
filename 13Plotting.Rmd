@@ -1,0 +1,24 @@
+
+# Some basic plotting in R
+
+We have made some videos to help you do some basic plots. These were made especially to help you with the problem set.
+
+How to plot a normal curve
+
+<iframe width="560" height="315" src="https://youtube.com/embed/14S5XsHGyqs" frameborder="0" allowfullscreen></iframe>
+
+This video shows how to include multiple plots in the same figure.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/w4WWZsvy8Wo" frameborder="0" allowfullscreen></iframe>
+
+This shows you how to import some data and make a scatter plot.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/6_s5-_iF8s4" frameborder="0" allowfullscreen></iframe>
+
+This shows you how to include multiple sets of data on the same plot.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/xnZaIi35AoY" frameborder="0" allowfullscreen></iframe>
+
+This shows you how to put two histograms on the same plot and gives you an example of how to subset data.
+
+<iframe width="560" height="315" src="https://youtube.com/embed/W3d1NfmmBnw" frameborder="0" allowfullscreen></iframe>

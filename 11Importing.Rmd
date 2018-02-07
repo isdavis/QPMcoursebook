@@ -1,0 +1,10 @@
+
+# Importing Data into R
+
+Learning Objectives:
+
+1. Learn how to import data into R.
+
+2. Learn how to look at the data.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U4-RnTW5dfw" frameborder="0" allowfullscreen></iframe>

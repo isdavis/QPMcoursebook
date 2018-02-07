@@ -1,0 +1,45 @@
+
+# Hypothesis Testing for Small Sample Quantitative Data
+
+##Learning Objective:
+
+Learn how to conduct a hypothesis test with a small number of observations for quantitative data.
+
+##Hypothesis Test
+
+###Step 1: Make assumptions about your data
+
+- For these tests, we assume that our data is quantitative and that the population is normally distributed. We also know that our sample size is going to be relatively small, which means that we will be referencing the t table rather than the z table.
+
+###Step 2: Formulate null and alternative hypotheses
+
+- Just like with other types of hypothesis testing, the null is what a determined skeptic would believe about what we are going to measure, and the alternative hypothesis is our research hypothesis based on the data collected.
+
+- As with other types of hypothesis testing, this test can be either one-sided or two-sided. Make sure you keep in mind how you intend to test the data.
+ 
+###Step 3: Calculate a Test Statistic
+
+- This statistic summarizes how much our alternative hypothesis differs from the rest of the data if the null was true. Here is the formula, which we've used many times before:
+
+- $$t^\ast= \frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}$$
+
+- Don't forget to note the degrees of freedom!
+
+- d.f.= n-1
+
+###Step 4: Calculate a p-value
+
+- Remember, a p-value is a measure of surprise, so small p-values more strongly contradict the null because that means it would be extremely surprising to see the results of our alternative hypothesis if the null were true.
+
+- To find the p-value, go to this t table (click here), or we can use R.  Keep in mind the confidence interval, the degrees of freedom, and if the hypothesis is one or two-sided.
+
+###Step 5: Draw a conclusion
+
+- Are the results statistically significant given the pre-determined $\alpha$ level (usually is the p value < 0.05)?
+ 
+- If p<$\alpha$, we reject the null and conclude that the evidence supports the alternative hypothesis. If $p>\alpha$, we fail to reject the null.  
+
+For more help, watch this video from the Khan Academy, which will walk you through a small-sample t-test step-by-step: 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/D2sMsmL0ScQ" frameborder="0" allowfullscreen></iframe>  
+

@@ -1,0 +1,73 @@
+
+# Choosing N for CI of a Proportion
+**Learning objectives**
+
+1. Understand the variables that go into choosing "N" for a confidence interval of a proportion
+2. Undertand the formula for finding "N" for a confidence interval of a proportion
+3. Understand how the variables within the formula for the confidence interval of a proportion work with one another
+
+##Choosing "N" for a confidence interval of a proportion
+
+You need three pieces of information to choose your sample size.  
+
+**1) Make a guess about the value of $\pi$**
+
+In some cases, we may have prior information (e.g., previously conducted studies) that inform our estimate of the true value of the populaiton proportion $\pi$.
+
+In other cases, we can "guess" what the standard error is. If it is not known, one can plug in a value of 0.5 for $\hat{\pi}$. This works because a value of $0.5\times(1-0.5)$ provides the largest possible standard error (since a proportion can only be between 0 and 1).
+
+This largest standard error means that it can be used as a conservative estimate.  By "conservative" we mean we have maximized our chances that the true popultation proportion will be inside our confidence interval.
+
+**2) Z-score**
+
+The Z-score might be manifested by providing a "confidence-level." This confidence level must then be converted to a corresponding Z-score. For instance, if you want to make sure you have a 95% confidence interval, you need a Z-score of 1.96.
+
+**3) Maximum Error (E)**
+
+This value corresponds to the furthest away a value can be from the mean while still being inside of the confidence interval. This is often referred to as our margin of error.  For example, if we want to be able to estimate a population proportion within $\pm 3$ percentage points, our maximum error is .03.
+
+##Manipulating the formula for a confidence interval for a proportion
+
+Let's go through the steps for isolating "n"
+
+The  formula for CI for a proportion:
+
+$$CI= \hat{\pi} \pm  Z \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}$$
+
+We can re-write this as:
+
+$$ CI= \hat{\pi} +/- E$$
+
+That is,  $\hat{\pi}-E $is equal to the lower bound and $\hat{\pi}+E$ is equal to the upper bound of the confidence interval. Therefore, we can think of this as
+
+$$E= Z\sqrt{\frac{\hat{\pi}(1-\hat{\pi} ^)}{n}}$$
+
+This last step might be confusing.  What I did was take the upper bound of the confidence interval and subtract from it $\hat{\pi}$. This gives the value for E. That way, you can change "CI" to "E" and get rid of p on the other side of the equation. 
+
+*NOTE: It is important to remember that $\hat{p}$ may not be provided in the problem. If this is the case, one may use the value 0.5 and substitute it in.*
+
+Using some algebra on the equation above, we get:
+
+ $$\sqrt{n}=Z\frac{\sqrt{\hat{\pi}(1-\hat{\pi})}}{E}$$
+
+and 
+
+$$n = \frac{Z^2(\hat{\pi}(1-\hat{\pi}))}{E^2}$$.
+
+If your answer for "N" is not a whole number, round up. That is, even if the found "N" is 12.03, round up to 13. The reason for this, is that you want to be conservative when creating a confidence interval, so that we can be confident of our range.
+
+This video provides an example.
+
+<iframe width="560" height="315" src="https://www.showme.com/sma/embed/?s=QNT6IKW" frameborder="0" allowfullscreen></iframe>
+
+##Take-away message
+
+Learning Objective 3: Understand how the variables within the formula for the confidence interval of a proportion work with one another
+Hopefully you now understand how one finds "N" for the confidence interval of a proportion. The formula for such a calculation is:
+ 
+
+$$n = \frac{Z^2(\hat{\pi}(1-\hat{\pi}))}{E^2}$$.
+
+You get the Z value from the confidence interval. You get $\hat{\pi}$ either from a prior study's data or as a conservtive guess of 0.5. The maximum error will usually be provided to you. Once you get all of that information, you just put it into the formula, and have "N"!
+
+Hopefully this section has given you a better sense for how the variables within the confidence interval of a proportion work with one another.

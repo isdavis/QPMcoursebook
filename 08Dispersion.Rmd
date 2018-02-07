@@ -1,0 +1,51 @@
+
+# Measures of Dispersion
+Learning Objectives:
+
+1) Understand how to calculate the **range** of a variable and how to calculate it.
+2) Understand and be able to calculate the **deviation** of specific data point.
+3) Understand how to calculate the **variance** of variable.
+4) Understand how to calculate the **standard deviation** of a variable, and its relationship to the variance.
+5) Understand the **"Empirical Rule"** and how it is related to the standard deviation.
+
+##Learning objective 1: Range
+
+The **range** is a simple measure of variability that shows how spread out the observations in a data set are.
+
+Range= (largest observation - smallest observation). Because the range is a measure of distance, the value of the range is always positive.
+
+The range really doesn't tell us anything much that is useful.
+
+##Learning objective 2: Deviations
+
+A **deviation** is a measure of distance from a measure of center, $$|x_1 - \bar{x}|$$. The observation may be greater or lesser than the value of the center, but because deviation is a measure of distance, its value is always positive.
+
+##Learning objective 3: Variance
+
+**Variance** is the average of squared deviations. The value of the variance is a squared value (for instance, inches squared, percentage squared, children squared) which does not necessarily tell us very clearly about how spread out the data is from the mean.
+
+Variance is calculated by dividing the sum of squared deviations from the value of the population by $n-1$. This is the equation: $$s^2=\frac{\sum_i^n (x_i - \bar{x})^2}{n-1}  $$
+
+ When variance increases it means the observations are more spread out from the mean.
+
+##Learning objective 4: Standard deviation
+
+The **standard deviation** is the square root of the variance.
+
+$$s=\sqrt{s^2}=\sqrt{\frac{\sum_i^n (x_i -\bar{x})^2}{n-1}}$$
+
+Like the variance, the standard deviation is always a positive number because it represents a distance from the mean. When x is a constant (for example, you have the observations 3 3 3 3 3), the standard deviation is 0 because there is no deviation from the mean. The standard deviation increases as variability increases around the mean.
+
+*NOTE*: The standard deviation is greatly affected by outliers.
+
+##Learning objective 5: The Empirical Rule
+
+The **Empirical Rule** is the distribution of observations is the histogram of the data is approximately bell shaped; if it is a normal, symmetrical distribution.
+
+The Rule says that about 68% of observations ball between $\bar{x}-s$ and $\bar{x}+s$; that about 95% of observations fall between $\bar{x}-2s$ and $\bar{x}+2s$; and that nearly all the data in a normal distribution will fall between $\bar{x}-3s$ and $\bar{x}+3s$.
+
+The Empirical Rule only works if the data is approximately bell shaped. It does not apply to data that is skewed.
+
+For more information about measures of dispersion, check out this video:
+
+//Should have a video?

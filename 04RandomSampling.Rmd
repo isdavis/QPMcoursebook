@@ -1,0 +1,101 @@
+
+
+# Random Samples
+
+##Learning Objectives 
+
+1)Understand what a random sample is, and why random samples are important.
+
+2)Identify simple random samples, systematic random samples, stratified random samples, cluster samples, and multi-stage sampling, and understand why scientists use them.
+
+##Learning Objective 1: Random Samples 
+
+###What is a random sample?
+
+A random sample is a sample where every subject in the population in question has an equal chance of being selected.  If there are 6,000 undergrads at WashU, and I want to select 600 to be in my sample, then if my method of selecting subject is random, each undergrad has the same chance of being selected, 10%. 
+
+###Why do we care if a sample is random?
+
+We want our samples to be representative.  In other words, we want our sample to look like the population we're drawing from, just smaller.  If we are conducting a study on how happy they are with their dorm, and 10% of WashU undergrads live in a "traditional" dorm on the South 40, then we want 10% of our sample to be comprised of students living in a traditional dorm on the South 40. 
+
+More technically, random samples are  representative in expectation. That means that if we took a lot of different random samples, on average they would be representative.  So while any one random sample might be off just a bit, random samples in general will be representative.
+
+###Real-life application: Don't look ignorant in your newspaper column
+
+Below is the link to an article by Rodger Simon, Politico's chief political columnist.  In this article, he dismisses polls because they ask so few people what they think.  This is a perfectly reasonable argument to make if one has had no background in statistics.  What Roger Simon failed to grasp, and the reason why polls work, even though they ask such few people, is that, when they are done well, they are representative of the population as a whole.
+
+<http://www.politico.com/news/stories/1211/70717.html>
+
+##Learning Objective 2: Types of Random Samples
+
+There are several different types of random samples.  In each of these samples, every subject in the population has the same probability of being selected, but the subjects are selected in different ways.
+
+###Simple Random Sample:
+
+This is the most basic method of sampling.  A certain number of subjects are chosen randomly out of a population.   An example of this is lotteries.  In a lottery, each number has the same chance of being selected.  
+
+Here's a helpful video that explains simple random samples:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/yx5KZi5QArQ" frameborder="0" allowfullscreen></iframe>
+
+**If simple random samples are representative, why not just use them for all samples?**
+
+The problem is that it is extremely difficult, if not impossible, to put together a simple random sample for large populations.  One challenge is that certain groups have different response rates than other groups.  In this case, if we just do a simple random sample, then groups that have a higher response rate will be over-represented. 
+
+Another challenge is that there is no directory with the names and contact information of every single person, so it can be difficult to put together a sample in the first place.  Scientists employ more complex sampling methods to remedy these problems.
+
+###Systematic Random Sample:
+
+In a systematic sample, subjects are selected through some sort of system.  For example, I might collect the student id numbers of all WashU undergrads, order them from least to greatest, and then start with the 8th number, and sample every 10th person. 
+
+This is still a random sample, because each person has the same chance of being selected. It's not, however, a simple random sample, because instead of being selected entirely randomly in no order, there was a system to choosing the people. 
+
+In a simple random sample, every set of people has the same chance of being in the sample.  In a systematic random sample, that's not true.   For example, if my student ID number is 1 higher than my roommate's, then the in a simple random sample it's possible that both my roommate and I will be in the sample.  In the systematic random sample I just described, however, it is impossible that my roommate and I will be in the same sample. Everyone in the sample has a student id number that's 10 apart. 
+
+Here's a helpful video that explains systematic random samples:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/QFoisfSZs8I" frameborder="0" allowfullscreen></iframe>
+
+###Stratified Random Sample:
+
+In a Stratified Random Sample, we first split the population into different groups, or strata.  We then select a set number of subjects from each group.  The goal is to set up the samples such that the proportion of subjects in the sample from each strata match the proportion of subjects from each strata in the population.
+
+To return to the example of sampling the undergraduate population of WashU, we might divide undergrads into different strata based on their residential area.  If 5% of all WashU undergrads live in Mudd Hall, and we want our sample to be 600 people, then 5% of those 600 people, or 30 people, will be from Mudd Hall.  To achieve this, we would do a simple random sample of Mudd residents, choosing 30 subjects.  And we would do this for each residential area.
+
+Here's a helpful video that explains stratified random sampling:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/sYRUYJYOpG0" frameborder="0" allowfullscreen></iframe>
+
+**What are the advantages of a stratified random sample?**
+
+Stratified Random Samples can be used to remedy problems of over-sampling, or under-sampling.  If different groups have different rates of response, then we can select more subjects from those groups, so the set of people who respond are representative.
+
+For example, if freshmen respond much less to surveys than upper-classmen, then we might use a stratified random sample, and over-sample freshmen, to correct for this.
+
+###Cluster Samples:
+
+In a cluster sample, the population is divided into different clusters.  These are organic groupings of people.  A simple random sample is run to select several clusters, and then everyone in each selected cluster is surveyed.
+
+For example, in the WashU undergrad survey, we might "cluster" students by floor.  Wheeler 1 would be a cluster, Lopata 3 another, and so on.  We would randomly select a few floors, and interview everyone on each floor. 
+
+Here's a helpful video that explains cluster sampling:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/QOxXy-I6ogs" frameborder="0" allowfullscreen></iframe>
+
+**What are the advantages of a cluster sample?**
+
+In some ways, cluster samples are easier to execute.  If many of the people we are interviewing live close together, it might be easier to reach them. 
+
+Of course, cluster sampling is not without its drawbacks.  Because subjects in the same cluster tend to be similar in certain systematic ways, the cluster sampling can lead to over-sampling of certain types of people. 
+
+###Multi-Stage Sampling:
+
+A multi-stage sample employs several types of random samples.  For example, for the undergrad survey, we might first stratify WashU undergrad by whether they live on the South 40, in the Village, or off campus.  We might then do a cluster sample within each strata.  We could choose 4 floors from each strata, and interview each person on that floor.
+
+##What are the takeaways?
+
+Random sampling is the way scientists develop representative samples.  There are several different ways of putting together random samples.  These include **cluster samples**, **stratified random samples**, **systematic samples**, and **multi-stage samples**, which combine aspects of different sampling methods. 
+
+ 
+
+

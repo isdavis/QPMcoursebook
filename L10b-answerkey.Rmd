@@ -1,0 +1,67 @@
+# Lab 10 Handout Answer Key: Quantitative Political Methodology 
+
+Write down the names of the members of your group. We will collect one sheet from each group for grading.
+You will work with a dataset that comes from Brandice Canes-Wrone, Brady David, and John Cogan. 2002. “Out of Step, Out of Office: Electoral Accountability and House Members Voting.” American Political Science Review 96 (1): 127 - 140. Download Incumbents.txt and Incumbents Codebook from Prof. Montgomery’s website. The dataset contains variables related to elections for the U.S. House, including spending patterns of incumbents and challengers. Data are at the electoral district level. Each observation represents a specific contest. Each line of the data includes information about the district, the incumbent, and the challenger (if there is one). Note that some variables are in logarithmic scale. The dataset is a tab delimited txt file.
+
+1. We want to test the following hypothesis: As the challenger’s campaign spending increases, the incumbent’s
+campaign spending increases. State the null and alternative hypotheses.
+
+$H_0: \alpha=0$ and $\beta=0$\
+
+$H_0: \alpha\neq0$ and $\beta \neq 0$
+
+2. Make a scatterplot for the two variables of interest WITHOUT the least-squares line. Have clear axes
+labels. Customize the plot in some way. (You can jitter the data, define the shape of the points, etc.)
+Write down the R code. Call the TA to show your scatterplot and have it signed below.
+
+```{r, eval=F}
+plot(data$incspend, data$chalspend, reg.line=FALSE, smooth=FALSE, spread=FALSE, boxplots=FALSE, span=0.5, xlab="Challenger spending (log)", ylab="Incumbent spending (log)", pch=c(20), main="Incumbent vs. Challenger spending")
+```
+
+3. Describe the scatterplot. Is there a relationship between the two variables? If so, what kind?
+
+There does appear to be a positive relationship: as the challenger spending is increasing, the incumbent spending is increasing as well.
+
+4. Conduct a regression analysis to test the hypothesis stated in Question 1. Write down the R code.
+
+```{r, eval=F}
+RegModel.1 <- lm(incspend~chalspend, data=data)
+summary(RegModel.1)
+```
+
+This should yield output that looks roughly like this:
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/33.png")
+``` 
+
+5. Write down the regression equation you obtained from R. Interpret the intercept and slope coefficients.
+Are they believable (are you confident in your estimates)? Why? Does the result support your hypothesis?
+
+The regression we obtained is this: 
+
+incspend = 10.29 + 0.22*chalspend + $e$
+
+These estimates are statistically significant with very small standard errors compared to the estimates. This allows us to be reasonably confident in them; all in all, this is a decent model considering it has only one explanatory variable. We could add other potential variables that could explain incumbent spending, for example seniority and chalquality, if we wanted to further improve our model. 
+
+If you have the time, answer the following questions.
+
+6. Go back to the scatterplot you created for Question 2. Add the least-squares line. Write down the R code.
+
+```{r, eval=F}
+abline(lm(data$incspend~data$chalspend))
+```
+
+7. Based on the R output you obtained for Questions 4 and 5, identify how many observations were used in the model.
+
+There were 3251 used in the regression: we know this because the output gives us that there were 3249 degrees of freedom. 
+
+NOTE: There were more observations in the dataset though. R tells us this by saying that "3436 observations were deleted due to missingness", meaning that in 3436 observations, either incspend or chalspend had a value of NA that could not be regressed. 
+
+8. Based on the R output you obtained for Questions 4 and 5, interpret what the residual standard error is telling you.
+
+It tells us that the RSE is 0.6528, which is reasonably low, implying a good fit. It will also help us construct confidence intervals for the slope. 
+
+9. Based on the R output you obtained for Questions 4 and 5, assess the model fit. How good is the model?
+
+The R^2 and adjusted R^2 are fairly low. Thus, although we can conclude from the low RSE that the total variation from the regression line isn't that high; the low R^2 means that not all of the total variation can be explained by the model. 

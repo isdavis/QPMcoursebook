@@ -1,0 +1,55 @@
+
+# Sampling Distributions, Pt. 1
+Learning Objectives:
+
+1)Understand what a sampling distribution is, and how it is different from a sample distribution, or the population distribution. 
+
+##First, let's review
+
+Thus far, we've dealt primarily with two distributions: samples, and populations, with samples being a subset of the population.  Often times, it can be difficult to know the exact parameters of a population, so we use samples to estimate. 
+
+But samples are not perfect.  Even a good random sample may have some error.  That is, the statistics calculated from the sample may not exactly match up with the population parameters.  So, for instance, the sample mean may not exactly match the population mean.
+
+We want to know how much error there will likely be in our sample statistics.  To do this, we use the **sampling distribution**.  The sampling distribution uses probability theory to describe how sample *statistics* will vary. 
+
+For example, imagine we are running a study on the average household income in the United States.  It would be infeasible to collect data for every single household, so we decide to do a survey.  Let's say we decide that our survey will have 2,000 households.  We know that the sample mean might be slightly different from the actual population mean.  But how different might it be?  What is the probability that your sample will be off by 1,000? By 3,000? By 10,000?
+
+To answer this question, we use the sampling distribution, which tells us the expected results of a sample if we were to (theoretically) collect a sample of that size many, many times
+
+##What is a sampling distribution?
+
+A sampling distribution is how the sample means or sample proportion are distributed.  In other words, if you were to draw large samples from a population repeatedly, and graph the resulting sample means, the sampling distribution is what that graph would look like.
+
+In the samples we've been dealing with so far, the **standard deviation** is a measure of how far individuals in a population tend to be from the population mean.  It is a measure of how spread out individuals are in the population.  In a sampling distribution, the **standard error** is a measure of how far a sample mean or proportion tends to be from the true population mean or proportion. (NOTE: Read this paragraph a few times and make sure you understand the difference.)
+
+To distinguish between samples, sampling distributions, and populations, it may help to think of this using college terms.   Below are the college equivalents to these terms.
+
+Population: students at Wash U
+
+Population parameter: Average GPA at Wash U
+
+Sample: the students in one course
+
+Sample mean: the mean GPA in that one course
+
+Sampling distribution: the hypothetical distribution of mean course GPAs.
+
+Standard error: a measure of spread between a hypothetical mean course GPA and the school GPA
+
+ Below is a short video describing a sampling distribution. (Don't worry about the exact formulas yet. Just try and get the concept.)
+
+<iframe width="560" height="315" src="https://youtube.com/embed/uPX0NBrJfRI" frameborder="0" allowfullscreen></iframe>
+
+##How is a sampling distribution different from the sample distribution or the population distribution?
+
+The distribution of the sample (sometimes confusingly called the sample distribution) is the distribution of a single sample.  In our example of household income, each point in the sample distribution represents one household that we surveyed.  
+
+The sampl**ing** distribution shows the results of repeated samples, and each point in the sampling distribution represents one sample mean. 
+
+The population distribution (if we could ever see it, which we cannot) shows every single possible data point in the population, and each data point represents one household.
+
+##What are the takeaways?
+
+A sampling distribution is the theoretical distribution of sample statistics.  Each point on the sampling distribution represents a sample statistic. 
+
+The standard error the sampling statistic is an indicator of how far a sample statistic is likely to be from the actual population parameter.

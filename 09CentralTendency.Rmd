@@ -1,0 +1,56 @@
+
+# Measures of Central Tendency
+Learning Objectives:
+
+1) Learn what a mean is and how to calculate one.
+2) Learn what a median is and how to calculate one.
+3) Learn what a mode is and how to calculate one.
+4) Understand how all of alternative measures differ and why.
+
+##Learning objective 1: Mean
+
+$x_1 $ indicates a single observation, or data point. $\bar{x}$ represents the **mean** of all the observations, which is taken by adding up all the observations and dividing them by the number of observations. We call this the arithmetic mean, or average.
+
+More formally, the equation for the mean is: $$\bar{x} = \frac{\sum_i^n x_i }{n} $$
+
+The mean is used only for quantitative data and interval data. (For example, if you were to ask respondents on a survey to circle their preferred baseball team, the Cardinals, Cubs, Reds, or Pirates, you couldn't then add up the teams and divide by four.)
+
+The mean is highly influenced by outliers, which means that for skewed distributions of data, the mean lies in the direction of the skew.
+
+The **trimmed mean** is a way of correcting for the effect of outliers on the mean. It involves cutting out a certain percentage of the data from both extremes. For example, a 10% trimmed mean involves throwing out the top 10% and bottom 10% of findings, then calculating the mean from the remaining middle 80% of the data.
+
+##Learning objective 2: Median
+
+The median is a measure of central tendency found by determining the middle value of a set of data. The value of the median is the 50th percentile because 50% of observations fall above the value of the median, and 50% of observations fall below the median.
+
+The median it is the middle of an ordered sequence. For example, if we look at the numbers 1 2 3 4 5, the middle of that ordered sequence is 3.
+
+If we have an even number of observations, say 1 2 3 4 5 6, we take the mean of the two middle numbers.  So the median here is equal to 3.5.
+
+The median is used for quantitative, ordinal or interval data. For symmetric distributions (e.g., a normal bell curve), the mean and the median are identical. However, the median is not affected by outliers like the mean is, so if a distribution of data is highly skewed, the median tends to be the preferred measure of center over the mean.
+
+
+/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files
+![This image shows three graphs two skewed and one symmetrical bell curve. Note the way the mean is easily influenced by the skew of the graph, how it is pulled towards the longer tail of a distribution. Comparing the mean and the median is a good way to determine the skew of data without actually making a histogram.  Source: http://experimentaltheology.blogspot.com/2012/03/central-tendency-in-skewed.html](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/1.jpg)
+
+##Learning objective 3: Mode
+
+The **mode** is a measure of central tendency that is the value that occurs most frequently.
+
+The mode is the most common data point. For example, if you collected the data 1 2 2 3 4, the mode is the number 2.
+
+Imagine a bar graph of the data. The mode is whichever bar is the tallest.
+
+The mode is used for all types of data. When data is bimodal, which means that there are two distinct values that tend to occur more frequently (in a histogram, this would mean there are two lumps in the graph), it can indicate polarization around two extremes. For symmetric distributions, the mean, median, and mode are all the same value.
+
+ 
+getwd()
+
+
+![This histogram comes from author Keith T. Poole using the W-NOMINATE dataset. Poole and his fellow researchers gave legislators "ideological points" based on past votes to determine where that legislator falls on the political spectrum. The above graph shows one mode for the Democrats, which falls between liberal and moderate, and another mode for the Republicans between moderate and conservative. This should make sense given what we know about modern American politics. The polarization of Congress- that is to say, the Democrats are leaning more left of center than in previous years and the Republicans trending more right of center, is illustrated by this histogram.  Source: http://voteview.com/nominate/nominate.htm](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/2.gif)
+
+Another look:
+
+For more information about measures of center, check out this video:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/GrynkZB3E7M" frameborder="0" allowfullscreen></iframe>

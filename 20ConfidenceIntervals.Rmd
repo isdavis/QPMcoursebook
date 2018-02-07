@@ -1,0 +1,65 @@
+
+# Constructing Confidence Intervals Using Proportions
+
+**Learning Objectives**
+
+1. Further understand proportions and how they differ from population means
+2. Understand how to construct confidence intervals for proportions.
+3. A little clarification on the notation for proportions.
+
+##What is a proportion?
+
+Proportions are significantly different from population means. Proportions are for dichotomous variables: variables that are characterized by only two values.
+
+So supposing we have some variable called Obama Approval Rating. This is a dichotomous variable because there are really only two values we are interested in: the percentage that "approve" and the percentage that did not respond that they "approved."
+
+Contrast this with population means that take the form of quantitative variables. Quantitative variables are what we have predominantly dealing with in the course so far. These are characterized by values that differ for each individual respondent. That is, our data for each person might be many different numbers.  Height, for example, is a continuous quantitative variable because each data point has a different value (Note how this differs from Obama Approval Rating where each data point can only take one of two values).
+
+##Confidence Intervals With Proportions
+
+Statistics problems that use proportions use most of the same equations as the problems for population means. **But** to calculate the standard error for proportions, we use the following formula:
+
+$$\hat{\sigma}_{\hat{\pi}}=\sqrt{\frac{\hat{\pi}(1-\hat{\pi}) }{n}}$$
+
+For a refresher on why this might be, go back and review the information on the sampling distribution of a proportion.  Our estimator ($\hat{\pi}$} for the population proportion ($\pi$) is the sample proportion $p$.  
+
+The standard equation for writing a confidence interval for a proportion is as follows:
+
+$$\pi \pm Z \times \sigma_{\pi}$$
+
+The confidence that we can have for any proportion varies with size of the sample and the degree to which the two values for our dichotomous variable match. As $n$ increases, the confidence we have in our statistic also increases.
+
+Note also, that as the value for our proportion approaches 50% (or .50), the less confidence we have in our statistic. If that seems a little weird, go back and look at the equations above and try a few different numbers for p, and see what you get.
+
+##Example
+
+Suppose that the point estimate for the proportion of Americans who approved George W. Bush as president in 2008 is 25% where n = 5000. Construct a 95% confidence interval for this proportion.
+
+First, write out the equation for the confidence interval for a proportion:
+$$\pi \pm z \times \sigma_{\pi}$$
+
+We already have the point estimate for this proportion (p=0.25). We still have to calculate the appropriate Z value and the standard error.
+To get the Z value, we need to calculate for the observation that corresponds to a 95% confidence interval. In general, to find the observation that corresponds to some confidence interval we take (1-confidence coefficient)/2. In this case:  (1-.95)/2 = .025. To find the Z value that corresponds, we simply look this probability up in a Z table. We find .025 in the column that reads .06 and the row that reads 1.9. Therefore, we have found our Z value to be 1.96.
+Next we need to calculate our standard error using the following formula:
+$$\hat{\sigma}_{\hat{\pi}}=\sqrt{\frac{\hat{\pi}(1-\hat{\pi}) }{n}}$$
+
+$$\hat{\sigma}_{\hat{\pi}}=\sqrt{\frac{.25(1-.25)}{ 5000}} = .0061$$
+
+We are now ready to construct our confidence interval by plugging in our calculated values into the equation above.
+$$.25 \pm 1.96\times .0061$$
+
+$$.25 \pm .012$$
+
+Here is another example of how to calculate a confidence interval for a proportion you might find instructive:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/3ReWri_jh3M" frameborder="0" allowfullscreen></iframe>
+
+##Having trouble with the notation?
+
+Below is a table of notations for samples, sampling distributions, and populations when we're dealing with proportions.
+
+Distribution: | Mean: | Standard deviation: | Estimated mean (using sample distribution):| Estimated standard deviation (using sample distribution)
+------------- | ------| ------------------- | ------------------------------------------ | ------------------------------------------------------- 
+Sample distribution | $\bar{x}$ | $s$ | N/A | N/A
+Sampling distribution | $\mu_{\bar{x}}$ | $\sigma_\bar{x}$ (Called standard error) | $\hat{\mu}_{\bar{x}}$ | $\hat{\sigma}_{\bar{x}}$
+Population distribution | $\mu$ | $\sigma$ | $\hat{\mu}$ | $\hat{\sigma}$ 

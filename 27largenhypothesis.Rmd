@@ -1,0 +1,120 @@
+
+# Large-n hypothesis testing for proportions
+
+##Qualitative data
+
+##Learning Objectives
+
+1. Understand conceptually why we use hypothesis tests 
+2. Understand the five parts of a hypothesis test 
+3. A couple of very helpful videos videos
+
+##Science is about testing claims with data
+
+Let's say that you are arguing with your friends over dinner, and they claim that WashU students are more conservaitve than the national average. Since everyone you know seems to be an Obama fan, you don't believe that is true.  You are a determined skeptic. 
+
+One way you could solve this problem would be to argue really loudly (whoever is most obnoxious wins). Another way to win might be to tell your friend about some anecdotes and examples (tell them about your liberal classmates).
+
+Neither of these represent good ways to really test competing claims. But f you think about it, this is how most political arguments seem to be resolved (at least on cable TV). But a better way is to try to resolve this conflict using data.
+
+Because you can use Google, you know that 20.7% of College Freshman nationwide identified themselves as Conservaitve.
+
+http://heri.ucla.edu/PDFs/pubs/TFS/Norms/Monographs/TheAmericanFreshman2011.pdf
+
+Imagine you take a simple random sample of 50 WashU Freshman.  7 of them identify themselves as conservaves, 14 of them identify themselves as liberal, and the rest sa they are "middle of the road."  There are twice as many liberals as conservaitves in your sample!  Based on this sample evidence, can you determine whether or not your friend is right? Yes. Yes, you can. 
+
+##But you will need to construct a hypothesis test...
+
+In a hypothesis test, we have an assumption that the population parameter takes a particular value, called the null hypothesis. This usually corresponds to the claim you are trying to disprove. In the above example, the null hypothesis (the view of the determined skeptic) would be that the proportion of students at WashU is 20.7% or less ($H_0: \pi_0 \le  0.207$).  The alternative hypothesis, your friend's theory, is that the proportion of students who are conservative is more than the national average ($H_a: \mu_a>0.207$).
+
+A hypothesis test analyzes the evidence *against* the null hypothesis. It tells us if we would be likely to get our sample value just because of normal sampling variability *if the null hypothesis were true.* We judge how far the estimate falls from the null hypothesis' parameter value, and then look at the probability of getting a sample value this far away from the null hypothesis value or *further.*
+
+##This all sounds a bit confusing, so let's break this down...
+
+Learning objective 2: Understand the five parts of a hypothesis test 
+The five parts of a hypothesis test are: assumptions, hypotheses, test statistic, p-value, and conclusion.
+
+**1) Assumptions** 
+
+To perform a hypothesis test you must assume:
+
+- The data is obtained through random sampling
+
+- We have qualitative data (things that are coded zero or one)
+
+- As a rule of thumb, we want a sample size such that $$ n \ge \frac{10}{min(\pi_0, 1-\pi_0)}$$
+min() means the minimum of the two numbers
+
+- The 10 in that equation is kind of arbitrary (it serves as a rule of thumb)
+
+- If the sample size is this large, you can assume that there is a normal sampling distribution for the sample proportion.  This gives us the leverage we need to make some calculations.
+
+**2) State hypotheses** 
+
+The *null hypothesis* is going to be that the true population proportion, $\pi$, is equal to the null hypothesis value, $\pi_0$. In this case $\pi_0\le0.207$.
+
+The *alternative hypothesis* is that $\pi_a$ is greater than $\pi_a > 0.207$.
+
+**3) Calculate test statistic**
+
+For large samples, we use a *test statistic* to determine how many standard errors (we use standard errors and not standard deviations because we are working with the sampling distribution) our observed sample proportion falls from the null hypothesis.  Here, we will denote our test statistic $TS$
+
+Using the information above, we know that $\hat{\pi} = 0.14$.  
+
+$$TS=\frac{\hat{\pi} - \pi_0}{se_0}$$
+
+Intuitively, this means that the farther $\hat{\pi} falls from $\pi_0$ on the sampling distribution, the bigger our test statistic.
+
+However, it is important to note that we have to calculate our test statistic under the assumption that the null hypothesis is true.  So, we are going to use the following formula for proportions
+
+$$\sqrt{\frac{\pi_0(1-\pi_0)}{n}} $$
+
+In words, that means we are going to calcualte the standard error for the sampling distribution under the assumption that $\pi=\pi_0$.  In our case this means that 
+
+$$\sqrt{\frac{0.207(1-0.207)}{50}}=0.057$$
+
+That means that
+
+$$TS=\frac{0.14 - 0.207}{0.057}=-1.169$$ 
+
+**4) Calculate the p-value**
+
+A p-value is the probabiliyt of observing your sample statistic, or something more extreme, assuming that the null hypothesis is true.
+
+Remember that in a sampling distribution, each value of $\hat{\pi}$ has a probability associated with it. Values  that fall very far away from $\pi_0$ have a very low probability of occurring if the null hypothesis is true.
+
+To determine that exact probability, we use the z-table! We simply go to the z-table and look up what probability is associated with our TS value. 
+
+The below picture illustrates. In the sampling distribution, sample proportions that are closest to the true population proportion have a higher probability of occurring. Sample proportions that are way out in the tails are less likely to occur. 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/7.png)
+
+NOTE: Some hypothesis tests are two-sided and others are one-sided. Most z-tables only provide you with a one-sided probability. So if you are performing a two-sided test, you will need to multiply your p-value by two.  This multiplication is basically a way to account for not only the probability of obtaining a y.bar as large or larger than the one you obtained, but also a way to account for the probability of obtaining a value as or more extreme than the one obtained in either direction.
+
+In this, case we can look up the p-value, as the area to the right of  $z=1.169$ and see that $p \approx 0.12$.  This represents the probability of observing a sample statistic this extreme (OR MORE) if the null hypothesis is true.
+
+**5) Draw a conclusion**
+
+But what does it mean if you obtain a p-value that is incredibly tiny? If you obtain a p-value of .05 this means that the probability of obtaining a sample statistic as or more extreme than the one you obtained is only about 1/20 or 5%.
+
+This suggests that the null hypothesis is incorrect and that we should reject it.
+
+Generally, you decide upon an $\alpha$ or a *level of significance* before you perform the hypothesis test. The $\alpha$ tells you that for a p-value under the chosen value you will reject the null hypothesis.
+
+In this case, we have failed to reject the null hypothesis.  That means, that there is not sufficient evidence in this sample to support your friends claim.  You cannot reject the null hypothesis (which is not the same thing as supporting it).
+
+##Watch both of these videos
+
+A video about hypothesis tests (this is a two-sided test)
+
+<iframe width="560" height="315" src="https://youtube.com/embed/-FtlH4svqx4" frameborder="0" allowfullscreen></iframe>
+
+A video about one-sided and two-sided hypothesis tests
+
+<iframe width="560" height="315" src="https://youtube.com/embed/mvye6X_0upA" frameborder="0" allowfullscreen></iframe>
+
+
+Large sample proportion hypothesis testing (WARNING: he uses different notation)
+
+<iframe width="560" height="315" src="https://youtube.com/embed/1JT9oODsClE" frameborder="0" allowfullscreen></iframe> 
+

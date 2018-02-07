@@ -1,0 +1,36 @@
+# Lab 2 Handout: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group.  We will collect one sheet from each groupfor grading.
+
+2.  Download constructionData.dta from  Monogan  (2015)'s  Dataverse.   It  is  a  dataset  on  healthlobbying in the 50 American states.
+
+3.  How many rows and columns are there?
+
+4.  Subset the data to four columns.  The four columns are:
+
+- partratedpc
+
+- partratepharmprod
+
+- partrateprofessionals
+
+- partrateadvo
+
+4. (cont.) The  columns  represent  the  lobbying  participation  rate  (i.e.   number  of  lobbyists  as  a  percentageof  number  of  firms)  for  four  subgroups  of  health  lobbyists. partratedpcis  the  lobby  participa-tion  rate  for  direct  patient  care. partratepharmprodis  the  rate  for  drugs  and  health  products. partrateprofessionalsis the rate for health professionals. partrateadvois the rate for healthadvocacy.
+
+5.  What are the medians for the four variables?
+
+6.  Go back to the full dataset.  Create a histogram that shows the distribution of the lobby partici-pation rate for all health care areas (using the variable partratetotalhealth).  Create a similar histogram for the number of bills related to health considered by the state legislature in 1997 (usinghealthagenda97).
+
+7.  Create a scatter plot with healthagenda97 on the vertical axis and partratetotalhealth on thehorizontal axis.  Interpret what the plot is telling you.
+
+8.  Save the last plot you made in a pdf 
+
+
+Answer the following questions if you have time.
+
+9.  Re-create  the  histograms  you  made  for  question  7.   But  this  time  make  the  vertical  axis  showprobability densities instead of raw frequencies.
+
+10.  Can you add a linear line to the plot you created for question 8 that shows the relationship betweenthe two variables?
+
+11.  Can you create the last three plots in a single panel?  Save them all in one file. 

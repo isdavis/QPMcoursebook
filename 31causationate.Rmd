@@ -1,0 +1,114 @@
+
+# Causation and Average Treatment Effects
+
+##Learning Objectives:
+
+1. Understand how social scientists define causation
+2. Understand the fundamental problem of causal inference
+3. Understand why experiments are social scientists' ideal method of determining causation
+4. Understand the term average treatment effect
+5. Understand the difficulties social scientists face when using correlation in the absence of an experiment to establish causality.
+
+##Introduction
+
+So far, we've talked about univariate inference.  This is useful, say, if we wanted to conduct a poll to determine what proportion of the country intends to vote Republican in the next election, or to determine the average household income in a certain country.  But there is one crucial part of social science that this class has not really addressed: how to determine cause and effect.
+
+Causation is a crucial part of the social sciences (and of science in general).  Political scientists aren't just concerned with describing a certain factor in the world (income, political view); they're concerned with understanding how those factors relate to each other.  Does income inequality cause political polarization? Does being democratic make a country less likely to go to war? Does being appointed by a Republican make a judge more likely to vote consistent with conservative policies?  
+
+##So, what exactly is causation?
+
+Imagine you're driving a car down a four-lane road.  All of the sudden, out of nowhere, a car drives out of its lane, into yours, right in front of your car.  You can tell that the driver is texting, and isn't looking at the road.  You slam on the breaks, and your hood collides with his fender.  Fortunately, you're shaken, but fine, and so is the other driver. Chances are, you will be asking yourselves some questions.  Why did that happen?  What would have happened if I had been paying more attention to the cars aroudn you? What if that driver hadn't been texting?  You would be asking yourself what caused that accident. 
+
+What does it mean for something to have caused that accident? What things can we point to? Well, we'd probably say that the other driver caused the accident. Or maybe, if we wanted to be precise, we'd say that the fact that the driver was texting while driving caused the accident.  But what does it mean when we say that the fact that the driver was texting caused the accident?  And what makes the fact that the driver was texting while driving any different than the fact that the sky was blue before the accident?  After all, both are true statements.  But only one could reasonably be considered a "cause" of the accident.
+
+Philosophers and scientists have pondered the question of cause and effect for centuries, and have come up with various different definitions of causation.  But the definition that is generally used by social scientists is this: **a X causes Y if Y would not have occurred but for X.**   
+
+One of the most famous examples of this in popular culture occurs in the movie "It's A Wonderful Life."  In the movie, the protagonist, George Bailey, in a moment of despair, wishes that he had never existed.  Following this, his guardian angel shows him what his community would look like if he had never existed.  As George Bailey walks around this new version of the world, he directly sees what he has caused, because the world he sees is a world in which everything is the same except for one thing: he was never born.  Because of this, every difference between the actual world and this hypothetical world can be attributed to his birth and life.  In science, the term for what would be if it were not for the existence of some causal factor-is called the **counterfactual. **
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/TNQ76UyurLA" frameborder="0" allowfullscreen></iframe>  
+
+For example, if we wanted to know whether the stimulus package of 2008 created jobs, then the counterfactual would be what *would* have happened **if** the stimulus package had not been passed. So to estimate the effect of the stimulus, we have to know what would have happened without it.  If that counterfactual is that unemployment would have increased to 20% in the absence of stimulus, then we could conclude that the stimulus package was effective in creating jobs.  If the counterfactual was that unemployment would have gone down to 2% in the absence of stimulus, then we could conclude that the stimulus package failed.  So your estimate of the effect of the stimulus depends entirely on what you assume would have happened in the absence of stimulus.
+
+##How do we determine what the counterfactual is?
+
+As you may have figured out, it's actually impossible for us to know what the counterfactual is, because, logically, X cannot simultaneously be true and not true.  Either the incumbent wins an election, or she doesn't.  Either a household experiences tax increases, or it doesn't.  Either the stimulus is put into effect, or it isn't.  Either the other driver was texting or he/she wasn't.  We do not have the luxury of being able to see the results of both scenarios play out simultaneously.
+
+This is sometimes called the **fundamental problem of causal inference**.  We can observe only the world in front of us.  We cannot observe hypothetical counterfactuals
+
+But do not lose hope. There are several ways scientists have developed to estimate causal effects that can partially overcome this problem.  The method that most directly determines cause is an experiment. 
+
+##How does an experiment work?
+
+Very basically, in an experiment, we isolate the one variable whose effect we want to measure.  We create two groups, which are (ideally) identical in every single way, except one group is exposed to that variable (called the treatment group), while the other is not (called the control group). 
+
+In order to get the two groups to be as similar as possible, we use randomization.  That is, we randomly assign people to be either in the control or treatment groups.
+
+For example, if we wanted to study the impact of a certain medication on heart pressure, then we would randomly assign the participants to either receive the medication or receive a placebo. If the treatment group improved, and the control group didn't, we would be more confident that the cause of this improvement was the medication. 
+
+##So, how do we measure the effect of the treatment in an experiment?
+
+Imagine you're running an experiment on political views.  Let's say you want to know whether exposure to negative campaign ads makes someone less likely to believe that politicians care about them.  You randomly assign half of your subjects to watch a negative campaign ad, and half of your subjects watch the same clip, altered slightly to change the tone from negative to neutral.  You then ask the subjects to fill out a survey, evaluating their attitudes towards politics. 
+
+If your experiment works the way any other experiment does, there's probably a lot of statistical noise.  Even if your experiment worked, it's unlikely that every single person in the treatment group scored lower than every single person in the control group.  There's probably a decent amount of variance in both groups.  So how do we measure the effect of the experimental treatment?
+
+ It's actually somewhat straightforward: we measure the difference between the **average** score for the treatment group, and the **average** score for the control group.  This will give us something we call the **average treatment effect (ATE)**.  To state it more formally, the formula for the ATE is:
+
+$$\frac{1}{N}\sum_{i=1}^N (Y_i(1) - Y_i(0)) $$
+
+Where N is the number of subjects,
+
+$Y_i(1)$  is the outcome if the observation is in the treatment group, and $Y_i(0)$ is the outcome variable in the control group. 
+
+As an example, imagine that individuals 1,2,3 are assigned to the treatment group, and individuals 4 and 5 are assigned to the control group. 
+
+$$ATE=\frac{Y_1+Y_2+Y_3-Y_4-Y_5}{5}$$
+
+(NOTE: We haven't yet covered regression, but when we do, something to keep in mind: the beta coefficient in a regression is that ATE for that variable.)
+
+##But what if we can't do an experiment?
+
+Especially in the social sciences, we cannot experimentally manipulate everything.  We cannot randomly have certain countries go to war with each other, and others not, to see what the impact is.  We cannot force certain counties to elect Democrats, and others to elect Republicans.  In those cases, we cannot use experimental methods to evaluate causal claims.  So instead, we use some statistical methods to try to untangle causation. 
+
+When we can't use experimental control, then we collect data, and try to determine cause using statistical control.  When we are trying to figure out whether X caused Y, there are 3 things we want to do:
+
+*1) Establish temporal order*
+
+For X to have caused Y, X must have come before Y.  This is relatively straightforward.  BUT, just because X came before Y, doesn't mean that X caused Y. 
+
+*2) Show an association*
+
+This is what we will focus on the rest of the semester, using regression and a number of other statistical techniques.  Basically, you have to show that there is some sort of relationship between two variables.  BUT, just because X is associated with Y, doesn't mean X caused Y.  Correlation is not causation.  For example, ice cream sales are close related to drowning deaths (i.e., when ice cream sales rise, so do drowning deaths).  Of course, that doesn't mean that by ice cream sales cause drowning deaths; both just occur in the summer. 
+
+*3) Eliminate alternative explanations*
+
+We want to show that no other factor explains the outcome that we are trying to explain.
+
+Once we have done these three things, then we can say that X caused Y.  But doing this is **not** easy.  In particular, eliminating alternative explanations is very difficult because of something we call **confounding**.
+
+This brings up an important concept known as **endogeneity**.  That basically just refers to when one variable in a model is correlated with another, like how the time of year predicted ice cream sales, but there actually is no causal relationship.
+
+##Confounding relationships
+
+So, what other relationships can exist other than a direct causal relationship? There could be a spurious relationship between the two variables (let's call them X and Y), where some third variable (let's call it Z) is actually the causal factor.
+
+$Z \rightarrow X$ and $Z \rightarrow Y$
+
+Spurious relationships are especially problematic, because they will result in an association between two variables that is not causal.
+
+There could be a **chain relationship**, where:
+
+X $\rightarrow$ Z and $Z \rightarrow Y$
+
+There could be multiple **causal relationships**, where:
+
+$X \rightarrow Y$ and $Z \rightarrow Y$
+
+ Finally, there could be **reverse causality**, where,
+
+$$Y \rightarrow X$$
+
+##Conclusion
+
+X causes Y if Y would not have occurred if not for X.  Ideally, to establish causation, we use experiments, in which we manipulate X, and see if Y occurs.  We use random assignment to ensure that the only difference between the treatment and control groups is the treatment.
+
+If we cannot use experiments, then we have to rely on other methods to establish correlation.  But because correlation does not imply causation, we need to establish temporal order, establish association, and rule out other explanations.  This is much more difficult, and requires more advanced statistical techniques.

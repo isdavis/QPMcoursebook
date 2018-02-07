@@ -1,0 +1,65 @@
+# Lab 4 Handout Answer Key: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space.  We will collect one sheet fromeach group for grading.
+
+2. Download the dataset polls2016.txt from the course website (http://pages.wustl.edu/montgomery/qpm/class-datasets) and read it into RStudio. This dataset includes the results of polls taken between June 2016 and the election for the 2016 presidential elections in the United States.  Each observation is a different poll.
+
+```{r, eval=F}
+polls <- read.csv("polls.txt")
+```
+
+3. Produce a histogram for the Clinton_Prop variable.  This variable shows the percentage of respondents that support Hillary Clinton in the election.  When all members of your group have produced the histogram in Rstudio call over the TA to sign below. (NOTE: This variable excludes the respondents who are undecided, who are supporting 3rd party candidates, or who have notanswered the question) 
+
+```{r, eval=F}
+hist(polls$Clinton_Prop, xlab = "Support for Clinton", main = "Sampling Distribution of Support for Clinton", freq = F, breaks = 20)
+```
+
+4. Does the histogram that you produced in Question (3) show a sampling distribution?  Why / why not?  What is the sample statistic? 
+
+5. Suppose you only have the result of the ABC/Post poll that started on 9/5/16.  What is yourestimate of the sampling distribution? Plot this distribution on the histogram that you produced for Question (3).  When all members of your group have added the distribution to the histogram inRstudio, call over the TA to sign below. Compare the two distributions. Remember, support for Clinton is a proportion!
+
+```{r, eval=F}
+pi <- polls$Clinton_Prop[polls$Pollster == "ABC/Post" & polls$Start_Date == "9/5/16"]
+n <- polls$N_Obs[polls$Pollster == "ABC/Post" & polls$Start_Date == "9/5/16"]
+se <- sqrt((pi*(1-pi))/n)
+
+# Add this distribution to the histogram of Clinton support
+ruler <- seq(.45, .6, .001)
+lines(ruler, dnorm(x = ruler, mean = pi, sd = se), col = "red", type = "l", lwd = 2)
+```
+
+6.  Suppose a new poll comes out showing Hillary Clinton with a support level of 47%.  Based on your sampling distribution, calculate in R the probability of a poll showing support for Clinton this low or lower. 
+
+```{r, eval=F}
+pnorm(.47, mean = pi, sd = se)
+```
+
+7. If you have time, suppose you are an advisor for one of the candidates.  Your candidate wants to know the 93% confidence interval around Clinton's level of support, based on the samplingdistribution from the the same ABC/Post poll.  Find this confidence interval using R. What does this confidence interval tell you about Clinton's chance of winning the popular vote?
+
+```{r, eval=F}
+pi + qnorm(c(0.035, 0.965))*se
+```
+
+8. If you have time, divide the data into two subsets using the Mode variable:  Live Phone and Internet. Plot the histogram of Clinton_Prop variable for these two subsets on the same graph.  When you produce the graph, call over the TA to sign below.  Which mode seems to favor Clinton more?  Why do you think this is?
+
+```{r, eval=F}
+blue_t <- rgb(0,0,.5,.5)
+red_t <- rgb(0.5,.5,0,.5)
+
+hist(polls$Clinton_Prop[polls$Mode == "Live Phone"],
+     xlim = c(.45,.6),
+     breaks = seq(.4,.65,.01),
+     freq = F,
+     col = blue_t,
+     ylim = c(0, 30),
+     xlab = "Support for Clinton",
+     main = "Support for Clinton by polling mode"
+     )
+
+hist(polls$Clinton_Prop[polls$Mode == "Internet"],
+     add = T,
+     breaks = seq(.4,.65,.01),
+     col = red_t,
+     freq = F
+     )
+```

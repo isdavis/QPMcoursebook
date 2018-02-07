@@ -1,0 +1,46 @@
+
+# Measures of Position
+
+Learning Objectives:
+
+1) Understand and the terms percentale, interquartile range, outliers and skew.  
+
+##Percentile
+
+The nth percentile means that n% of observations fall below (or are equal to) n, and (100-n)% fall above n.
+
+For example, if you score in the 90th percentile on a test, that means that 90% of students who took the test earned the same or a lower score than you, and 10% scored higher than you.
+
+The percentile tells us a lot about a specific observation within a data set because it gives us its relative position. The median is the 50th percentile because exactly 50% of observations fall above the median, and 50% of observations fall below the median.
+
+##Interquartile Range
+
+This way of looking at data splits observations into four parts (four quarters). The Interquartile Range (IQR) determines the middle 50% of the data (the middle two quarters).
+
+IQR= (75th percentile-25th percentile)
+
+The 25th percentile is the lower quartile (25% of data falls below the 25th percentile) and the 75th percentile is the upper quartile (25% of data falls above the 75th percentile).
+
+A good way of finding these observations in an ordered set of data is to determine the median, then find the median from the highest data point to the median, and the lowest data point to the median.
+
+For example, if you had the data 1 2 3 4 5, you could determine by counting in 3 numbers from each side that the median is 3. You could then find the median of 1 2 3 and of 3 4 5. That will tell you that 2 is the value of the lower quartile, and 4 is the value of the upper quartile. 4-2= 2, which means that the IQR= 2.
+
+##Outliers
+
+An outlier is an observation whose value is so much greater or lesser than the other observations that it can be considered an extreme. For example, if you had the data 1 2 3 4 8000, you can easily tell that 8000 is an outlier because it is so much larger than the other values.
+
+Although there are many definitions, one common definition of an outlier is any observation that falls 1.5(IQR) above the upper quartile, or 1.5(IQR) below the upper quartile. In our above data set, we can determine that the IQR=2. 1.5(2)=3. This means that any value less than -1 or greater than 7 is an outlier, so 8000 is clearly an outlier.
+
+##Skew
+
+The skew tells us the tendency of the data.
+
+To determine skew, you can look at a histogram of the data, or compare the median and the mean of a set of data. If the longer tail of the data is to the left of the mode, the data is skewed to the left. We call this a **negative skew**.
+
+If that longer tail of the data is to the right, the data is skewed to the right; a **positive skew**.
+
+In comparing the median and the mean, if the mean is greater than the median, the data is positively skewed, and if the mean is smaller than the median, the data is negatively skewed. We can compare these two measures of center because the mean is more sensitive to outliers than the median.
+
+For more information about skew, check out this video:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/gzSbAkZE8jw" frameborder="0" allowfullscreen></iframe>

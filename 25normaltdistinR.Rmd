@@ -1,0 +1,11 @@
+
+# Working with the normal and t distribution in R
+This video shows you how to work with the normal distribution in R:
+
+
+<iframe width="560" height="315" src="https://youtube.com/embed/bSU-7Q7xP5Q" frameborder="0" allowfullscreen></iframe>
+ 
+
+This video shows you how to work with the t-distribution in R:
+
+<iframe width="560" height="315" src="https://youtube.com/embed/aBHJF6_LjzQ" frameborder="0" allowfullscreen></iframe>

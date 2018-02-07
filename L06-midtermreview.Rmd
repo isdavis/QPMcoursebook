@@ -1,0 +1,47 @@
+# Lab 6: Midterm Review 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Problem 2: Data Types 
+
+Respondents of a Gallup poll were asked the following questions. State thetype of data for each question and explain (possible answers can include: qualitative (categorical) vs. quantitative, discrete vs. continuous, nominalvs. ordinal vs. interval. Note: not all might apply)
+
+(a)  Are you a member of the Republican or Democratic Party?
+
+(b)  What is your combined household income?
+
+(c)  How many elections have you participated in the last 10 years?
+
+(d)  How likely are you to vote in the upcoming election? [1. Not verylikely; 2. Somewhat likely; 3. Very likely]
+
+(e)  Attitudes toward legalization of marijuana (favor, neutral, oppose) 
+
+## Problem 3: 
+
+Define the following terms. Give examples when appropriate:
+
+(a)Parameter vs. Statistic
+
+(b)Sampling Distribution
+
+(c)Standard Error
+
+(d)Confidence Coefficient (or Confidence Level)
+
+## Problem 4: Confidence Intervals 
+
+You randomly selected 36 military organizations from around the world and gather data on the percent of their force that was conscripted througha draft. The mean of your sample data is 45 percent and you know (magically) that the population has a standard deviation of 8 percent. Calculate the best point estimate and a 92 percent confidence interval forthe population mean. Label the point estimate and confidence interval carefully. Write a sentence explaining what this confidence interval means. 
+
+Hint: the unit of analysis is the military organization => quantitative data.
+
+## Problem 5: Sample Size 
+
+How large a sample size is needed to estimate the proportion of Wash U.students who approve of President Obama’s job performance. Assume wewant to be correct to withinßthree percent and we want to have 92%confidence in our findings? You do not have a pilot study, so use the mostconservative approach.
+
+## Problem 6: Hypothesis Testing 
+
+The Food and Nutrition Board of the National Academy of Sciences states that the recommended daily allowance (RDA) of iron for adult female sunder the age of 51 is 18 milligrams (mg). A sample of iron intake was obtained during a 24-hour period from 45 randomly selected adult females under the age of 51. It revealed that the sample mean was 14.68 mg. At 99% significance level, does the data suggest that adult females under the age of 51 are, on average, getting less than the RDA of 18 mg of iron? Assume that the population standard deviation is 4.2 mg.

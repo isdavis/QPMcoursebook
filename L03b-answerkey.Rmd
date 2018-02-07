@@ -1,0 +1,30 @@
+
+# Lab 3 Handout Answer Key: Quantitative Political Methodology
+
+1. Write down the names of all the members of your group in this space. We will collect one sheet fromeach group for grading.
+
+2. Imagine, for your honors thesis, you would like to show increasing polarization trends in the U.S.House of Representatives, using Poole's data. You have already calculated some summary statisticsfor the 88th Congress (1963-1964) and produced the following plot:
+
+```{r, echo=F, out.width = "400px"}
+knitr::include_graphics("/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/18.png")
+```
+
+3. Now, you would like to do a similar analysis for the 107th Congress. Upload the 107th Congress datasets, wnominaterep2001.txt and wnominatedem2001.txt, from the course website into R commander: http://pages.wustl.edu/montgomery/qpm/class-datasets.1
+
+```{r, eval=F}
+dataR<-read.table("wnominate_rep2001.txt")
+dataD<-read.table("wnominate_dem2001.txt")
+```
+
+4. You want to summarize and visually present your data to prove your argument (i.e., to showincreasing polarization). To do this, produce the same summary statistics and a histogram as in (2),but now for the 107th Congress. Write down the summary statistics and replicate your plot below(when all members of your group have produced the histogram in R Studio, call over the TA to signbelow).
+
+```{r, eval=F}
+Hist(rep2001$wnominate, scale="frequency", breaks=10, col="darkgray",xlim=c(-1,1))
+Hist(dem2001$wnominate, scale="frequency", breaks=10, col="lightgray",xlim=c(-1,1), add=TRUE)
+```
+
+5. What do the two plots tell us? Compare and explain histograms from (2) and (3). Make sure all the plots your produce are readable (i.e. they have titles, properly labeled axis) and informative for thereaders). 
+
+6. If you have time, do a similar analysis for the 71st Congress (data is available from the coursewebsite), comparing it to the other two Congresses already analyzed. NOTE: You can compare your analysis to the one produced by Keith Poole (one of the authors ofthe data)  at (http://voteview.com/political_polarization.asp) and (http://voteview.com/Polarized_America.htm)
+
+Code is identical

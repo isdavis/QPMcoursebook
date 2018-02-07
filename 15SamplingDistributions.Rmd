@@ -1,0 +1,101 @@
+
+# Sampling Distributions, Pt. 2
+Learning Objectives
+
+1)Be able to calculate the parameters of the sampling distribution for a sample mean in two circumstances: 
+
+The population variance is known
+
+The population variance must be estimated from our data
+
+2)Understand the notation for the center and spread of the population distribution, sampling distribution, and sample distribution
+
+##First, let's review
+
+A sampling distribution is the theoretical distribution of sample statistics.  We use sampling distributions to figure out how close a statistic calculated from a sample (e.g., a sample mean) is likely to be to the population parameter we're concerned with.  Each point on a sampling distribution represents a statistic calcualated from a different sample. 
+
+##How do we know what the shape of a sampling distribution is when the sample size is large?  
+
+Due to a rule known as the Central Limit Theorem, when the sample sizes are sufficiently large, the resulting sampling distribution will be normally distributed, regardless the population distribution.
+
+The videos below offer a good explanation of the Central Limit Theorem and how they relate to calculating sampling distributions.  Seriously . watch them.  No really.  Don't jump ahead.  Don't skip videos.  Don't fast forward. Watch these all the way through.If you find something confusing, watch it twice. This is probably the most important concept we will cover in the entire class.    
+
+<iframe width="560" height="315" src="https://youtube.com/embed/JNm3M9cqWyc" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/embed/FXZ2O1Lv-KE" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/embed/NYd6wzYkQIM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/embed/J1twbrHel3o" frameborder="0" allowfullscreen></iframe>
+
+##Take a step back
+
+For this class you need to *really* **(REALLY!)** need understand this, so pay attention. 
+
+1) When the sample size is large, the sampling statistic will be distributed normally *no matter how the population is distributed.* This fact comes from the Central Limit Theorem and is the basis for many of the statistical tests we will cover. 
+
+2) In some other circumstances (that we will discuss in great detail later) the sampling distribution of a sample statistic may be a t-distribution or a binomial distribution (and there are a few others). 
+
+Probably the most confusing thing about this class for many students is understanding what a sampling distribution is and figuring out which sampling distribution to use for different situations.   So do yourself a favor.  If you are still a little hazy about what a sampling distribution is, go and watch those videos again, come to office hours, or find some other resource. 
+
+##How do we know what the *mean* of a sampling distribution is?
+
+So far, we've figured out what the shape of a sampling distribution is when the sample size is large, but we have not yet figured out what the center of the distribution is. 
+
+When we are looking at the sampling distribution of sample means, then the mean of the sampling distribution is the mean of the population, $\mu_\bar{x} = \mu$. Pretty easy huh?  But it's a bit confusing to say.
+
+You may be thinking now, "But we don't know the population mean, $\mu$!"  You are right.  So we are going to estimate the mean of the sampling distribution as $\hat{\mu}_\bar{x} = \bar{x}$.  That is, our best guess for the mean of the sampling distribution is the mean of the sample distribution.  Again, this is pretty easy but can be confusing to keep straight.
+
+##How do we know what the *standard error* is?
+
+The tricky part of finding a sampling distribution is calculating the standard error.
+
+**If we know the population variance:**
+
+To calculate the exact standard error for means, we use the population standard deviation.  The formula to calculate the standard error for means is given by:
+
+$$\sigma_\bar{x} = \frac{\sigma}{\sqrt{n}}$$
+
+**If we don't know the population variance AND the sample size is large:**
+
+But what happens when we don't know the population standard deviation, which, in all likelihood is the case?  In that event, we estimate the population variance (and hence the variance of the sampling distribution) using the sample standard deviation.  Our estimate of the population variance is:
+
+$$\hat{\sigma}^2= \text{s}^{2}$$
+
+Therefore, our estimate of the standard error (the square root of the variance) of the sampling distribution is:.
+
+$$\hat{\sigma}_\bar{x}=\frac{\hat{\sigma}}{\sqrt{n}}=\text{s}\sqrt{\frac{1}{n}}$$
+
+You should be able to prove this to yourself using just the the two equations above.  Try it for yourself, just to make sure you understand.  Ask about it in class if you cannot quite get it.
+
+##Some notes on notation
+
+There are a lot of moving parts when it comes to samples, populations, and sampling distributions, so it is important to keep all the symbols straight. 
+
+There are a few broad rules when it comes to assigning symbols. 
+
+1)      When there is a hat ($\hat{\mu}, \hat{\sigma}, \hat{\pi}$), that means that that variable is being estimated using a sample statistic.
+
+2)      Alphabetic letters ($\bar{x}$, $s$, $p$, $n$) are parameters of the sample distribution.
+
+3)      Greek letters without hats or subscripts, ($\mu, \sigma, \pi$) are parameters of the population distribution.
+
+4)      Greek letters with subscripts ($\mu_\bar{x}, \sigma_\bar{x}$, etc.) are parameters of the sampling distribution.
+
+Below is a table of notations for samples, sampling distributions, and populations when we're dealing with means.
+
+	
+Distribution: | Mean: | Standard deviation: | Estimated mean (using sample distribution):| Estimated standard deviation (using sample distribution)
+------------- | ------| ------------------- | ------------------------------------------ | ------------------------------------------------------- 
+Sample distribution | $\bar{x}$ | $s$ | N/A | N/A
+Sampling distribution | $\mu_{\bar{x}}$ | $\sigma_\bar{x}$ (Called standard error) | $\hat{\mu}_{\bar{x}}$ | $\hat{\sigma}_{\bar{x}}$
+Population distribution | $\mu$ | $\sigma$ | $\hat{\mu}$ | $\hat{\sigma}$ 
+ 
+##What's the takeaway?
+
+To calculate the shape of the sampling distribution, we look at the size of the sample, and statistics calculated from the sample distribution.  The center of the population distribution is the center of the sampling distribution, and is estimated as the mean of the sample distribution, \bar{x}. The standard deviation of the sampling distribution, known as the standard error, is calculated according to the formulas above.
+
+Sometimes we know the population standard deviation, we use that to calculate the standard error.  
+
+$$\frac{\sigma}{\sqrt{n}}$$
+
+Sometiems use the sample standard deviation to estimate the population standard deviation, when we don't know the population variance.  For the sampling distribution of sample means, the standard error is then:
+
+$$\text{s}\sqrt{\frac{1}{n}}$$

@@ -1,0 +1,49 @@
+# Difference-in-Differences, Part I
+
+Learning Objectives:
+
+1. Learn what the difference-in-differences research design seeks to accomplish 
+2. Conceptualize diff-in-diff as a "natural experiment"
+3. Understand what theoretical assumptions justify using a diff-in-diff design
+
+##What does difference-in-differences seek to accomplish?
+
+Difference-in-differences is an empirical strategy used to make claims of causal inference. Using difference-in-differences (hereafter "diff-in-diff"), a researcher considers some intervening factor (the introduction of a policy, a stock market shock, a terrorist attack, etc.) and seeks to prove that factor to be the cause of some outcome (bank closures, casualties, vote share, etc.).
+
+As a running example for this page, we'll consider the task of estimating the effect of closing early-voting voting precincts in 17 counties in North Caroilna had on turnout.
+
+The technique can be broken into the following steps:
+
+- Identify the population (A) to which the intervention was applied Identify a comparable population (B) to which the intervention was NOT applied. In our example, we would divide all 100 counties in North Carolina into group A, counties where early voting precincts were reduced, and group B, counties where the number of early voting precincts was kept the same.
+
+- Identify the characteristic of interest of both populations before and after the intervention (A-pre, A-post, B-pre, B-post).  This means we need to know the  turnout rate for all counties in group A before the reform (e.g., in 2012) and after the reform (e.g., in 2016).  Likewise, we need to calculate the turnout rate in for counties in group B before the reform (2012) and after the reform (2016).
+
+- Find D1: the difference between A-pre and B-pre.  This would be difference in the average turnout rate between group A and group B in 2012.  
+
+- Find D2: the difference between A-post and B-post. This would be the difference in the average turnout rate between group A and gropu B in 2016.
+
+- Calculate D2 minus D1 to find the difference-in-differences (DD). This would be a measure of how the differences between turnout rates in group A and B changed as a result of the closed precincts.
+
+The final DD value you obtain is the estimated causal effect of the intervention (conditional on some key assumptions to be addressed later).
+
+Here's a visual illustration of how this research strategy works:
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/12.png)
+
+Think of the blue circles as population A, and the red triangles as population B. (For simplicity, consider the Y-value to be the population mean for the characteristic of interest.) The gap between the two blue line segments, labeled "Effect of treatment", is the DD value defined above. 
+
+It's the difference between the change we observed in the control group before and after treatment, and the change we observed in the treatment group before and after treatment.  The difference between these changes is the DD estimator.
+
+##Difference-in-differences (DiD) as a "natural experiment"
+
+The diff-in-diff strategy seeks to replicate the process of a researcher-controlled randomized experiment, but using naturally-generated data. In a randomized experiment, the researcher divides her population into treatment and control groups which are (theoretically) identical on all relevant covariates, and then applies a treatment only to the treatment group. Any difference in post-treatment characteristics can then be causally attributed to the treatment.
+
+Real-world phenomena don't divide populations into treatment and control groups as neatly and evenly as do randomized experiments. However, in some circumstances, they can come close. Diff-in-diff does not depend on treatment and control groups being equal across covariates; rather, the two groups need to be different in the same way and to the same degree over time.
+
+In using a diff-in-diff strategy, we must assume that the two groups would have been consistently different before and after the intervention ("treatment") but for the intervention, so any difference in the differences between the two groups before and after treatment can be causally attributed to the treatment.
+
+## Theoretical assumptions underlying the DiD design
+
+Making plausible claims of causal inference under the diff-in-diff design depends on an empirically untestable assumption: that in the absence of the treatment, the difference between the two populations would have been the same before and after the treatment. As this is a claim about a counterfactual, it can never be empirically tested. The strength of a difference-in-differences research design rests on how well the claim is justified theoretically.
+
+We'll take a closer look at these assumptions in a running example on the next page.

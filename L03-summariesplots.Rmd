@@ -1,0 +1,165 @@
+# Lab 3: More on Summaries and Plots 
+
+Department of Political Science 
+
+Washington University in St. Louis 
+
+(date here)
+
+## Chick Weight 
+
+###In this lab we used a dataset called chickweight that comes with R in the foreign package. We can get a summary by writing this code: 
+
+data("ChickWeight")
+summary(ChickWeight)
+
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/5.png)
+
+We can then create a histogram of the weight: 
+
+```{r, eval=F}
+hist(ChickWeight$weight, xlab = "Chick Weight", breaks =20,main = "Histogram of Chick Weight", col = 'light green')
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/6.png)
+
+We can create a histogram of the weight IF they received diet treatment 1: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 1],xlab = "Chick Weight", breaks = 20,main = "Histogram of Chick Weight", col = 'light blue')
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/7.png)
+
+We can then overlay the histogram of weight IF they recieved diet treatment 2: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 2],xlab = "Chick Weight", breaks = 20,main = "Histogram of Chick Weight", col = 'pink',add = TRUE))
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/8.png)
+
+A histogram similar to the second histogram, except with a higher upper limit and breaks handled a different way: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 1],xlim = c(0, 400),xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = 'light blue'))
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/9.png)
+
+Another overlay, just like the third histogram, except with the same higher upper limit and changed breaks: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 2],xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = 'pink',add = TRUE))
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/10.png)
+
+A pair of histograms with density as the y axis rather than frequency: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 1],xlim = c(0, 400), freq = FALSE,xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = 'light blue')
+hist(ChickWeight$weight[ChickWeight$Diet == 2],freq = FALSE,xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = 'pink',add = TRUE)
+
+
+dom.blue <- rgb(red = 0, green = 0, blue = 1, alpha = 0.5)
+dom.pink <- rgb(red = 1, green = 0, blue = 0, alpha = 0.5)
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/11.png)
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/12.png)
+
+
+
+
+Overlay with the higher upper limit and changed breaks AND density plot instead of frequency: 
+
+```{r, eval=F}
+hist(ChickWeight$weight[ChickWeight$Diet == 1],xlim = c(0, 400), freq = FALSE,xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = dom.blue))
+hist(ChickWeight$weight[ChickWeight$Diet == 2],freq = FALSE,xlab = "Chick Weight", breaks = seq(from = 0, to = 400, by= 20),main = "Histogram of Chick Weight", col = dom.pink, add = TRUE)
+```
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/13.png)
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/14.png)
+
+We can save our plots like this: 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/15.png)
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/16.png)
+
+Just as a quick refresher, we get five-number summaries:
+
+For all of the variables in the dataset:
+
+```{r, eval=F}
+summary(nameofdataset)
+```
+
+For a specific variable in the dataset:
+
+```{r, eval=F}
+summary(nameofdataset$nameofvariable)
+```
+
+Just the mean:
+
+```{r, eval=F}
+mean(nameofdataset$nameofvariable)
+```
+
+Just the median:
+
+```{r, eval=F}
+median(nameofdataset$nameofvariable)
+```
+
+Just the standard deviation:
+
+```{r, eval=F}
+sd(nameofdataset$nameofvariable)
+```
+
+Just the minimum:
+
+```{r, eval=F}
+min(nameofdataset$nameofvariable)
+```
+
+Just the maximum:
+
+```{r, eval=F}
+max(nameofdataset$nameofvariable)
+```
+
+Just quantiles:
+
+```{r, eval=F}
+quantile(nameofdataset$nameofvariable,0.5)
+```
+
+## Density Plots Explained 
+
+A density plot is also a graphical representation ofthe distribution of data; it is a smoother version of a histogram and is usually a more effective wayto view the distribution of a variable. 
+
+![](/Users/Ian/Dropbox (IsD)/QPM/bookdown-minimal-master/bookdown-minimal-master/_bookdown_files/Lab_Files/17.png)
+
+We can plot density plots in R using this code: 
+
+```{r, eval=F}
+plot(density(dataset,name$variable.name),options...)
+#Example
+plot(density(brazil$age))
+```
+
+## Other Useful Modifiers for Plots 
+
+The Par function is very useful, as it allows you to fit multiple plots into one window. This will become very important when you do your final project as you may need to plot many different but related plots in a similar area. 
+
+```{r, eval=F}
+par(mfrow=c(1,3), bg="lightsalmon")
+```
+
+This allows 3 plots in 1 row, and bg="lightsalmon" produces a pinkish background. 
+
+For even more information about R plotting options, check out this helpful guide: (including colors) (http://www.statmethods.net/advgraphs/parameters.html)

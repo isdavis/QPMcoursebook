@@ -1,0 +1,10 @@
+
+# Installing R and R Studio
+
+##Installing R and R Studio on a Mac (would also work for other platforms)
+
+<iframe width="560" height="315" src="https://youtube.com/embed/cX532N_XLIs" frameborder="0" allowfullscreen></iframe>
+
+##Installing R and R Studio on Windows 
+
+<iframe width="560" height="315" src="https://youtube.com/embed/eD07NznguA4" frameborder="0" allowfullscreen></iframe>
